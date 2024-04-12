@@ -12,6 +12,7 @@ export default function App() {
 
   return (
       <>
+      
           <div className={`page-wrapper bg-black ${toggle ? "toggled" : ""}`}>
               <Sidebar/>
               <main className="page-content h-screen">

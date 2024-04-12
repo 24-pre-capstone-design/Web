@@ -36,9 +36,7 @@ export default function Login(){
               </div>
             </div>
             <div className="justify-between mb-6">
-              <label className="block text-sm text-white"><input type="checkbox"/>&ensp;아이디 저장
-                <Link to="/Findpassword" style={{backgroundColor : "transparent", color : "white", float: "right"}}>비밀번호찾기</Link>
-              </label>
+              <label className="block text-sm text-white"><input type="checkbox"/>&ensp;아이디 저장<Link to="/Findpassword" style={{backgroundColor : "transparent", color : "white", float: "right"}}>비밀번호찾기</Link></label>
             </div>
             <div>
               <button type="submit" onClick={onClickLogin} style={{backgroundColor : "#3e538c"}} className="w-full flex justify-center py-4 px-4 border-transparent rounded-md text-white hover:bg-indigo-700">로그인</button>
