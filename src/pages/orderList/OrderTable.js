@@ -32,7 +32,7 @@ const OrderTable = () => {
     };
 
     return(
-        <div class="pt-6 h-screen flex flex-col items-center">
+        <div class="pt-4 h-screen flex flex-col items-center">
             <table class="w-full bg-gray-800 text-white">
                 <thead class="border-b-2 border-gray-800 ">
                     <tr class="">
