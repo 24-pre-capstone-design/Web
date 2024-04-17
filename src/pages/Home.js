@@ -14,7 +14,8 @@ export default function Home(){
                     <Topnav toggle={toggle} setToggle={setToggle}/>
 
                     <div className="relative top-25 mx-10">
-                        <h3 className="text-4xl text-white font-bold">DashBoard</h3>
+                        <h3 className="text-4xl text-white font-bold border border-red-600">DashBoard</h3>
+
                     </div>
                 </main>
             </div>
