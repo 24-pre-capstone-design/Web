@@ -10,11 +10,15 @@ export default function Login(){
   const hasCredential = () => {
     if (id.length <=0 && password.length <= 0) {
         alert("아이디와 비밀번호를 입력해주세요");
+        return false;
     }else if (id.length <= 0){
       alert("아이디를 입력해주세요");
+      return false;
     }else if (password.length <= 0) {
       alert("비밀번호를 입력해주세요");
+      return false;
     }
+    return true;
   }
 
   const saveIdHasChecked = () => {
@@ -30,6 +34,10 @@ export default function Login(){
     if (id) {
       setId(id);
     }
+  }
+
+  const login = () => {
+    window.location.href = "/home";
   }
 
   useEffect(() => {
@@ -84,8 +92,10 @@ export default function Login(){
             <div>
               <button type="submit"
                       onClick={() => {
-                        hasCredential();
-                        saveIdHasChecked();
+                        if (hasCredential()) {
+                          saveIdHasChecked();
+                          login();
+                        }
                       }}
                       className="w-full flex justify-center py-4 px-4 border-transparent rounded-md text-white bg-indigo-600 hover:bg-indigo-700"
               >로그인</button>
