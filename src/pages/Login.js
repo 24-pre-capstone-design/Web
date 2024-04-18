@@ -17,6 +17,19 @@ export default function Login(){
     }
   }
 
+  const saveIdHasChecked = () => {
+    if (isRemember) {
+      localStorage.setItem("ntm_id", id);
+    }
+  }
+
+  const hasIdInLocalStorage = () => {
+    const id = localStorage.getItem("ntm_id");
+    if (id) {
+      setId(id);
+    }
+  }
+
   return(
       <div className="flex items-center justify-center h-screen bg-gray-800">
         <div className="bg-black p-8 rounded-lg max-w-3xl w-full">
@@ -64,7 +77,10 @@ export default function Login(){
 
             <div>
               <button type="submit"
-                      onClick={() => hasCredential()}
+                      onClick={() => {
+                        hasCredential();
+                        saveIdHasChecked();
+                      }}
                       className="w-full flex justify-center py-4 px-4 border-transparent rounded-md text-white bg-indigo-600 hover:bg-indigo-700"
               >로그인</button>
             </div>
