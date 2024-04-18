@@ -1,22 +1,26 @@
 import React, {useEffect, useState} from "react";
 import {Link} from "react-router-dom";
 
+import Info from "../components/alert/Info";
+
 export default function Login(){
 
   const [id, setId] = useState("");
   const [password, setPassword] = useState("");
   const [isRemember, setIsRemember] = useState(true);
 
+  const [message, setMessage] = useState("");
+
   const hasCredential = () => {
     if (id.length <=0 && password.length <= 0) {
-        alert("아이디와 비밀번호를 입력해주세요");
+        setMessage("아이디와 비밀번호를 입력해주세요");
         return false;
     }else if (id.length <= 0){
-      alert("아이디를 입력해주세요");
-      return false;
+        setMessage("아이디를 입력해주세요");
+        return false;
     }else if (password.length <= 0) {
-      alert("비밀번호를 입력해주세요");
-      return false;
+        setMessage("비밀번호를 입력해주세요");
+        return false;
     }
     return true;
   }
@@ -37,8 +41,19 @@ export default function Login(){
   }
 
   const login = () => {
+    // 나중에 통신 로직 추가 -> api 디렉토리로 이동할 예정
     window.location.href = "/home";
   }
+
+  useEffect(() => {
+    if (message) {
+      const timer = setTimeout(() => {
+        setMessage("");
+      }, 3000);
+
+      return () => clearTimeout(timer);
+    }
+  }, [message]);
 
   useEffect(() => {
     hasIdInLocalStorage();
@@ -46,6 +61,11 @@ export default function Login(){
 
   return(
       <div className="flex items-center justify-center h-screen bg-gray-800">
+
+        <div className={`fixed top-6 ${!message ? 'hidden' : null}`}>
+            <Info message={message} />
+        </div>
+
         <div className="bg-black p-8 rounded-lg max-w-3xl w-full">
           <h1 className="text-center text-white text-2xl font-bold mb-6">nice to menu</h1>
           <h2 className="text-center text-white font-bold mb-6">로그인</h2>

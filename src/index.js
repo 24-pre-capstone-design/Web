@@ -4,6 +4,7 @@ import './index.css';
 import App from './App';
 import '../src/assets/css/tailwind.css'
 import '../src/assets/css/daisy.css'
+import '../src/assets/css/animation.css'
 import {BrowserRouter} from 'react-router-dom';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
