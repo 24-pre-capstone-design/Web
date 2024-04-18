@@ -1,45 +1,57 @@
 import React, {useState} from "react";
 import {Link} from "react-router-dom";
 
-import Findpassword from "./Findpassword";
-
 export default function Login(){
 
-  const [Username, setUsername] = useState("");
-  const [Password, setPassword] = useState("");
-
-  const onUsernameHandler = (e) => {
-    setUsername(e.Target.value);
-  }
-  const onPasswordHandler = (e) => {
-    setPassword(e.Target.value);
-  }
-
-  const onClickLogin = () => {
-    console.log('Login');
-  }
+  const [id, setId] = useState("");
+  const [password, setPassword] = useState("");
 
   return(
-      <div className="flex items-center justify-center h-screen" style ={{backgroundColor : "#292b2e"}}>
+      <div className="flex items-center justify-center h-screen bg-gray-800">
         <div className="bg-black p-8 rounded-lg max-w-3xl w-full">
           <h1 class="text-center text-white text-2xl font-bold mb-6">nice to menu</h1>
           <h2 class="text-center text-white font-bold mb-6">로그인</h2>
+
           <form>
             <div className ="mb-6">
               <div className ="mt-4 relative rounded-md shadow-sm">
-                <input type="text" style={{backgroundColor : "transparent", color : "white", outline : "none", width : "100%"}} placeholder="Username" onChange = {onUsernameHandler}/>
+                <input type="text"
+                       className="bg-transparent w-full outline-none text-white"
+                       placeholder="아이디를 입력하세요"
+                       value={id}
+                       onChange = {(e) => setId(e.target.value)}
+                />
               </div>
             </div>
+
             <div className="mb-6">
               <div className="mt-4 relative rounded-md shadow-sm">
-                <input type="text" style={{backgroundColor : "transparent", color : "white", outline : "none", width : "100%"}} placeholder="Password" onChange = {onPasswordHandler}/>
+                <input type="password"
+                       className="bg-transparent w-full outline-none text-white"
+                       placeholder="비밀번호를 입력하세요"
+                       value={password}
+                       onChange = {(e) => setPassword(e.target.value)}
+                />
               </div>
             </div>
-            <div className="justify-between mb-6">
-              <label className="block text-sm text-white"><input type="checkbox"/>&ensp;아이디 저장<Link to="/Findpassword" style={{backgroundColor : "transparent", color : "white", float: "right"}}>비밀번호찾기</Link></label>
+
+            <div className="justify-between mb-6 flex items-center">
+              <div className="form-control w-28">
+                <label className="label cursor-pointer">
+                  <input type="checkbox" defaultChecked className="checkbox checkbox-primary"/>
+                  <span className="label-text text-white">아이디 저장</span>
+                </label>
+              </div>
+              <div className="flex items-center">
+                <Link to="/find-password" className="label-text text-white text-end mx-2">비밀번호찾기</Link>
+              </div>
             </div>
+
             <div>
-              <button type="submit" onClick={onClickLogin} style={{backgroundColor : "#3e538c"}} className="w-full flex justify-center py-4 px-4 border-transparent rounded-md text-white hover:bg-indigo-700">로그인</button>
+              <button type="submit"
+                      style={{backgroundColor : "#3e538c"}}
+                      className="w-full flex justify-center py-4 px-4 border-transparent rounded-md text-white bg-indigo-600 hover:bg-indigo-700"
+              >로그인</button>
             </div>
           </form>
         </div>
