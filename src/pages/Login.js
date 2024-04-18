@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import {Link} from "react-router-dom";
 
 export default function Login(){
@@ -20,6 +20,8 @@ export default function Login(){
   const saveIdHasChecked = () => {
     if (isRemember) {
       localStorage.setItem("ntm_id", id);
+    }else{
+      localStorage.removeItem("ntm_id");
     }
   }
 
@@ -29,6 +31,10 @@ export default function Login(){
       setId(id);
     }
   }
+
+  useEffect(() => {
+    hasIdInLocalStorage();
+  }, []);
 
   return(
       <div className="flex items-center justify-center h-screen bg-gray-800">
