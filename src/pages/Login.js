@@ -49,7 +49,7 @@ export default function Login(){
     if (message) {
       const timer = setTimeout(() => {
         setMessage("");
-      }, 3000);
+      }, 2000);
 
       return () => clearTimeout(timer);
     }
@@ -62,7 +62,7 @@ export default function Login(){
   return(
       <div className="flex items-center justify-center h-screen bg-gray-800">
 
-        <div className={`fixed top-6 ${!message ? 'hidden' : null}`}>
+        <div className={`fixed top-6 ${!message ? 'hidden' : ''}`}>
             <Info message={message} />
         </div>
 
