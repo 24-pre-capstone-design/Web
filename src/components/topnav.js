@@ -32,10 +32,10 @@ export default function Topnav(){
                             <div className={`dropdown-menu absolute end-0 m-0 mt-4 z-10 w-44 rounded-md overflow-hidden bg-black border border-gray-400 shadow ${toggle ? '' : 'hidden'}`} >
                                 <ul className="py-2 text-start">
                                     <li>
-                                        <Link to="/setting" className="flex items-center font-medium py-1 px-4 text-white hover:text-yellow-500"><AiOutlineSetting className="me-2"/>관리자 설정</Link>
+                                        <Link to="/setting" className="flex items-center font-medium py-1 px-4 text-white hover:text-indigo-600"><AiOutlineSetting className="me-2"/>관리자 설정</Link>
                                     </li>
                                     <li>
-                                        <Link to="/" className="flex items-center font-medium py-1 px-4 text-white hover:text-yellow-500"><IoMdLogOut className="me-2"/>로그아웃</Link>
+                                        <Link to="/" className="flex items-center font-medium py-1 px-3 text-white hover:text-indigo-600"><IoMdLogOut className="me-2"/>로그아웃</Link>
                                     </li>
                                 </ul>
                             </div>
