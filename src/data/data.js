@@ -1,3 +1,12 @@
+import 짜장면 from "../assets/images/food/짜장면.png";
+import 짬뽕 from "../assets/images/food/짬뽕.png";
+import 볶음밥 from "../assets/images/food/볶음밥.png";
+import 탕수육 from "../assets/images/food/탕수육.png";
+import 깐풍기 from "../assets/images/food/깐풍기.png";
+import 짜장밥 from "../assets/images/food/짜장밥.png";
+import 짬뽕밥 from "../assets/images/food/짬뽕밥.png";
+import 간짜장 from "../assets/images/food/간짜장.png";
+
 export const test = "test data";
 
 export const menuData = [
@@ -7,7 +16,7 @@ export const menuData = [
         price: 6000,
         foodCategory: "면류",
         status: "판매중",
-        pictureURL: ""
+        pictureURL: 짜장면
     },
     {
         id: 2,
@@ -15,7 +24,7 @@ export const menuData = [
         price: 8000,
         foodCategory: "면류",
         status: "판매중",
-        pictureURL: ""
+        pictureURL: 짬뽕
     },
     {
         id: 3,
@@ -23,7 +32,7 @@ export const menuData = [
         price: 7000,
         foodCategory: "밥류",
         status: "판매중",
-        pictureURL: ""
+        pictureURL: 볶음밥
     },
     {
         id: 4,
@@ -31,7 +40,7 @@ export const menuData = [
         price: 15000,
         foodCategory: "특식",
         status: "판매중",
-        pictureURL: ""
+        pictureURL: 탕수육
     },
     {
         id: 5,
@@ -39,7 +48,7 @@ export const menuData = [
         price: 13000,
         foodCategory: "특식",
         status: "판매중",
-        pictureURL: ""
+        pictureURL: 깐풍기
     },
     {
         id: 6,
@@ -47,7 +56,7 @@ export const menuData = [
         price: 8000,
         foodCategory: "밥류",
         status: "판매중",
-        pictureURL: ""
+        pictureURL: 짜장밥
     },
     {
         id: 7,
@@ -55,7 +64,7 @@ export const menuData = [
         price: 9000,
         foodCategory: "밥류",
         status: "판매중",
-        pictureURL: ""
+        pictureURL: 짬뽕밥
     },
     {
         id: 8,
@@ -63,22 +72,6 @@ export const menuData = [
         price: 7000,
         foodCategory: "면류",
         status: "판매중",
-        pictureURL: ""
-    },
-    {
-        id: 9,
-        name: "닭볶음탕",
-        price: 18000,
-        foodCategory: "특식",
-        status: "판매중",
-        pictureURL: ""
-    },
-    {
-        id: 10,
-        name: "유산슬",
-        price: 16000,
-        foodCategory: "특식",
-        status: "판매중",
-        pictureURL: ""
+        pictureURL: 간짜장
     }
 ];
