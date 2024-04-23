@@ -792,6 +792,39 @@ video {
       -ms-flex-order: 3 !important;
           order: 3 !important;
 }
+.col-span-1 {
+  grid-column: span 1 / span 1 !important;
+}
+.col-span-2 {
+  grid-column: span 2 / span 2 !important;
+}
+.col-span-3 {
+  grid-column: span 3 / span 3 !important;
+}
+.col-span-4 {
+  grid-column: span 4 / span 4 !important;
+}
+.col-span-5 {
+  grid-column: span 5 / span 5 !important;
+}
+.col-span-6 {
+  grid-column: span 6 / span 6 !important;
+}
+.col-span-7 {
+  grid-column: span 7 / span 7 !important;
+}
+.col-span-8 {
+  grid-column: span 8 / span 8 !important;
+}
+.col-span-9 {
+  grid-column: span 9 / span 9 !important;
+}
+.col-span-10 {
+  grid-column: span 10 / span 10 !important;
+}
+.col-span-11 {
+  grid-column: span 11 / span 11 !important;
+}
 .col-span-12{
   grid-column: span 12 / span 12 !important;
 }
@@ -1041,6 +1074,9 @@ video {
 }
 .h-80{
   height: 20rem !important;
+}
+.h-90{
+  height: 22.5rem !important;
 }
 .h-9{
   height: 2.25rem !important;
@@ -1311,8 +1347,38 @@ video {
 .grid-cols-1{
   grid-template-columns: repeat(1, minmax(0, 1fr)) !important;
 }
+.grid-cols-2{
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+}
+.grid-cols-3{
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+}
+.grid-cols-4{
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+}
+.grid-cols-5{
+  grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
+}
+.grid-cols-6{
+  grid-template-columns: repeat(6, minmax(0, 1fr)) !important;
+}
 .grid-cols-12{
   grid-template-columns: repeat(12, minmax(0, 1fr)) !important;
+}
+.grid-flow-row{
+    grid-auto-flow: row !important;
+}
+.grid-flow-col{
+  grid-auto-flow: column !important;
+}
+.grid-flow-dense{
+    grid-auto-flow: dense !important;
+}
+.grid-flow-row-dense{
+    grid-auto-flow: row dense !important;
+}
+.grid-flow-col-dense{
+  grid-auto-flow: column dense !important;
 }
 .flex-col{
   -webkit-box-orient: vertical !important;
@@ -4679,7 +4745,7 @@ html[dir=rtl] .tns-visually-hidden {
   }
 }
 
-@media (min-width: 1280px){
+@media (min-width: 1560px){
   .xl\:col-span-10{
     grid-column: span 10 / span 10 !important;
   }
