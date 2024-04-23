@@ -2812,6 +2812,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{
 .page-wrapper .sidebar-wrapper.sidebar-dark{
   --tw-bg-opacity: 1;
   background-color: #292B2E;
+  /*background-color: rgb(15 23 42 / var(--tw-bg-opacity));*/
 }
 .page-wrapper .sidebar-wrapper.sidebar-colored{
   --tw-bg-opacity: 1;
