@@ -1,6 +1,6 @@
 export const test = "test data";
 
-export const menuItem = [
+export const menuData = [
     {
         id: 1,
         name: "짜장면",
