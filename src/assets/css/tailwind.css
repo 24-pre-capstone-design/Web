@@ -1295,6 +1295,9 @@ video {
 .max-w-\[208px\]{
   max-width: 208px !important;
 }
+.max-w-\[1440px\]{
+  max-width: 1440px !important;
+}
 .max-w-\[30px\]{
   max-width: 30px !important;
 }
@@ -4578,7 +4581,6 @@ html[dir=rtl] .tns-visually-hidden {
     text-align: start !important;
   }
 }
-
 @media (min-width: 768px){
   .md\:order-1{
     -webkit-box-ordinal-group: 2 !important;
