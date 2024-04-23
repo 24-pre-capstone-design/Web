@@ -1329,6 +1329,21 @@ video {
 .grid-cols-12{
   grid-template-columns: repeat(12, minmax(0, 1fr)) !important;
 }
+.grid-flow-row{
+    grid-auto-flow: row !important;
+}
+.grid-flow-col{
+  grid-auto-flow: column !important;
+}
+.grid-flow-dense{
+    grid-auto-flow: dense !important;
+}
+.grid-flow-row-dense{
+    grid-auto-flow: row dense !important;
+}
+.grid-flow-col-dense{
+  grid-auto-flow: column dense !important;
+}
 .flex-col{
   -webkit-box-orient: vertical !important;
   -webkit-box-direction: normal !important;
@@ -4625,7 +4640,7 @@ html[dir=rtl] .tns-visually-hidden {
   }
 }
 
-@media (min-width: 1024px){
+@media (min-width: 1250px){
   .lg\:col-span-12{
     grid-column: span 12 / span 12 !important;
   }
@@ -4694,7 +4709,7 @@ html[dir=rtl] .tns-visually-hidden {
   }
 }
 
-@media (min-width: 1280px){
+@media (min-width: 1560px){
   .xl\:col-span-10{
     grid-column: span 10 / span 10 !important;
   }
