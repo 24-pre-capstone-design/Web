@@ -32,7 +32,7 @@ export default function MenuList() {
                             {
                                 checkboxShow ?
                                     <div className="mx-2">
-                                        <button className="btn btn-error mx-0.5" onClick={() => setCheckboxShow(true)}><FaTrashAlt /></button>
+                                        <button className="btn btn-error mx-0.5" onClick={()=>document.getElementById('deleteModal').showModal()}><FaTrashAlt /></button>
                                         <button className="btn text-red-600 mx-0.5" onClick={() => setCheckboxShow(false)}><GrPowerReset /></button>
                                     </div>
                                     :
@@ -76,11 +76,21 @@ export default function MenuList() {
                             }
 
                         </div>
-
                         <Pagenation page={page}/>
-
                     </section>
 
+                    <dialog id="deleteModal" className="modal">
+                        <div className="modal-box">
+                            <h3 className="font-bold text-lg">Warning!</h3>
+                            <p className="py-4">정말 삭제하시겠습니까? 메뉴 삭제 이후에는 복구가 불가능 합니다.</p>
+                            <div className="modal-action">
+                                <form method="dialog">
+                                    <button className="btn mx-0.5" onClick={()=>setCheckboxShow(false)}>취소</button>
+                                    <button className="btn btn-outline btn-error mx-0.5" onClick={()=>setCheckboxShow(false)}>삭제</button>
+                                </form>
+                            </div>
+                        </div>
+                    </dialog>
 
 
                 </main>
