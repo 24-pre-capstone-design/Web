@@ -4,6 +4,7 @@ import React, {useEffect, useState} from "react";
 import { menuData } from "../data/data.js";
 import Pagenation from "../components/Pagenation";
 import {FaTrashAlt, GrPowerReset} from '../assets/icons/vander'
+import EditMenu from "./EditMenu";
 
 export default function MenuList() {
 
@@ -28,7 +29,7 @@ export default function MenuList() {
                         <h3 className="text-4xl text-white font-bold">상품 및 메뉴 관리</h3>
 
                         <div className="flex items-center mx-10">
-                            <button className="btn text-primary">메뉴 추가하기</button>
+                            <button className="btn text-primary" onClick={()=>document.getElementById('editModal').showModal()}>메뉴 추가하기</button>
                             {
                                 checkboxShow ?
                                     <div className="mx-2">
@@ -54,23 +55,30 @@ export default function MenuList() {
 
                             {
                                 menuItem && menuItem.map((item, index) => {
+                                    const modalId = `updateModal-${item.id}`;
                                     return (
-                                        <div className="card h-auto bg-base-100 shadow-xl my-3" key={item.id}>
-                                            <figure><img src={item.pictureURL} alt=""/></figure>
-                                            <div className="card-body">
-                                                <h2 className="card-title justify-between">
-                                                    <div>
-                                                        {item.name}
-                                                        <div className="badge badge-accent badge-outline align-middle mb-1 mx-2">{item.foodCategory}</div>
+                                        <>
+                                            <div className="card h-auto bg-base-100 shadow-xl my-3" key={item.id}>
+                                                <figure><img src={item.pictureURL} alt=""/></figure>
+                                                <div className="card-body">
+                                                    <h2 className="card-title justify-between">
+                                                        <div>
+                                                            {item.name}
+                                                            <div className="badge badge-accent badge-outline align-middle mb-1 mx-2">{item.foodCategory}</div>
+                                                        </div>
+                                                        <input type="checkbox" className={`checkbox checkbox-error ${checkboxShow ? '' : 'hidden'}`} />
+                                                    </h2>
+                                                    <p>{item.price}원</p>
+                                                    <div className="card-actions justify-end">
+                                                        <button className="btn btn-block" onClick={() => document.getElementById(modalId).showModal()}>메뉴 수정하기</button>
                                                     </div>
-                                                    <input type="checkbox" className={`checkbox checkbox-error ${checkboxShow ? '' : 'hidden'}`} />
-                                                </h2>
-                                                <p>{item.price}원</p>
-                                                <div className="card-actions justify-end">
-                                                    <button className="btn btn-block">메뉴 수정하기</button>
                                                 </div>
                                             </div>
-                                        </div>
+
+                                            <dialog id={modalId} className="modal" key={item.id}>
+                                                <EditMenu item={item}/>
+                                            </dialog>
+                                        </>
                                     )
                                 })
                             }
@@ -90,6 +98,10 @@ export default function MenuList() {
                                 </form>
                             </div>
                         </div>
+                    </dialog>
+
+                    <dialog id="editModal" className="modal">
+                        <EditMenu />
                     </dialog>
 
 
