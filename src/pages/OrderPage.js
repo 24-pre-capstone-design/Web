@@ -4,7 +4,6 @@ import Topnav from "../components/topnav";
 import { orders } from "../data/data"
 
 export default function OrderPage(){
-
     const [toggle, setToggle] = useState(true);
     const [orderItem, setOrderItem] = useState([]);
       useEffect(() => {
@@ -13,9 +12,6 @@ export default function OrderPage(){
 
     const itemsPerPage = 10;
     const [currentPage, setCurrentPage] = useState(1);
-    const indexOfLastItem = currentPage * itemsPerPage;
-    const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-    const currentOrders = orders.slice(indexOfFirstItem,indexOfLastItem);
     const totalPageCount = Math.ceil(orders.length / itemsPerPage);
 
     const handleClick = (pageNumber) => {
@@ -23,70 +19,91 @@ export default function OrderPage(){
     };
 
     const renderOrders = () => {
-        const renderedOrders = [];
-        currentOrders.forEach((order, index) => {
-            renderedOrders.push(
-                <React.Fragment key={order.id}>
-                    <tr>
-                        <td className="p-3 text-sm font-bold">{order.id}</td>
-                        <td className="p-3 text-sm text-gray-700">{order.menu}</td>
-                        <td className="p-3 text-sm text-gray-700">{order.date}</td>
-                        <td className="p-3 text-sm text-gray-700">{order.price}</td>
-                        <td className="p-3 text-sm text-gray-700">
-                            <span className="p-1.5 text-xs font-medium uppercase tracking-wider text-yellow-800 bg-red-200 rounded-lg bg-opacity-40">{order.status}</span>
-                        </td>
+        const startIndex = (currentPage - 1) * itemsPerPage;
+        const endIndex = startIndex + itemsPerPage;
+        const renderedOrders = orderItem.slice(startIndex, endIndex).map((order, index) => (
+            <React.Fragment key={order.id}>
+                <tr>
+                    <td className="p-3 text-sm font-bold">{order.id}</td>
+                    <td className="p-3 text-sm text-gray-700">{order.menu}</td>
+                    <td className="p-3 text-sm text-gray-700">{order.date}</td>
+                    <td className="p-3 text-sm text-gray-700">{order.price}</td>
+                    <td className="p-3 text-sm text-gray-700">
+                        <span className="p-1.5 text-xs font-medium uppercase tracking-wider text-yellow-800 bg-red-200 rounded-lg bg-opacity-40">{order.status}</span>
+                    </td>
+                </tr>
+                {index !== orderItem.length - 1 && (
+                    <tr key={`line${order.id}`} className="border-t border-gray-600">
+                        <td colSpan="5" className="text-center"></td>
                     </tr>
-                    {index !== currentOrders.length - 1 && (
-                        <tr key={`line${order.id}`} className="border-t border-gray-600">
-                            <td colSpan="5" className="text-center"></td>
-                        </tr>
-                    )}
-                </React.Fragment>
-            );
-        });
+                )}
+            </React.Fragment>
+        ));
+
         return renderedOrders;
     };
 
     const renderPageNumbers = () => {
         const pageNumbers = [];
-        let startPage = 1;
-        if (currentPage > 5) {
-            startPage = currentPage - 4;
-        }
+
+        let startPage = Math.max(1, currentPage - 2);
         const endPage = Math.min(startPage + 4, totalPageCount);
+
+        const prevPageButton = (
+            <button
+                className={`text-lg font-semibold mx-2 px-4 py-2 rounded-lg focus:outline-none ${currentPage === 1 ? 'bg-gray-300 text-gray-700' : 'bg-gray-800 text-white'}`}
+                disabled={currentPage === 1}
+                onClick={() => handleClick(currentPage - 1)}
+            >
+                이전
+            </button>
+        );
+
+        const nextPageButton = (
+            <button
+                className={`text-lg font-semibold mx-2 px-4 py-2 rounded-lg focus:outline-none ${currentPage === totalPageCount ? 'bg-gray-300 text-gray-700' : 'bg-gray-800 text-white'}`}
+                disabled={currentPage === totalPageCount}
+                onClick={() => handleClick(currentPage + 1)}
+            >
+                다음
+            </button>
+        );
+
         for (let i = startPage; i <= endPage; i++) {
-            pageNumbers.push(i);
+            pageNumbers.push(
+                <button
+                    className={`text-lg font-semibold mx-2 px-4 py-2 rounded-lg focus:outline-none ${currentPage === i ? 'bg-gray-800 text-white' : 'bg-gray-200 text-white'}`}
+                    key={i}
+                    onClick={() => handleClick(i)}
+                >
+                    {i}
+                </button>
+            );
+        }
+
+        if (pageNumbers.length < 5 && startPage > 1) {
+            const diff = 5 - pageNumbers.length;
+            for (let i = startPage - 1; i >= Math.max(1, startPage - diff); i--) {
+                pageNumbers.unshift(
+                    <button
+                        className={`text-lg font-semibold mx-2 px-4 py-2 rounded-lg focus:outline-none bg-gray-200 text-white`}
+                        key={i}
+                        onClick={() => handleClick(i)}
+                    >
+                        {i}
+                    </button>
+                );
+            }
         }
         return (
             <div className="flex mt-4">
-                <button
-                    className={`text-lg font-semibold mx-2 px-4 py-2 rounded-lg focus:outline-none ${currentPage === 1 ? 'bg-gray-300 text-gray-700' : 'bg-gray-800 text-white'}`}
-                    disabled={currentPage === 1}
-                    onClick={() => handleClick(currentPage - 1)}
-                >
-                    이전
-                </button>
-
-                {pageNumbers.map((number) => (
-                    <button
-                        className={`text-lg font-semibold mx-2 px-4 py-2 rounded-lg focus:outline-none ${currentPage === number ? 'bg-gray-800 text-white' : 'bg-gray-200 text-white'}`}
-                        key={number}
-                        onClick={() => handleClick(number)}
-                    >
-                        {number}
-                    </button>
-                ))}
-
-                <button
-                    className={`text-lg font-semibold mx-2 px-4 py-2 rounded-lg focus:outline-none ${currentPage === totalPageCount ? 'bg-gray-300 text-gray-700' : 'bg-gray-800 text-white'}`}
-                    disabled={currentPage === totalPageCount}
-                    onClick={() => handleClick(currentPage + 1)}
-                >
-                    다음
-                </button>
+                {currentPage > 1 && prevPageButton}
+                {pageNumbers}
+                {currentPage < totalPageCount && nextPageButton}
             </div>
         );
-    };
+    };  
+
 
     return(
         <>
