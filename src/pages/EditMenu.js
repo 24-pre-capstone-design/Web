@@ -10,7 +10,7 @@ export default function EditMenu({item}){
             <div className="py-3">
                 <span className="badge badge-lg my-1">카테고리</span>
                 <select className="select select-bordered w-full max-w-xs">
-                    <option disabled>카테고리 미지정</option>
+                    <option disabled selected>카테고리 미지정</option>
                     {
                         category.map((c, index) => (
                             <option key={index} selected={item?.foodCategory === c.name}>{c.name}</option>
