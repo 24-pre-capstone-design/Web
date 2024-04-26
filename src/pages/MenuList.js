@@ -65,6 +65,7 @@ export default function MenuList() {
                                                         <div>
                                                             {item.name}
                                                             <div className="badge badge-accent badge-outline align-middle mb-1 mx-2">{item.foodCategory}</div>
+                                                            <div className="badge badge-warning badge-outline align-middle mb-1">{item.status}</div>
                                                         </div>
                                                         <input type="checkbox" className={`checkbox checkbox-error ${checkboxShow ? '' : 'hidden'}`} />
                                                     </h2>
