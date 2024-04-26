@@ -19,3 +19,16 @@
         transform: translateX(0);
     }
 }
+
+.hover\:scale:hover {
+    animation: scale 1s ease;
+}
+
+@keyframes scale {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.05);
+    }
+}

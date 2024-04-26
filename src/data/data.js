@@ -9,6 +9,51 @@ import 간짜장 from "../assets/images/food/간짜장.png";
 
 export const test = "test data";
 
+export const category = [
+    {
+        id: 1,
+        name: "밥류"
+    },
+    {
+        id: 2,
+        name: "면류"
+    },
+    {
+        id: 3,
+        name: "볶음류"
+    },
+    {
+        id: 4,
+        name: "탕류"
+    },
+    {
+        id: 5,
+        name: "음료"
+    },
+    {
+        id: 6,
+        name: "특식"
+    }
+]
+
+export const status = [
+    {
+        id: 1,
+        name: "판매중",
+        description: "판매중인 상태입니다."
+    },
+    {
+        id: 2,
+        name: "품절",
+        description: "품절된 상태입니다."
+    },
+    {
+        id: 3,
+        name: "비공개",
+        description: "비공개된 상태입니다."
+    }
+]
+
 export const menuData = [
     {
         id: 1,
