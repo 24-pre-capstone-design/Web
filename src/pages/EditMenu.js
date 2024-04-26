@@ -1,4 +1,5 @@
 import React from "react";
+import {category, status} from "../data/data";
 
 export default function EditMenu({item}){
 
@@ -10,12 +11,13 @@ export default function EditMenu({item}){
                 <span className="badge badge-lg my-1">카테고리</span>
                 <select className="select select-bordered w-full max-w-xs">
                     <option disabled selected>카테고리 미지정</option>
-                    <option>밥류</option>
-                    <option>면류</option>
-                    <option>볶음류</option>
-                    <option>탕류</option>
-                    <option>음료</option>
-                    <option>기타</option>
+                    {
+                        category.map((item, index) => {
+                            return (
+                                <option key={index}>{item.name}</option>
+                            )
+                        })
+                    }
                 </select>
             </div>
 
@@ -33,9 +35,13 @@ export default function EditMenu({item}){
                 <span className="badge badge-lg my-1">판매 상태</span>
                 <select className="select select-bordered w-full max-w-xs">
                     <option disabled selected>판매 상태</option>
-                    <option>판매중</option>
-                    <option>품절</option>
-                    <option>비공개</option>
+                    {
+                        status.map((item, index) => {
+                            return (
+                                <option key={index}>{item.name}</option>
+                            )
+                        })
+                    }
                 </select>
             </div>
 
