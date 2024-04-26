@@ -1,5 +1,5 @@
 import React from "react";
-import {category, status} from "../data/data";
+import {category, status} from "../../data/data";
 
 export default function EditMenu({item}){
 
