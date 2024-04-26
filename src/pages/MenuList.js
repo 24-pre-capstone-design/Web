@@ -1,10 +1,11 @@
 import Sidebar from "../components/sidebar";
 import Topnav from "../components/topnav";
 import React, {useEffect, useState} from "react";
-import { menuData } from "../data/data.js";
+import {category, menuData} from "../data/data.js";
 import Pagenation from "../components/Pagenation";
 import {FaTrashAlt, GrPowerReset} from '../assets/icons/vander'
-import EditMenu from "./EditMenu";
+import EditMenu from "../components/modal/EditMenu";
+import NewCategory from "../components/modal/NewCategory";
 
 export default function MenuList() {
 
@@ -13,9 +14,17 @@ export default function MenuList() {
     const [size, setSize] = useState(8);
     const [menuItem, setMenuItem] = useState([]);
     const [checkboxShow, setCheckboxShow] = useState(false);
+    const [selectedCategory, setSelectedCategory] = useState('');
 
     useEffect(() => {
-        setMenuItem(menuData)
+        if (selectedCategory === 'new'){
+            document.getElementById('newCategoryModal').showModal();
+            setSelectedCategory('');
+        }
+    },[selectedCategory]);
+
+    useEffect(() => {
+        setMenuItem(menuData);
     }, []);
 
     return (
@@ -40,8 +49,25 @@ export default function MenuList() {
                                     <button className="btn text-red-600 mx-2" onClick={() => setCheckboxShow(true)}>선택 삭제</button>
 
                             }
+                            <select
+                                className="select select-bordered w-36 max-w-xs mx-2"
+                                value={selectedCategory}
+                                onChange={(e) => setSelectedCategory(e.target.value)}
+                            >
+                                <option selected>카테고리 전체</option>
+                                {
+                                    category.map((c, index) => (
+                                        <option key={index} value={c.name}>{c.name}</option>
+                                    ))
+                                }
+                                <option value="new">--카테고리 추가--</option>
+                            </select>
                             <label className="input input-bordered flex items-center gap-2">
-                                <input type="text" className="grow" placeholder="Search" />
+                                <input
+                                    type="text"
+                                    className="grow w-28"
+                                    placeholder="Search"
+                                    />
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" className="w-4 h-4 opacity-70">
                                     <path fillRule="evenodd" d="M9.965 11.026a5 5 0 1 1 1.06-1.06l2.755 2.754a.75.75 0 1 1-1.06 1.06l-2.755-2.754ZM10.5 7a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0Z" clipRule="evenodd" />
                                 </svg>
@@ -103,6 +129,10 @@ export default function MenuList() {
 
                     <dialog id="editModal" className="modal">
                         <EditMenu />
+                    </dialog>
+
+                    <dialog id="newCategoryModal" className="modal">
+                        <NewCategory />
                     </dialog>
 
 
