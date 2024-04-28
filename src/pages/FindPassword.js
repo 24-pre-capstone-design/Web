@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from "react";
 import Info from "../components/alert/Info";
 
-export default function Findpassword(){
+export default function FindPassword(){
 
     const [id, setId] = useState("");
     const [birthDate, setBirthDate] = useState("");
@@ -55,8 +55,8 @@ export default function Findpassword(){
                 </div>
 
                 <div className="mb-6">
-                    <div className="flex items-center justify-center mt-4 relative rounded-md text-white">
-                        <input type="text" pattern="[0-9]*" maxLength="8" className="bg-transparent outline-none w-[250px]" placeholder="생년월일 8자리를 입력해주세요" value={birthDate} onChange = {(e) => setBirthDate(e.target.value)}/>
+                    <div className="mt-4 relative rounded-md shadow-sm">
+                        <input type="number" maxLength="8" className="bg-transparent w-full outline-none text-white" placeholder="생년월일 8자리를 입력해주세요" value={birthDate} onChange = {(e) => setBirthDate(e.target.value)}/>
                     </div>
                 </div>
 
@@ -70,7 +70,7 @@ export default function Findpassword(){
                         <p className="py-4">로그인 후 비밀번호를 변경해 주세요.</p>
                         <div className="modal-action">
                             <form method="dialog">
-                                <button className="btn" onClick={() => {window.location.href = "/login";}}>확인</button>
+                                <button className="btn" onClick={() => {window.location.href = "/";}}>확인</button>
                             </form>
                         </div>
                     </div>
