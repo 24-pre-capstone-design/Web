@@ -84,7 +84,7 @@ export default function MenuList() {
                                     const modalId = `updateModal-${item.id}`;
                                     return (
                                         <>
-                                            <div className="card h-auto bg-base-100 shadow-xl my-3" key={item.id}>
+                                            <div className="card h-auto bg-base-100 shadow-xl my-3 mx-2" key={item.id}>
                                                 <figure><img src={item.pictureURL} alt=""/></figure>
                                                 <div className="card-body">
                                                     <h2 className="card-title justify-between">

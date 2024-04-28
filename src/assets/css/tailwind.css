@@ -1057,6 +1057,9 @@ video {
 .h-40{
   height: 10rem !important;
 }
+.h-48{
+    height: 12rem !important;
+}
 .h-5{
   height: 1.25rem !important;
 }
