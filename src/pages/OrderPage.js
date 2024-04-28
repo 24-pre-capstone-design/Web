@@ -2,6 +2,7 @@ import React, {useEffect, useState} from "react"
 import Sidebar from "../components/sidebar";
 import Topnav from "../components/topnav";
 import { orders } from "../data/data"
+import {TbTilde} from "../assets/icons/vander.js";
 
 export default function OrderPage(){
 
@@ -95,15 +96,27 @@ export default function OrderPage(){
                 <main className="page-content h-screen">
                     <Topnav toggle={toggle} setToggle={setToggle}/>
 
-                    <div className="relative top-25 mx-10">
-                        <h3 className="text-4xl text-white font-bold">주문건 관리</h3>
-                    </div>
-                    <div className="relative top-25 mx-10">
-                        <div className="flex justify-end pt-6 rounded-lg focus:outline-none ">
-                            <input type="date" className="p-2 mr-2 bg-gray-800 text-white"></input>
-                            <h5 className="p-2 bg-gray-800 text-white"> ~ </h5>
-                            <input type="date" className="p-2 bg-gray-800 text-white"></input>
+                    <div className="relative top-25 mx-10 flex items-center justify-between">
+                        <h3 className="text-4xl text-white font-bold">주문 관리</h3>
+
+                        <div className="flex justify-end rounded-lg focus:outline-none ">
+                            <label className="input input-bordered flex items-center gap-2">
+                                <input
+                                    type="date"
+                                    className="grow w-32"
+                                    placeholder="Search"
+                                />
+                                <TbTilde />
+                                <input
+                                    type="date"
+                                    className="grow w-32"
+                                    placeholder="Search"
+                                />
+                            </label>
                         </div>
+
+                    </div>
+                    <div className="relative top-25 mx-10 mt-8">
                         <div class="pt-4 h-screen flex flex-col items-center">
                             <table class="w-full bg-gray-800 text-white">
                                 <thead class="border-b-2 border-gray-800">
