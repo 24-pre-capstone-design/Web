@@ -9,6 +9,25 @@ import 간짜장 from "../assets/images/food/간짜장.png";
 
 export const test = "test data";
 
+export const monthData = [
+    {
+        id : 1,
+        month : "2024-04",
+    },
+    {
+        id : 2,
+        month : "2024-03",
+    },
+    {
+        id : 3,
+        month : "2024-02",
+    },
+    {
+        id : 4,
+        month : "2024-01",
+    }
+]
+
 export const category = [
     {
         id: 1,

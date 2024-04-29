@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from "react"
 import Sidebar from "../components/sidebar";
 import Topnav from "../components/topnav";
-import { orders } from "../data/data"
+import {category, monthData, orders} from "../data/data"
 import {TbTilde} from "../assets/icons/vander.js";
 
 export default function OrderPage(){
@@ -99,8 +99,28 @@ export default function OrderPage(){
                     <div className="relative top-25 mx-10 flex items-center justify-between">
                         <h3 className="text-4xl text-white font-bold">주문 관리</h3>
 
-                        <div className="flex justify-end rounded-lg focus:outline-none ">
-                            <label className="input input-bordered flex items-center gap-2">
+                        <div className="flex justify-end">
+                            <select className="select select-bordered w-28 max-w-xs mx-0.5">
+                                <option selected>상태 전체</option>
+                                <option>신규</option>
+                                <option>준비중</option>
+                                <option>완료</option>
+                            </select>
+                            <select className="select select-bordered w-36 max-w-xs mx-0.5">
+                                <option selected>최근 주문순</option>
+                                <option>오래된 주문순</option>
+                                <option>가격 높은 순</option>
+                                <option>가격 낮은 순</option>
+                            </select>
+                            <select className="select select-bordered w-28 max-w-xs mx-0.5">
+                                <option selected>기간 전체</option>
+                                {
+                                    monthData.map((item, index) => (
+                                        <option key={index} value={item.month}>{item.month}</option>
+                                    ))
+                                }
+                            </select>
+                            <label className="input input-bordered flex items-center gap-2 mx-0.5">
                                 <input
                                     type="date"
                                     className="grow w-32"
@@ -112,6 +132,16 @@ export default function OrderPage(){
                                     className="grow w-32"
                                     placeholder="Search"
                                 />
+                            </label>
+                            <label className="input input-bordered flex items-center gap-2 mx-0.5">
+                                <input
+                                    type="text"
+                                    className="grow w-28"
+                                    placeholder="Search"
+                                />
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" className="w-4 h-4 opacity-70">
+                                    <path fillRule="evenodd" d="M9.965 11.026a5 5 0 1 1 1.06-1.06l2.755 2.754a.75.75 0 1 1-1.06 1.06l-2.755-2.754ZM10.5 7a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0Z" clipRule="evenodd" />
+                                </svg>
                             </label>
                         </div>
 
