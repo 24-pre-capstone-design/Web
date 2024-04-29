@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from "react"
 import Sidebar from "../components/sidebar";
 import Topnav from "../components/topnav";
-import {category, monthData, orders} from "../data/data"
+import {monthData, orderData} from "../data/data"
 import {TbTilde} from "../assets/icons/vander.js";
 import Pagenation from "../components/Pagenation";
 
@@ -9,40 +9,10 @@ export default function OrderPage(){
 
     const [toggle, setToggle] = useState(true);
     const [orderItem, setOrderItem] = useState([]);
+
       useEffect(() => {
-        setOrderItem(orders)
+        setOrderItem(orderData)
     }, []);
-
-    const itemsPerPage = 10;
-    const [currentPage, setCurrentPage] = useState(1);
-    const indexOfLastItem = currentPage * itemsPerPage;
-    const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-    const currentOrders = orders.slice(indexOfFirstItem,indexOfLastItem);
-
-    const renderOrders = () => {
-        const renderedOrders = [];
-        currentOrders.forEach((order, index) => {
-            renderedOrders.push(
-                <React.Fragment key={order.id}>
-                    <tr>
-                        <td className="px-3 text-sm font-bold">{order.id}</td>
-                        <td className="px-3 text-sm text-gray-700">{order.menu}</td>
-                        <td className="px-3 text-sm text-gray-700">{order.date}</td>
-                        <td className="px-3 text-sm text-gray-700">{order.price}</td>
-                        <td className="px-3 text-sm text-gray-700">
-                            <span className=" text-xs font-medium uppercase tracking-wider text-yellow-800 bg-red-200 rounded-lg bg-opacity-40">{order.status}</span>
-                        </td>
-                    </tr>
-                    {index !== currentOrders.length - 1 && (
-                        <tr key={`line${order.id}`} className="border-t border-gray-600">
-                            <td colSpan="5" className="text-center"></td>
-                        </tr>
-                    )}
-                </React.Fragment>
-            );
-        });
-        return renderedOrders;
-    };
 
     return(
         <>
@@ -106,9 +76,9 @@ export default function OrderPage(){
                                 <option>가격 낮은 순</option>
                             </select>
                             <select className="select select-bordered select-sm w-28 max-w-xs mx-2">
-                                <option selected>10개</option>
-                                <option>20개</option>
+                                <option selected>15개</option>
                                 <option>30개</option>
+                                <option>45개</option>
                             </select>
 
                         </div>
@@ -117,14 +87,30 @@ export default function OrderPage(){
                                 <thead>
                                     <tr className="h-10">
                                         <th>번호</th>
+                                        <th>결제아이디</th>
                                         <th>메뉴</th>
-                                        <th>주문 일시</th>
+                                        <th>수량</th>
                                         <th>가격</th>
                                         <th>상태</th>
+                                        <th>주문시각</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    {renderOrders()}
+                                {
+                                    orderItem.map((item, index) => {
+                                        return (
+                                            <tr key={index}>
+                                                <td>{item.id}</td>
+                                                <td>{item.paymentId}</td>
+                                                <td>{item.foodName}</td>
+                                                <td>{item.quantity}</td>
+                                                <td>{item.sumOfCost}</td>
+                                                <td>{item.orderHistoryStatus}</td>
+                                                <td>{item.orderedAt}</td>
+                                            </tr>
+                                        )
+                                    })
+                                }
                                 </tbody>
                             </table>
                         </div>

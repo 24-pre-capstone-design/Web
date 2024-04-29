@@ -140,70 +140,276 @@ export const menuData = [
     }
 ];
 
+export const orderData = [
+    {
+        id : 1,
+        paymentId : 1,
+        foodName : "육회비빔밥",
+        quantity : 1,
+        sumOfCost : 12000,
+        orderHistoryStatus : "NEW",
+        orderedAt : "2024-04-29 11:24"
+    },
+    {
+        id : 2,
+        paymentId : 1,
+        foodName : "왕돈까스",
+        quantity : 2,
+        sumOfCost : 30000,
+        orderHistoryStatus : "NEW",
+        orderedAt : "2024-04-29 11:25"
+    },
+    {
+        id : 3,
+        paymentId : 1,
+        foodName : "김치우동",
+        quantity : 1,
+        sumOfCost : 7800,
+        orderHistoryStatus : "COOKING",
+        orderedAt : "2024-04-29 11:26"
+    },
+    {
+        id : 4,
+        paymentId : 2,
+        foodName : "치즈돈까스",
+        quantity : 1,
+        sumOfCost : 13900,
+        orderHistoryStatus : "COOKING",
+        orderedAt : "2024-04-29 11:27"
+    },
+    {
+        id : 5,
+        paymentId : 2,
+        foodName : "돌솥비빔밥",
+        quantity : 2,
+        sumOfCost : 17000,
+        orderHistoryStatus : "COOKING",
+        orderedAt : "2024-04-29 11:28"
+    },
+    {
+        id : 6,
+        paymentId : 3,
+        foodName : "스시세트",
+        quantity : 1,
+        sumOfCost : 25000,
+        orderHistoryStatus : "NEW",
+        orderedAt : "2024-04-29 11:29"
+    },
+    {
+        id : 7,
+        paymentId : 3,
+        foodName : "치킨마요덮밥",
+        quantity : 3,
+        sumOfCost : 33000,
+        orderHistoryStatus : "NEW",
+        orderedAt : "2024-04-29 11:30"
+    },
+    {
+        id : 8,
+        paymentId : 4,
+        foodName : "불고기버거",
+        quantity : 2,
+        sumOfCost : 24000,
+        orderHistoryStatus : "COOKING",
+        orderedAt : "2024-04-29 11:31"
+    },
+    {
+        id : 9,
+        paymentId : 4,
+        foodName : "순대국밥",
+        quantity : 1,
+        sumOfCost : 8000,
+        orderHistoryStatus : "COOKING",
+        orderedAt : "2024-04-29 11:32"
+    },
+    {
+        id : 10,
+        paymentId : 5,
+        foodName : "샐러드세트",
+        quantity : 1,
+        sumOfCost : 15000,
+        orderHistoryStatus : "COOKING",
+        orderedAt : "2024-04-29 11:33"
+    },
+    {
+        id : 11,
+        paymentId : 6,
+        foodName : "마라탕",
+        quantity : 2,
+        sumOfCost : 25000,
+        orderHistoryStatus : "COOKING_COMPLETE",
+        orderedAt : "2024-04-29 11:34"
+    },
+    {
+        id : 12,
+        paymentId : 7,
+        foodName : "짬뽕",
+        quantity : 1,
+        sumOfCost : 12000,
+        orderHistoryStatus : "COOKING_COMPLETE",
+        orderedAt : "2024-04-29 11:35"
+    },
+    {
+        id : 13,
+        paymentId : 7,
+        foodName : "탕수육",
+        quantity : 1,
+        sumOfCost : 18000,
+        orderHistoryStatus : "COOKING_COMPLETE",
+        orderedAt : "2024-04-29 11:36"
+    },
+    {
+        id : 14,
+        paymentId : 8,
+        foodName : "쌀국수",
+        quantity : 3,
+        sumOfCost : 24000,
+        orderHistoryStatus : "PAYMENT_COMPLETE",
+        orderedAt : "2024-04-29 11:37"
+    },
+    {
+        id : 15,
+        paymentId : 9,
+        foodName : "팟타이",
+        quantity : 2,
+        sumOfCost : 32000,
+        orderHistoryStatus : "PAYMENT_COMPLETE",
+        orderedAt : "2024-04-29 11:38"
+    },
+    {
+        id : 16,
+        paymentId : 10,
+        foodName : "초밥세트",
+        quantity : 1,
+        sumOfCost : 28000,
+        orderHistoryStatus : "NEW",
+        orderedAt : "2024-04-29 11:39"
+    },
+    {
+        id : 17,
+        paymentId : 10,
+        foodName : "우동",
+        quantity : 2,
+        sumOfCost : 15000,
+        orderHistoryStatus : "NEW",
+        orderedAt : "2024-04-29 11:40"
+    },
+    {
+        id : 18,
+        paymentId : 11,
+        foodName : "피자",
+        quantity : 1,
+        sumOfCost : 20000,
+        orderHistoryStatus : "NEW",
+        orderedAt : "2024-04-29 11:41"
+    },
+    {
+        id : 19,
+        paymentId : 11,
+        foodName : "파스타",
+        quantity : 2,
+        sumOfCost : 26000,
+        orderHistoryStatus : "NEW",
+        orderedAt : "2024-04-29 11:42"
+    },
+    {
+        id : 20,
+        paymentId : 12,
+        foodName : "스테이크",
+        quantity : 1,
+        sumOfCost : 35000,
+        orderHistoryStatus : "COOKING",
+        orderedAt : "2024-04-29 11:43"
+    },
+    {
+        id : 21,
+        paymentId : 12,
+        foodName : "샐러드",
+        quantity : 1,
+        sumOfCost : 12000,
+        orderHistoryStatus : "COOKING",
+        orderedAt : "2024-04-29 11:44"
+    },
+    {
+        id : 22,
+        paymentId : 13,
+        foodName : "햄버거",
+        quantity : 3,
+        sumOfCost : 33000,
+        orderHistoryStatus : "COOKING",
+        orderedAt : "2024-04-29 11:45"
+    },
+    {
+        id : 23,
+        paymentId : 13,
+        foodName : "핫도그",
+        quantity : 2,
+        sumOfCost : 16000,
+        orderHistoryStatus : "COOKING",
+        orderedAt : "2024-04-29 11:46"
+    },
+    {
+        id : 24,
+        paymentId : 14,
+        foodName : "김밥",
+        quantity : 1,
+        sumOfCost : 5000,
+        orderHistoryStatus : "COOKING_COMPLETE",
+        orderedAt : "2024-04-29 11:47"
+    },
+    {
+        id : 25,
+        paymentId : 15,
+        foodName : "라면",
+        quantity : 2,
+        sumOfCost : 7000,
+        orderHistoryStatus : "COOKING_COMPLETE",
+        orderedAt : "2024-04-29 11:48"
+    },
+    {
+        id : 26,
+        paymentId : 15,
+        foodName : "컵밥",
+        quantity : 1,
+        sumOfCost : 4000,
+        orderHistoryStatus : "COOKING_COMPLETE",
+        orderedAt : "2024-04-29 11:49"
+    },
+    {
+        id : 27,
+        paymentId : 16,
+        foodName : "마라샹궈",
+        quantity : 1,
+        sumOfCost : 18000,
+        orderHistoryStatus : "PAYMENT_COMPLETE",
+        orderedAt : "2024-04-29 11:50"
+    },
+    {
+        id : 28,
+        paymentId : 17,
+        foodName : "타코",
+        quantity : 3,
+        sumOfCost : 21000,
+        orderHistoryStatus : "PAYMENT_COMPLETE",
+        orderedAt : "2024-04-29 11:51"
+    },
+    {
+        id : 29,
+        paymentId : 18,
+        foodName : "삼겹살",
+        quantity : 1,
+        sumOfCost : 25000,
+        orderHistoryStatus : "PAYMENT_COMPLETE",
+        orderedAt : "2024-04-29 11:52"
+    },
+    {
+        id : 30,
+        paymentId : 18,
+        foodName : "불고기",
+        quantity : 1,
+        sumOfCost : 23000,
+        orderHistoryStatus : "PAYMENT_COMPLETE",
+        orderedAt : "2024-04-29 11:53"
+    },
 
-export const orders = [
-        { id: 1, menu: '왕돈까스, 김치우동', date: '2024-03-29 18:00', status: '신규', price: 15000 },
-        { id: 2, menu: '왕돈까스', date: '2024-03-29 18:00', status: '신규', price: 25000 },
-        { id: 3, menu: '김치우동', date: '2024-03-29 18:00', status: '준비중', price: 15000 },
-        { id: 4, menu: '왕돈까스, 김치우동', date: '2024-03-29 18:00', status: '완료', price: 15000 },
-         { id: 5, menu: '왕돈까스, 김치우동', date: '2024-03-29 18:00', status: '완료', price: 15000 },
-        { id: 6, menu: '왕돈까스', date: '2024-03-29 18:00', status: '완료', price: 25000 },
-        { id: 7, menu: '김치우동', date: '2024-03-29 18:00', status: '준비중', price: 15000 },
-        { id: 8, menu: '왕돈까스, 김치우동', date: '2024-03-29 18:00', status: '완료', price: 15000 },
-         { id: 9, menu: '왕돈까스, 김치우동', date: '2024-03-29 18:00', status: '완료', price: 15000 },
-        { id: 10, menu: '왕돈까스', date: '2024-03-29 18:00', status: '완료', price: 25000 },
-        { id: 11, menu: '김치우동', date: '2024-03-29 18:00', status: '완료', price: 15000 },
-        { id: 12, menu: '왕돈까스, 김치우동', date: '2024-03-29 18:00', status: '완료', price: 15000 },
-         { id: 13, menu: '왕돈까스, 김치우동', date: '2024-03-29 18:00', status: '완료', price: 15000 },
-        { id: 14, menu: '왕돈까스', date: '2024-03-29 18:00', status: '완료', price: 25000 },
-        { id: 15, menu: '김치우동', date: '2024-03-29 18:00', status: '완료', price: 15000 },
-        { id: 16, menu: '왕돈까스, 김치우동', date: '2024-03-29 18:00', status: '완료', price: 15000 },
-        { id: 1, menu: '왕돈까스, 김치우동', date: '2024-03-29 18:00', status: '신규', price: 15000 },
-        { id: 2, menu: '왕돈까스', date: '2024-03-29 18:00', status: '신규', price: 25000 },
-        { id: 3, menu: '김치우동', date: '2024-03-29 18:00', status: '준비중', price: 15000 },
-        { id: 20, menu: '왕돈까스, 김치우동', date: '2024-03-29 18:00', status: '완료', price: 15000 },
-         { id: 5, menu: '왕돈까스, 김치우동', date: '2024-03-29 18:00', status: '완료', price: 15000 },
-        { id: 6, menu: '왕돈까스', date: '2024-03-29 18:00', status: '완료', price: 25000 },
-        { id: 7, menu: '김치우동', date: '2024-03-29 18:00', status: '준비중', price: 15000 },
-        { id: 8, menu: '왕돈까스, 김치우동', date: '2024-03-29 18:00', status: '완료', price: 15000 },
-         { id: 9, menu: '왕돈까스, 김치우동', date: '2024-03-29 18:00', status: '완료', price: 15000 },
-        { id: 10, menu: '왕돈까스', date: '2024-03-29 18:00', status: '완료', price: 25000 },
-        { id: 11, menu: '김치우동', date: '2024-03-29 18:00', status: '완료', price: 15000 },
-        { id: 12, menu: '왕돈까스, 김치우동', date: '2024-03-29 18:00', status: '완료', price: 15000 },
-         { id: 13, menu: '왕돈까스, 김치우동', date: '2024-03-29 18:00', status: '완료', price: 15000 },
-        { id: 30, menu: '왕돈까스', date: '2024-03-29 18:00', status: '완료', price: 25000 },
-        { id: 15, menu: '김치우동', date: '2024-03-29 18:00', status: '완료', price: 15000 },
-        { id: 16, menu: '왕돈까스, 김치우동', date: '2024-03-29 18:00', status: '완료', price: 15000 },
-        { id: 1, menu: '왕돈까스, 김치우동', date: '2024-03-29 18:00', status: '신규', price: 15000 },
-        { id: 2, menu: '왕돈까스', date: '2024-03-29 18:00', status: '신규', price: 25000 },
-        { id: 3, menu: '김치우동', date: '2024-03-29 18:00', status: '준비중', price: 15000 },
-        { id: 4, menu: '왕돈까스, 김치우동', date: '2024-03-29 18:00', status: '완료', price: 15000 },
-         { id: 5, menu: '왕돈까스, 김치우동', date: '2024-03-29 18:00', status: '완료', price: 15000 },
-        { id: 6, menu: '왕돈까스', date: '2024-03-29 18:00', status: '완료', price: 25000 },
-        { id: 7, menu: '김치우동', date: '2024-03-29 18:00', status: '준비중', price: 15000 },
-        { id: 40, menu: '왕돈까스, 김치우동', date: '2024-03-29 18:00', status: '완료', price: 15000 },
-         { id: 9, menu: '왕돈까스, 김치우동', date: '2024-03-29 18:00', status: '완료', price: 15000 },
-        { id: 10, menu: '왕돈까스', date: '2024-03-29 18:00', status: '완료', price: 25000 },
-        { id: 11, menu: '김치우동', date: '2024-03-29 18:00', status: '완료', price: 15000 },
-        { id: 12, menu: '왕돈까스, 김치우동', date: '2024-03-29 18:00', status: '완료', price: 15000 },
-         { id: 13, menu: '왕돈까스, 김치우동', date: '2024-03-29 18:00', status: '완료', price: 15000 },
-        { id: 14, menu: '왕돈까스', date: '2024-03-29 18:00', status: '완료', price: 25000 },
-        { id: 15, menu: '김치우동', date: '2024-03-29 18:00', status: '완료', price: 15000 },
-        { id: 16, menu: '왕돈까스, 김치우동', date: '2024-03-29 18:00', status: '완료', price: 15000 },
-        { id: 1, menu: '왕돈까스, 김치우동', date: '2024-03-29 18:00', status: '신규', price: 15000 },
-        { id: 50, menu: '왕돈까스', date: '2024-03-29 18:00', status: '신규', price: 25000 },
-        { id: 3, menu: '김치우동', date: '2024-03-29 18:00', status: '준비중', price: 15000 },
-        { id: 4, menu: '왕돈까스, 김치우동', date: '2024-03-29 18:00', status: '완료', price: 15000 },
-         { id: 5, menu: '왕돈까스, 김치우동', date: '2024-03-29 18:00', status: '완료', price: 15000 },
-        { id: 6, menu: '왕돈까스', date: '2024-03-29 18:00', status: '완료', price: 25000 },
-        { id: 7, menu: '김치우동', date: '2024-03-29 18:00', status: '준비중', price: 15000 },
-        { id: 8, menu: '왕돈까스, 김치우동', date: '2024-03-29 18:00', status: '완료', price: 15000 },
-         { id: 9, menu: '왕돈까스, 김치우동', date: '2024-03-29 18:00', status: '완료', price: 15000 },
-        { id: 10, menu: '왕돈까스', date: '2024-03-29 18:00', status: '완료', price: 25000 },
-        { id: 11, menu: '김치우동', date: '2024-03-29 18:00', status: '완료', price: 15000 },
-        { id: 60, menu: '왕돈까스, 김치우동', date: '2024-03-29 18:00', status: '완료', price: 15000 },
-         { id: 13, menu: '왕돈까스, 김치우동', date: '2024-03-29 18:00', status: '완료', price: 15000 },
-        { id: 14, menu: '왕돈까스', date: '2024-03-29 18:00', status: '완료', price: 25000 },
-        { id: 15, menu: '김치우동', date: '2024-03-29 18:00', status: '완료', price: 15000 },
-        { id: 70, menu: '왕돈까스, 김치우동', date: '2024-03-29 18:00', status: '완료', price: 15000 },
-    ];
+];
