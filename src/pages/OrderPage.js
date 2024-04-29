@@ -14,6 +14,26 @@ export default function OrderPage(){
         setOrderItem(orderData)
     }, []);
 
+
+    const orderHistoryStatus = [
+        {
+            value : "NEW",
+            label : "신규주문"
+        },
+        {
+            value : "COOKING",
+            label : "조리중"
+        },
+        {
+            value : "COOKING_COMPLETE",
+            label : "조리완료"
+        },
+        {
+            value : "PAYMENT_COMPLETE",
+            label : "결제완료"
+        }
+    ]
+
     return(
         <>
             <div className={`page-wrapper bg-black ${toggle ? "toggled" : ""}`}>
@@ -25,14 +45,14 @@ export default function OrderPage(){
                         <h3 className="text-4xl text-white font-bold">주문 관리</h3>
 
                         <div className="flex justify-end">
-                            <select className="select select-bordered w-28 max-w-xs mx-0.5">
+                            <select className="select select-bordered w-28 max-w-xs mx-0.5 bg-neutral text-gray-50 border border-white/10">
                                 <option selected>상태 전체</option>
                                 <option>신규주문</option>
                                 <option>조리중</option>
                                 <option>조리완료</option>
                                 <option>결제완료</option>
                             </select>
-                            <select className="select select-bordered w-28 max-w-xs mx-0.5">
+                            <select className="select select-bordered w-28 max-w-xs mx-0.5 bg-neutral text-gray-50 border border-white/10">
                                 <option selected>기간 전체</option>
                                 {
                                     monthData.map((item, index) => (
@@ -40,7 +60,7 @@ export default function OrderPage(){
                                     ))
                                 }
                             </select>
-                            <label className="input input-bordered flex items-center gap-2 mx-0.5">
+                            <label className="input input-bordered flex items-center gap-2 mx-0.5 bg-neutral text-gray-50 border border-white/10">
                                 <input
                                     type="date"
                                     className="grow w-32"
@@ -53,7 +73,7 @@ export default function OrderPage(){
                                     placeholder="Search"
                                 />
                             </label>
-                            <label className="input input-bordered flex items-center gap-2 mx-0.5">
+                            <label className="input input-bordered flex items-center gap-2 mx-0.5 bg-neutral text-gray-50 border border-white/10">
                                 <input
                                     type="text"
                                     className="grow w-28"
@@ -69,13 +89,13 @@ export default function OrderPage(){
 
                     <section className="relative top-25 mx-10 mt-8">
                         <div className="flex items-center justify-between">
-                            <select className="select select-bordered select-sm w-36 max-w-xs mx-2">
+                            <select className="select select-bordered select-sm w-36 max-w-xs mx-2 bg-neutral text-gray-50 border border-white/10">
                                 <option selected>최근 주문순</option>
                                 <option>오래된 주문순</option>
                                 <option>가격 높은 순</option>
                                 <option>가격 낮은 순</option>
                             </select>
-                            <select className="select select-bordered select-sm w-28 max-w-xs mx-2">
+                            <select className="select select-bordered select-sm w-28 max-w-xs mx-2 bg-neutral text-gray-50 border border-white/10">
                                 <option selected>15개</option>
                                 <option>30개</option>
                                 <option>45개</option>
@@ -83,9 +103,9 @@ export default function OrderPage(){
 
                         </div>
                         <div className="overflow-x-auto p-2">
-                            <table className="table table-xs bg-base-100/95 text-center">
+                            <table className="table table-xs bg-neutral text-center text-white">
                                 <thead>
-                                    <tr className="h-10">
+                                    <tr className="h-10 border border-slate-900 text-gray-50">
                                         <th>번호</th>
                                         <th>결제아이디</th>
                                         <th>메뉴</th>
@@ -99,13 +119,19 @@ export default function OrderPage(){
                                 {
                                     orderItem.map((item, index) => {
                                         return (
-                                            <tr key={index}>
+                                            <tr key={index} className="border border-slate-900">
                                                 <td>{item.id}</td>
                                                 <td>{item.paymentId}</td>
                                                 <td>{item.foodName}</td>
                                                 <td>{item.quantity}</td>
                                                 <td>{item.sumOfCost}</td>
-                                                <td>{item.orderHistoryStatus}</td>
+                                                <td>{
+                                                    orderHistoryStatus.map((status, index) => {
+                                                        if (status.value === item.orderHistoryStatus) {
+                                                            return status.label
+                                                        }
+                                                    })
+                                                }</td>
                                                 <td>{item.orderedAt}</td>
                                             </tr>
                                         )
