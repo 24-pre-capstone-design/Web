@@ -119,7 +119,7 @@ export default function OrderPage(){
                                 {
                                     orderItem.map((item, index) => {
                                         return (
-                                            <tr key={index} className="border border-slate-900">
+                                            <tr key={index} className={`border border-slate-900 ${index%2===0 ? 'bg-slate-800' : 'bg-gray-600'}`}>
                                                 <td>{item.id}</td>
                                                 <td>{item.paymentId}</td>
                                                 <td>{item.foodName}</td>
