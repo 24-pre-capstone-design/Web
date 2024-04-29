@@ -3,6 +3,7 @@ import Sidebar from "../components/sidebar";
 import Topnav from "../components/topnav";
 import {category, monthData, orders} from "../data/data"
 import {TbTilde} from "../assets/icons/vander.js";
+import Pagenation from "../components/Pagenation";
 
 export default function OrderPage(){
 
@@ -17,11 +18,6 @@ export default function OrderPage(){
     const indexOfLastItem = currentPage * itemsPerPage;
     const indexOfFirstItem = indexOfLastItem - itemsPerPage;
     const currentOrders = orders.slice(indexOfFirstItem,indexOfLastItem);
-    const totalPageCount = Math.ceil(orders.length / itemsPerPage);
-
-    const handleClick = (pageNumber) => {
-        setCurrentPage(pageNumber);
-    };
 
     const renderOrders = () => {
         const renderedOrders = [];
@@ -29,12 +25,12 @@ export default function OrderPage(){
             renderedOrders.push(
                 <React.Fragment key={order.id}>
                     <tr>
-                        <td className="p-3 text-sm font-bold">{order.id}</td>
-                        <td className="p-3 text-sm text-gray-700">{order.menu}</td>
-                        <td className="p-3 text-sm text-gray-700">{order.date}</td>
-                        <td className="p-3 text-sm text-gray-700">{order.price}</td>
-                        <td className="p-3 text-sm text-gray-700">
-                            <span className="p-1.5 text-xs font-medium uppercase tracking-wider text-yellow-800 bg-red-200 rounded-lg bg-opacity-40">{order.status}</span>
+                        <td className="px-3 text-sm font-bold">{order.id}</td>
+                        <td className="px-3 text-sm text-gray-700">{order.menu}</td>
+                        <td className="px-3 text-sm text-gray-700">{order.date}</td>
+                        <td className="px-3 text-sm text-gray-700">{order.price}</td>
+                        <td className="px-3 text-sm text-gray-700">
+                            <span className=" text-xs font-medium uppercase tracking-wider text-yellow-800 bg-red-200 rounded-lg bg-opacity-40">{order.status}</span>
                         </td>
                     </tr>
                     {index !== currentOrders.length - 1 && (
@@ -46,47 +42,6 @@ export default function OrderPage(){
             );
         });
         return renderedOrders;
-    };
-
-    const renderPageNumbers = () => {
-        const pageNumbers = [];
-        let startPage = 1;
-        if (currentPage > 5) {
-            startPage = currentPage - 4;
-        }
-        const endPage = Math.min(startPage + 4, totalPageCount);
-        for (let i = startPage; i <= endPage; i++) {
-            pageNumbers.push(i);
-        }
-        return (
-            <div className="flex mt-4">
-                <button
-                    className={`text-lg font-semibold mx-2 px-4 py-2 rounded-lg focus:outline-none ${currentPage === 1 ? 'bg-gray-300 text-gray-700' : 'bg-gray-800 text-white'}`}
-                    disabled={currentPage === 1}
-                    onClick={() => handleClick(currentPage - 1)}
-                >
-                    이전
-                </button>
-
-                {pageNumbers.map((number) => (
-                    <button
-                        className={`text-lg font-semibold mx-2 px-4 py-2 rounded-lg focus:outline-none ${currentPage === number ? 'bg-gray-800 text-white' : 'bg-gray-200 text-white'}`}
-                        key={number}
-                        onClick={() => handleClick(number)}
-                    >
-                        {number}
-                    </button>
-                ))}
-
-                <button
-                    className={`text-lg font-semibold mx-2 px-4 py-2 rounded-lg focus:outline-none ${currentPage === totalPageCount ? 'bg-gray-300 text-gray-700' : 'bg-gray-800 text-white'}`}
-                    disabled={currentPage === totalPageCount}
-                    onClick={() => handleClick(currentPage + 1)}
-                >
-                    다음
-                </button>
-            </div>
-        );
     };
 
     return(
@@ -102,15 +57,10 @@ export default function OrderPage(){
                         <div className="flex justify-end">
                             <select className="select select-bordered w-28 max-w-xs mx-0.5">
                                 <option selected>상태 전체</option>
-                                <option>신규</option>
-                                <option>준비중</option>
-                                <option>완료</option>
-                            </select>
-                            <select className="select select-bordered w-36 max-w-xs mx-0.5">
-                                <option selected>최근 주문순</option>
-                                <option>오래된 주문순</option>
-                                <option>가격 높은 순</option>
-                                <option>가격 낮은 순</option>
+                                <option>신규주문</option>
+                                <option>조리중</option>
+                                <option>조리완료</option>
+                                <option>결제완료</option>
                             </select>
                             <select className="select select-bordered w-28 max-w-xs mx-0.5">
                                 <option selected>기간 전체</option>
@@ -146,25 +96,40 @@ export default function OrderPage(){
                         </div>
 
                     </div>
-                    <div className="relative top-25 mx-10 mt-8">
-                        <div class="pt-4 h-screen flex flex-col items-center">
-                            <table class="w-full bg-gray-800 text-white">
-                                <thead class="border-b-2 border-gray-800">
-                                    <tr class="">
-                                        <th class="w-12 p-3 text-sm font-semibold tracking-wide text-left">번호</th>
-                                        <th class="w-40 p-3 text-sm font-semibold tracking-wide text-left">메뉴</th>
-                                        <th class="w-40 p-3 text-sm font-semibold tracking-wide text-left">주문 일시</th>
-                                        <th class="w-14 p-3 text-sm font-semibold tracking-wide text-left">가격</th>
-                                        <th class="w-14 p-3 text-sm font-semibold tracking-wide text-left">상태</th>
+
+                    <section className="relative top-25 mx-10 mt-8">
+                        <div className="flex items-center justify-between">
+                            <select className="select select-bordered select-sm w-36 max-w-xs mx-2">
+                                <option selected>최근 주문순</option>
+                                <option>오래된 주문순</option>
+                                <option>가격 높은 순</option>
+                                <option>가격 낮은 순</option>
+                            </select>
+                            <select className="select select-bordered select-sm w-28 max-w-xs mx-2">
+                                <option selected>10개</option>
+                                <option>20개</option>
+                                <option>30개</option>
+                            </select>
+
+                        </div>
+                        <div className="overflow-x-auto p-2">
+                            <table className="table table-xs bg-base-100/95 text-center">
+                                <thead>
+                                    <tr className="h-10">
+                                        <th>번호</th>
+                                        <th>메뉴</th>
+                                        <th>주문 일시</th>
+                                        <th>가격</th>
+                                        <th>상태</th>
                                     </tr>
                                 </thead>
-                                <tbody className="border-t border-gray-600">
+                                <tbody>
                                     {renderOrders()}
                                 </tbody>
                             </table>
-                                {renderPageNumbers()}
                         </div>
-                    </div>
+                        <Pagenation />
+                    </section>
                 </main>
             </div>
         </>
