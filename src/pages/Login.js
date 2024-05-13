@@ -13,7 +13,7 @@ export default function Login(){
 
   const [message, setMessage] = useState("");
 
-  const [cookie, setCookie] = useCookies(['refreshToken']);
+  const [cookie, setCookie] = useCookies(['accessToken']);
 
   const hasCredential = () => {
     if (id.length <=0 && password.length <= 0) {
@@ -47,7 +47,7 @@ export default function Login(){
   const login = async () => {
     try {
         const response = await auth_login(id, password);
-        setCookie("refreshToken", response.data.refreshToken, {path: "/"});
+        setCookie("accessToken", response.data.accessToken, {path: "/"});
         window.location.href = "/home";
     } catch (error) {
         setMessage("인증에 실패했습니다.");

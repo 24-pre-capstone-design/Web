@@ -1,4 +1,4 @@
-import {axiosWithoutAuth} from "./AxiosInstance";
+import {axiosWithoutAuth} from "../common/AxiosInstance";
 
 export const auth_login = async (id, password) => {
     try {
@@ -12,3 +12,5 @@ export const auth_login = async (id, password) => {
         throw error;
     }
 }
+
+
