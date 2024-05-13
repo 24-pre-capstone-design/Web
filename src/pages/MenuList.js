@@ -6,7 +6,6 @@ import Pagenation from "../components/Pagenation";
 import {FaTrashAlt, GrPowerReset} from '../assets/icons/vander'
 import EditMenu from "../components/modal/EditMenu";
 import NewCategory from "../components/modal/NewCategory";
-import Footer from "../components/Footer";
 
 export default function MenuList() {
 
