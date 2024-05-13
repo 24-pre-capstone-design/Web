@@ -5,13 +5,20 @@ import {Link} from "react-router-dom";
 import * as Icon from 'react-feather'
 import {AiOutlineSetting, FaUser, IoMdLogOut} from '../assets/icons/vander'
 import 'simplebar-react/dist/simplebar.min.css';
+import {useCookies} from "react-cookie";
 
 export default function Topnav({toggle, setToggle}){
 
     const [adminToggle, setAdminToggle] = useState(false);
+    const [cookie, setCookie] = useCookies(['accessToken']);
 
     const toggleHandler = () => {
         setToggle(!toggle);
+    }
+
+    const logout = () => {
+        setCookie("accessToken", "", {path: "/"});
+        window.location.href = "/";
     }
 
     return(
@@ -39,7 +46,10 @@ export default function Topnav({toggle, setToggle}){
                                         <Link to="/setting" className="flex items-center font-medium py-1 px-4 text-white hover:text-indigo-600"><AiOutlineSetting className="me-2"/>관리자 설정</Link>
                                     </li>
                                     <li>
-                                        <Link to="/" className="flex items-center font-medium py-1 px-3 text-white hover:text-indigo-600"><IoMdLogOut className="me-2"/>로그아웃</Link>
+                                        <Link
+                                            className="flex items-center font-medium py-1 px-3 text-white hover:text-indigo-600"
+                                            onClick={() => {logout();}}>
+                                            <IoMdLogOut className="me-2"/>로그아웃</Link>
                                     </li>
                                 </ul>
                             </div>
