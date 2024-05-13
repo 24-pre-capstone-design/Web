@@ -2,6 +2,7 @@ import React, {useEffect, useState} from "react";
 import {Link} from "react-router-dom";
 
 import Info from "../components/alert/Info";
+import {auth_login} from "../api/Auth";
 
 export default function Login(){
 
@@ -41,8 +42,11 @@ export default function Login(){
   }
 
   const login = () => {
-    // 나중에 통신 로직 추가 -> api 디렉토리로 이동할 예정
-    window.location.href = "/home";
+    const response = auth_login(id, password);
+    if (response) {
+      // window.location.href = "/home";
+      console.log(response);
+    }
   }
 
   useEffect(() => {
