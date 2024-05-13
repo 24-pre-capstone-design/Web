@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React, {useState} from "react";
 import Sidebar from "../components/sidebar";
 import Topnav from "../components/topnav";
-import { BiSearch } from "react-icons/bi";
-import { CgCalendarDates, CgClipboard, CgDollar, CgExternal, CgFileDocument, CgLaptop } from "react-icons/cg";
+import {CgDollar, CgExternal, CgFileDocument, CgLaptop} from "react-icons/cg";
+import {GrCart, LuLightbulb} from "../assets/icons/vander"
 
 export default function Home() {
     const [toggle, setToggle] = useState(true);
@@ -14,94 +14,71 @@ export default function Home() {
                 <main className="page-content h-screen">
                     <Topnav toggle={toggle} setToggle={setToggle} />
 
-                    <div className="relative top-25 mx-10">
-                        <div className="dashboard--content">
-                            <div>
-                                <div className="content--header flex justify-between items-center">
-                                    <div className="header--title text-white text-3xl font-bold">
-                                        <h3>DashBoard</h3>
-                                        <h7 className="header--subtitle text-sm font-light">스마트 키오스크 대시보드</h7>
-                                    </div>
+                    <div className="relative top-25 mx-10 flex items-center justify-between">
+                        <h3 className="text-4xl text-white font-bold">DASHBOARD</h3>
 
-                                    <div className="header--activity flex gap-4 items-center">
-                                        <div className="search-box bg-gray-800 rounded-lg flex items-center">
-                                            <input type="text" placeholder="SEARCH" className="bg-transparent border-none outline-none p-2" />
-                                            <BiSearch className="icon text-white text-lg cursor-pointer transition-transform hover:scale-110" />
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="dashboard--List flex gap-20 items-center mt-8">
-                                    <div className="card--left flex-1">
-                                        <div className="card--container flex flex-wrap gap-20 items-start">
-                                            {firstLine.map((item, index) => (
-                                                <div key={index} className="card bg-gray-700 text-white p-4 w-72 rounded-lg flex flex-col items-start justify-center">
-                                                    <div className="flex items-center">
-                                                        <div className="card--icon mr-2">{item.icon}</div>
-                                                        <div className="card--title text-xl">{item.title}</div>
-                                                    </div>
-                                                    <div className="card--content text-lg text-center mt-2">{item.content}</div>
-                                                </div>
-                                            ))}
-                                        </div>
-                                        <div className="card--container flex flex-wrap gap-20 items-start">
-                                            {secondLine.map((item, index) => (
-                                                <div key={index} className="card bg-gray-700 text-white p-4 w-72 rounded-lg flex flex-col items-start justify-center">
-                                                    <div className="flex items-center">
-                                                        <div className="card--icon mr-2">{item.icon}</div>
-                                                        <div className="card--title text-xl">{item.title}</div>
-                                                    </div>
-                                                    <div className="card--content text-lg text-center mt-2">{item.content}</div>
-                                                </div>
-                                            ))}
-                                        </div>
-                                        <div className="card--container">
-                                            <div className="card--1 bg-gray-700 text-white p-4 w-72 rounded-lg">
-                                                <div className="list--header flex items-center">
-                                                    <div className="card--icon"><CgClipboard size="24" /></div>
-                                                    <div className="card--title text-xl">상품목록</div>
-                                                </div>
-
-                                                <div className="list--container bg-gray-700">
-                                                    {product.map((menu, index) => (
-                                                        <div key={index} className="list flex justify-between">
-                                                            <span>{menu.num}</span>
-                                                            <span>{menu.name}</span>
-                                                            <span>{menu.price}</span>
-                                                            <span>{menu.state}</span>
-                                                        </div>
-                                                    ))}
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div className="card--container">
-                                            <div className="card--1 bg-gray-700 text-white p-4 w-72 rounded-lg">
-                                                <div className="list--header flex items-center">
-                                                    <div className="card--icon"><CgCalendarDates size="24" /></div>
-                                                    <div className="card--title text-xl">일 매출액</div>
-                                                </div>
-
-                                                <div className="list--container bg-gray-700">
-                                                    {orderlist.map((profit, index) => (
-                                                        <div key={index} className="list flex justify-between">
-                                                            <span>{profit.order_num}</span>
-                                                            <span>{profit.name}</span>
-                                                            <span>{profit.num}</span>
-                                                            <span>{profit.price}</span>
-                                                        </div>
-                                                    ))}
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="card--right flex-1">
-                                        <div className="card--2 bg-gray-700 text-white p-4 w-96 rounded-lg">
-                                            <div className="card--title text-xl">오늘의 메뉴</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                        <div className="flex items-center mx-10">
+                            <label className="input input-bordered flex items-center gap-2">
+                                <input
+                                    type="text"
+                                    className="grow w-28"
+                                    placeholder="Search"
+                                />
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" className="w-4 h-4 opacity-70">
+                                    <path fillRule="evenodd" d="M9.965 11.026a5 5 0 1 1 1.06-1.06l2.755 2.754a.75.75 0 1 1-1.06 1.06l-2.755-2.754ZM10.5 7a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0Z" clipRule="evenodd" />
+                                </svg>
+                            </label>
                         </div>
                     </div>
+
+                    <section className="relative top-25 mt-3 mb-8 mx-6">
+                        <div className="chat chat-start">
+                            <div className="chat-bubble">디지털 약자를 위한 따뜻한 키오스크 시스템, Nice To Menu 입니다!</div>
+                        </div>
+
+                        <div className="stats shadow mt-5 mx-2">
+
+                            <div className="stat">
+                                <div className="stat-figure text-primary">
+                                    <GrCart className="inline-block w-8 h-8 stroke-current"/>
+                                </div>
+                                <div className="stat-title">Total Orders</div>
+                                <div className="stat-value text-primary">25 건</div>
+                                <div className="stat-desc">{new Date().getMonth() + 1}월 {new Date().getDate()}일의 총 주문 건 수 입니다.</div>
+
+                            </div>
+
+                            <div className="stat">
+                                <div className="stat-title">Total Sales</div>
+                                <div className="stat-value text-secondary">4,375,900 ₩</div>
+                                <div className="stat-desc">{new Date().getMonth() + 1}월 {new Date().getDate()}일의 매출액 입니다.</div>
+                            </div>
+
+                        </div>
+
+                        <div className="stats shadow mt-5 mx-2">
+                            <div className="stat">
+                                <div className="stat-figure text-success">
+                                    <LuLightbulb className="inline-block w-10 h-10 stroke-current"/>
+                                </div>
+                                <div className="stat-title">New Orders</div>
+                                <div className="stat-value text-success">4 건</div>
+                                <div className="stat-desc">새로 요청된 주문입니다.</div>
+                            </div>
+
+                            <div className="stat">
+                                <div className="stat-figure text-accent">
+                                    <LuLightbulb className="inline-block w-10 h-10 stroke-current"/>
+                                </div>
+                                <div className="stat-title">Food On Sale</div>
+                                <div className="stat-value text-accent">27 개</div>
+                                <div className="stat-desc">현재 판매 중인 메뉴의 개수 입니다.</div>
+                            </div>
+
+                        </div>
+
+                    </section>
+
                 </main>
             </div>
         </>
