@@ -3,6 +3,7 @@ import {Link} from "react-router-dom";
 
 import Info from "../components/alert/Info";
 import {auth_login} from "../api/Auth";
+import {useCookies} from "react-cookie";
 
 export default function Login(){
 
@@ -11,6 +12,8 @@ export default function Login(){
   const [isRemember, setIsRemember] = useState(true);
 
   const [message, setMessage] = useState("");
+
+  const [cookie, setCookie] = useCookies(['refreshToken']);
 
   const hasCredential = () => {
     if (id.length <=0 && password.length <= 0) {
@@ -41,11 +44,13 @@ export default function Login(){
     }
   }
 
-  const login = () => {
-    const response = auth_login(id, password);
-    if (response) {
-      // window.location.href = "/home";
-      console.log(response);
+  const login = async () => {
+    try {
+        const response = await auth_login(id, password);
+        setCookie("refreshToken", response.data.refreshToken, {path: "/"});
+        window.location.href = "/home";
+    } catch (error) {
+        setMessage("인증에 실패했습니다.");
     }
   }
 
