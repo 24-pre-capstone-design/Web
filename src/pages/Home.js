@@ -7,6 +7,7 @@ import {menuData, orderData, orderHistoryStatus, saleData} from "../data/data";
 import Slider from "react-slick";
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import Footer from "../components/Footer";
 
 export default function Home() {
 
@@ -24,7 +25,7 @@ export default function Home() {
     };
 
     const settings = {
-        dots: true,
+        dots: false,
         arrows : false,
         infinite: true,
         slidesToShow: 5,
@@ -215,6 +216,7 @@ export default function Home() {
 
                     </section>
 
+                <Footer/>
 
                 </main>
             </div>

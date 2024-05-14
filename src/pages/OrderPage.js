@@ -4,6 +4,7 @@ import Topnav from "../components/topnav";
 import {monthData, orderData, orderHistoryStatus} from "../data/data"
 import {TbTilde} from "../assets/icons/vander.js";
 import Pagenation from "../components/Pagenation";
+import Footer from "../components/Footer";
 
 export default function OrderPage(){
 
@@ -122,6 +123,9 @@ export default function OrderPage(){
                         </div>
                         <Pagenation />
                     </section>
+
+                    <Footer />
+
                 </main>
             </div>
         </>
