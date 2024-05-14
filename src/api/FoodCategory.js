@@ -15,8 +15,8 @@ export const postFoodCategory = async (id, name)=>{
   }
 };
 
-export const getFoodCategory = async(id, string) =>{
-  console.log("Fetching foodCategory:", id, string);
+export const getFoodCategory = async(id, name) =>{
+  console.log("Fetching foodCategory:", id, name);
     try {
         const response = await axios.get(`${API_SERVER}/foodCategory/${id}`);
         return response.data;
@@ -26,12 +26,10 @@ export const getFoodCategory = async(id, string) =>{
     }
 }
 
-
-
-
-export const getFoodCategoryId = async ()=>{
+export const getFoodCategoryId = async (id, name)=>{
+  console.log("Fetching foodCategoryId:", id, name);
   try{
-    const response = await axios.get('/foodCategory');
+    const response = await axios.get('/foodCategoryId');
     console.log(response.data);
   }catch(error){
     console.error('Error fetching food categories:', error);
@@ -39,9 +37,9 @@ export const getFoodCategoryId = async ()=>{
   }
 };
 
-export const deleteFoodCategory = async (id, authToken)=>{
+export const deleteFoodCategory = async (foodCategoryId, authToken)=>{
   try{
-    const response = await axios.delete(`${API_SERVER}//foodCategory/${id}`, {
+    const response = await axios.delete(`${API_SERVER}//foodCategoryId/${foodCategoryId}`, {
           headers: {
               'Authorization': `Bearer ${authToken}`
           }
@@ -51,4 +49,18 @@ export const deleteFoodCategory = async (id, authToken)=>{
     console.error('Error fetching food categories:', error);
     throw error;
   }
+};
+
+export const patchFoodCategory = async (foodCategoryId, updatedFoodCategory, authToken) => {
+    try {
+        await axios.patch(`${API_SERVER}/foodCategoryId/${foodCategoryId}`, updatedFoodCategory, {
+            headers: {
+                'Authorization': `Bearer ${authToken}`,
+                'Content-Type': 'application/json'}
+        });
+        return true;
+    } catch (error) {
+        console.error("Error updating food categories:", error);
+        return false; 
+    }
 };

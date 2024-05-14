@@ -7,33 +7,40 @@ import Login from "./pages/Login";
 import MenuList from "./pages/MenuList";
 import FindPassword from "./pages/FindPassword";
 import {useCookies} from "react-cookie";
-import { deleteFoodCategory, getFoodCategory, postFoodCategory } from "./api/FoodCategory";
+import { deleteFoodCategory, getFoodCategory, patchFoodCategory, postFoodCategory } from "./api/FoodCategory";
 
 export default function App() {
 
     const accessToken = useCookies(['accessToken']);
 
     useEffect(() => {
-    const foodCategory = async () => {
-        const id = 0; 
-        const name = "";
-        const authToken = "";
-            try {
-                const newFoodCategory = { id: "0", name: "김밥" };
-                const postResponse = await postFoodCategory(newFoodCategory);
-                console.log('FoodCategory 생성:', postResponse);
+        const foodCategory = async () => {
+            const id = 0; 
+            const name = "";
+            const authToken = "";
+                try {
+                    const newFoodCategory = { id: "0", name: "김밥" };
+                    const postResponse = await postFoodCategory(newFoodCategory);
+                    console.log('FoodCategory 생성:', postResponse);
 
-                const getResponse = await getFoodCategory(id,name);
-                console.log('FoodCategory 정보 get:', getResponse);
+                    const getResponse = await getFoodCategory(id,name);
+                    console.log('FoodCategory 정보 get:', getResponse);
 
-                const deleteResponse = await deleteFoodCategory(id, authToken);
-                console.log('FoodCategory삭제:', deleteResponse);
+                    const deleteResponse = await deleteFoodCategory(id, authToken);
+                    console.log('FoodCategory 삭제:', deleteResponse);
 
-            } catch (error) {
-                console.error("Error in foodCategory operations:", error);
-            }
-        };
-        foodCategory();
+                    const updatedFoodCategory = { id: "1", name: "라면"};
+                    const patchResponse = await patchFoodCategory(foodCategoryId, updatedFoodCategory, authToken);
+                     if (patchResponse === true) {
+                        console.log('FoodCategory 수정 완료');
+                    } else {
+                        console.log('FoodCategory 수정 실패');
+                    }
+                } catch (error) {
+                    console.error("Error in foodCategory operations:", error);
+                }
+            };
+            foodCategory();
     }, []);
 
   return (
