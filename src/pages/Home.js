@@ -24,12 +24,14 @@ export default function Home() {
     };
 
     const settings = {
+        dots: true,
         infinite: true,
         slidesToShow: 5,
         slidesToScroll: 1,
         autoplay: true,
-        autoplaySpeed: 1000,
-        pauseOnHover: false,
+        speed: 3000,
+        autoplaySpeed: 3000,
+        cssEase: "linear"
     };
 
     return (
@@ -182,12 +184,12 @@ export default function Home() {
 
                         <div className="divider mt-8"></div>
 
-                        <div className="mt-6 py-10">
-                            <div className="flex items-center justify-between mx-6 my-3">
+                        <div className="mt-6 pb-6">
+                            <div className="flex items-center justify-between mx-6 mb-6">
                                 <h3 className="text-xl text-white font-bold">인기 메뉴</h3>
                                 <Link to="/menu" className="link mx-2">메뉴 더보기</Link>
                             </div>
-                            <Slider {...settings} className="mt-2">
+                            <Slider {...settings} className="pb-6">
                                 {
                                     menuItem5.map((item, index) => (
                                         <div className="px-4">
