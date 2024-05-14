@@ -7,6 +7,7 @@ import Login from "./pages/Login";
 import MenuList from "./pages/MenuList";
 import FindPassword from "./pages/FindPassword";
 import {useCookies} from "react-cookie";
+import MyPage from "./pages/MyPage";
 
 export default function App() {
 
@@ -21,6 +22,7 @@ export default function App() {
                             <Route path="/home" element={<Home />} />
                             <Route path="/order" element={<OrderPage/>}/>
                             <Route path="/menu" element={<MenuList />} />
+                            <Route path="/my" element={<MyPage />} />
                         </>
                         :
                         <>
