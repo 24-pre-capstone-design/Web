@@ -8,6 +8,7 @@ import Slider from "react-slick";
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import Footer from "../components/Footer";
+import CountUp from "react-countup";
 
 export default function Home() {
 
@@ -43,7 +44,7 @@ export default function Home() {
                 <main className="page-content h-screen">
                     <Topnav toggle={toggle} setToggle={setToggle}/>
 
-                    <div className="relative top-25 mx-10 flex items-center justify-between">
+                    <div className="relative top-6 mx-10 flex items-center justify-between">
                         <h3 className="text-4xl text-white font-bold">DASHBOARD</h3>
 
                         <div className="flex items-center mx-10">
@@ -63,7 +64,7 @@ export default function Home() {
                         </div>
                     </div>
 
-                    <section className="relative top-25 mt-3 mb-8 mx-6">
+                    <section className="relative top-6 mt-3 mb-8 mx-6">
                         <div className="chat chat-start">
                             <div className="chat-bubble">디지털 약자를 위한 따뜻한 키오스크 시스템, Nice To Menu 입니다!</div>
                         </div>
@@ -75,7 +76,7 @@ export default function Home() {
                                     <GrCart className="inline-block w-8 h-8 stroke-current"/>
                                 </div>
                                 <div className="stat-title">Total Orders</div>
-                                <div className="stat-value text-primary text-3xl">25 건</div>
+                                <div className="stat-value text-primary text-3xl"><CountUp start={1} end={25} /> 건</div>
                                 <div className="stat-desc">{new Date().getMonth() + 1}월 {new Date().getDate()}일의 총 주문 건
                                     수 입니다.
                                 </div>
@@ -84,7 +85,7 @@ export default function Home() {
 
                             <div className="stat">
                                 <div className="stat-title">Total Sales</div>
-                                <div className="stat-value text-secondary text-3xl">4,375,900 ₩</div>
+                                <div className="stat-value text-secondary text-3xl">{formatPrice(4375900)} ₩</div>
                                 <div className="stat-desc">{new Date().getMonth() + 1}월 {new Date().getDate()}일의 매출액
                                     입니다.
                                 </div>
@@ -98,7 +99,7 @@ export default function Home() {
                                     <LuLightbulb className="inline-block w-10 h-10 stroke-current"/>
                                 </div>
                                 <div className="stat-title">New Orders</div>
-                                <div className="stat-value text-success text-3xl">4 건</div>
+                                <div className="stat-value text-success text-3xl"><CountUp start={1} end={7} duration={3}/> 건</div>
                                 <div className="stat-desc">새로 요청된 주문입니다.</div>
                             </div>
 
@@ -107,7 +108,7 @@ export default function Home() {
                                     <LuLightbulb className="inline-block w-10 h-10 stroke-current"/>
                                 </div>
                                 <div className="stat-title">Food On Sale</div>
-                                <div className="stat-value text-accent text-3xl">27 개</div>
+                                <div className="stat-value text-accent text-3xl"><CountUp start={1} end={27} /> 개</div>
                                 <div className="stat-desc">현재 판매 중인 메뉴의 개수 입니다.</div>
                             </div>
                         </div>
