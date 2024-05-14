@@ -37,9 +37,9 @@ export const deleteOwner = async (ownerId, authToken) => {
     }
 };
 
-export const patchOwner = async (ownerId, authToken) => {
+export const patchOwner = async (ownerId, updatedOwnerData, authToken) => {
     try {
-        await axios.patch(`${API_SERVER}/owner/${ownerId}`, {
+        await axios.patch(`${API_SERVER}/owner/${ownerId}`, updatedOwnerData, {
             headers: {
                 'Authorization': `Bearer ${authToken}`,
                 'Content-Type': 'application/json'

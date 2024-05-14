@@ -26,22 +26,24 @@ export default function App() {
             const authToken = "";
         
             try {
-                const newOwnerData = { id: "t123", password: "1234asdf!", name: "123", birthDate: "20010325" };
-                const postResponse = await postOwner(newOwnerData);
-                console.log('Owner 생성됨:', postResponse);
+                // const newOwnerData = { id: "t123", password: "1234asdf!", name: "123", birthDate: "20010325" };
+                // const postResponse = await postOwner(newOwnerData);
+                // console.log('Owner 생성됨:', postResponse);
                 
                 const getResponse = await getOwner(ownerId);
                 console.log('Owner 정보 가져옴:', getResponse);
 
-                const patchResponse = await patchOwner(ownerId, authToken);
+                const updatedOwnerData = { id: "mingmingmon", password: "1234asdf!", name: "123456", birthDate: "20010325" };
+                const patchResponse = await patchOwner(ownerId, updatedOwnerData, authToken);
+
                 if (patchResponse === true) {
                     console.log('Owner 수정 완료');
                 } else {
                     console.log('Owner 수정 실패');
                 }
 
-                const deleteResponse = await deleteOwner(ownerId, authToken);
-                console.log('Owner 삭제됨:', deleteResponse);
+                // const deleteResponse = await deleteOwner(ownerId, authToken);
+                // console.log('Owner 삭제됨:', deleteResponse);
                 
             } catch (error) {
                 console.error("Error in owner operations:", error);
