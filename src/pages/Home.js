@@ -3,19 +3,33 @@ import Sidebar from "../components/sidebar";
 import Topnav from "../components/topnav";
 import {GrCart, LuLightbulb} from "../assets/icons/vander"
 import {Link} from "react-router-dom";
-import {orderData, orderHistoryStatus, saleData} from "../data/data";
+import {menuData, orderData, orderHistoryStatus, saleData} from "../data/data";
+import Slider from "react-slick";
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 
 export default function Home() {
 
     const [toggle, setToggle] = useState(true);
     const [orderItem5, setOrderItem5] = useState([]);
+    const [menuItem5, setMenuItem5] = useState([])
 
     useEffect(() => {
         setOrderItem5(orderData.slice(0, 5));
+        setMenuItem5(menuData.slice(0,5));
     }, []);
 
     const formatPrice = (price) => {
         return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + " ₩";
+    };
+
+    const settings = {
+        infinite: true,
+        slidesToShow: 5,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 1000,
+        pauseOnHover: false,
     };
 
     return (
@@ -164,8 +178,38 @@ export default function Home() {
                                     </tbody>
                                 </table>
                             </div>
-
                         </div>
+
+                        <div className="divider mt-8"></div>
+
+                        <div className="mt-6 py-10">
+                            <div className="flex items-center justify-between mx-6 my-3">
+                                <h3 className="text-xl text-white font-bold">인기 메뉴</h3>
+                                <Link to="/menu" className="link mx-2">메뉴 더보기</Link>
+                            </div>
+                            <Slider {...settings} className="mt-2">
+                                {
+                                    menuItem5.map((item, index) => (
+                                        <div className="px-4">
+                                        <div className="card card-compact w-96 bg-base-100 shadow-xl" key={item.id}>
+                                            <figure><img src={item.pictureURL} alt=""/></figure>
+                                            <div className="card-body">
+                                                <h2 className="card-title justify-between">
+                                                    <div>
+                                                        {item.name}
+                                                        <div className="badge badge-accent badge-outline align-middle mb-1 mx-2">{item.foodCategory}</div>
+                                                        <div className="badge badge-warning badge-outline align-middle mb-1">{item.status}</div>
+                                                    </div>
+                                                </h2>
+                                                <p>{item.price}원</p>
+                                            </div>
+                                        </div>
+                                        </div>
+                                    ))
+                                }
+                            </Slider>
+                        </div>
+
                     </section>
 
 
