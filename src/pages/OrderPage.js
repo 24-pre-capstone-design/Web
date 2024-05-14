@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from "react"
 import Sidebar from "../components/sidebar";
 import Topnav from "../components/topnav";
-import {monthData, orderData} from "../data/data"
+import {monthData, orderData, orderHistoryStatus} from "../data/data"
 import {TbTilde} from "../assets/icons/vander.js";
 import Pagenation from "../components/Pagenation";
 
@@ -13,26 +13,6 @@ export default function OrderPage(){
       useEffect(() => {
         setOrderItem(orderData)
     }, []);
-
-
-    const orderHistoryStatus = [
-        {
-            value : "NEW",
-            label : "신규주문"
-        },
-        {
-            value : "COOKING",
-            label : "조리중"
-        },
-        {
-            value : "COOKING_COMPLETE",
-            label : "조리완료"
-        },
-        {
-            value : "PAYMENT_COMPLETE",
-            label : "결제완료"
-        }
-    ]
 
     return(
         <>
