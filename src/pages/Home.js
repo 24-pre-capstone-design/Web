@@ -85,7 +85,7 @@ export default function Home() {
 
                             <div className="stat">
                                 <div className="stat-title">Total Sales</div>
-                                <div className="stat-value text-secondary text-3xl">{formatPrice(4375900)} ₩</div>
+                                <div className="stat-value text-secondary text-3xl">{formatPrice(4375900)}</div>
                                 <div className="stat-desc">{new Date().getMonth() + 1}월 {new Date().getDate()}일의 매출액
                                     입니다.
                                 </div>
