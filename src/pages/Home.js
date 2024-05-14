@@ -45,7 +45,7 @@ export default function Home() {
                         <h3 className="text-4xl text-white font-bold">DASHBOARD</h3>
 
                         <div className="flex items-center mx-10">
-                            <label className="input input-bordered flex items-center gap-2">
+                            <label data-theme="dark" className="input input-bordered flex items-center gap-2">
                                 <input
                                     type="text"
                                     className="grow w-28"
@@ -66,7 +66,7 @@ export default function Home() {
                             <div className="chat-bubble">디지털 약자를 위한 따뜻한 키오스크 시스템, Nice To Menu 입니다!</div>
                         </div>
 
-                        <div className="stats shadow mt-5 mx-2">
+                        <div data-theme="dark" className="stats shadow mt-5 mx-2" >
 
                             <div className="stat">
                                 <div className="stat-figure text-primary">
@@ -90,7 +90,7 @@ export default function Home() {
 
                         </div>
 
-                        <div className="stats shadow mt-5 mx-2">
+                        <div data-theme="dark" className="stats shadow mt-5 mx-2">
                             <div className="stat">
                                 <div className="stat-figure text-success">
                                     <LuLightbulb className="inline-block w-10 h-10 stroke-current"/>
@@ -110,17 +110,17 @@ export default function Home() {
                             </div>
                         </div>
 
-                        <div className="divider mt-8 mb-3"></div>
+                        <div className="divider divider-neutral mt-8 mb-3"></div>
 
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-10">
                             <div className="overflow-x-auto mx-2">
                                 <div className="flex items-center justify-between">
                                     <h3 className="text-xl text-white font-bold m-2">최근 주문내역</h3>
-                                    <Link to="/order" className="link mx-2">주문내역 더보기</Link>
+                                    <Link to="/order" className="link mx-2 text-gray-400">주문내역 더보기</Link>
                                 </div>
-                                <table className="table">
-                                    <thead>
-                                    <tr>
+                                <table className="table text-gray-400">
+                                    <thead className="text-gray-400">
+                                    <tr className="border-none">
                                         <th></th>
                                         <th>메뉴</th>
                                         <th>가격</th>
@@ -132,7 +132,7 @@ export default function Home() {
                                     {
                                         orderItem5.map((order, index) => (
 
-                                        <tr key={index}>
+                                        <tr key={index} className="border-t border-gray-800">
                                             <td>{index + 1}</td>
                                             <td>{order.foodName}</td>
                                             <td>{formatPrice(order.sumOfCost)}</td>
@@ -153,12 +153,12 @@ export default function Home() {
                             <div className="overflow-x-auto mx-2">
                                 <div className="flex items-center justify-between">
                                     <h3 className="text-xl text-white font-bold m-2">최근 매출액</h3>
-                                    <Link to="/menu" className="link mx-2">리포팅 및 분석 더보기</Link>
+                                    <Link to="/menu" className="link mx-2 text-gray-400">리포팅 및 분석 더보기</Link>
                                 </div>
-                                <table className="table">
+                                <table className="table text-gray-400 table-b">
                                     {/* head */}
-                                    <thead>
-                                    <tr>
+                                    <thead className="text-gray-400">
+                                    <tr className="border-none">
                                         <th></th>
                                         <th>주문건수</th>
                                         <th>매출액</th>
@@ -169,7 +169,7 @@ export default function Home() {
                                     {
                                         saleData.map((sale, index) => (
 
-                                            <tr key={index}>
+                                            <tr key={index} className="border-t border-gray-800">
                                                 <td>{index + 1}</td>
                                                 <td>{sale.order}</td>
                                                 <td>{formatPrice(sale.sale)}</td>
@@ -182,18 +182,18 @@ export default function Home() {
                             </div>
                         </div>
 
-                        <div className="divider mt-8"></div>
+                        <div className="divider divider-neutral mt-8"></div>
 
                         <div className="mt-6 pb-6">
                             <div className="flex items-center justify-between mx-6 mb-6">
                                 <h3 className="text-xl text-white font-bold">인기 메뉴</h3>
-                                <Link to="/menu" className="link mx-2">메뉴 더보기</Link>
+                                <Link to="/menu" className="link mx-2 text-gray-400">메뉴 더보기</Link>
                             </div>
                             <Slider {...settings} className="pb-6">
                                 {
                                     menuItem5.map((item, index) => (
                                         <div className="px-4">
-                                        <div className="card card-compact w-96 bg-base-100 shadow-xl" key={item.id}>
+                                        <div data-theme="dark" className="card card-compact w-96 bg-base-100 shadow-xl" key={item.id}>
                                             <figure><img src={item.pictureURL} alt=""/></figure>
                                             <div className="card-body">
                                                 <h2 className="card-title justify-between">
