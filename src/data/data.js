@@ -413,3 +413,55 @@ export const orderData = [
     },
 
 ];
+
+export const orderHistoryStatus = [
+    {
+        value : "NEW",
+        label : "신규주문"
+    },
+    {
+        value : "COOKING",
+        label : "조리중"
+    },
+    {
+        value : "COOKING_COMPLETE",
+        label : "조리완료"
+    },
+    {
+        value : "PAYMENT_COMPLETE",
+        label : "결제완료"
+    }
+]
+
+export const saleData = [
+    {
+        id : 1,
+        order : 37,
+        sale : 4432100,
+        date : "2024-05-14"
+    },
+    {
+        id : 2,
+        order : 32,
+        sale : 3132100,
+        date : "2024-05-13"
+    },
+    {
+        id : 3,
+        order : 45,
+        sale : 5125000,
+        date : "2024-05-12"
+    },
+    {
+        id : 4,
+        order : 29,
+        sale : 3028900,
+        date : "2024-05-11"
+    },
+    {
+        id : 5,
+        order : 60,
+        sale : 7598000,
+        date : "2024-05-10"
+    }
+];
