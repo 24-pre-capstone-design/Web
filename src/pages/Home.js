@@ -25,6 +25,7 @@ export default function Home() {
 
     const settings = {
         dots: true,
+        arrows : false,
         infinite: true,
         slidesToShow: 5,
         slidesToScroll: 1,
