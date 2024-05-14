@@ -22,7 +22,7 @@ export default function Sidebar(){
                     <Link to="/"><img src={logo} alt="logo" className="h-8 w-56" style={{filter: "grayscale(50%)"}} /></Link>
                 </div>
             <SimpleBarReact style={{height:"calc(100% - 70px)"}}> 
-                <ul className="sidebar-menu border-t border-white/10">
+                <ul className="sidebar-menu border-white/10">
 
                     <li>
                     {/*    대시보드 메뉴 입니다. */}
