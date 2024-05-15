@@ -1,19 +1,17 @@
 import React from "react"
-import { Link } from "react-router-dom"
+import logo from "../assets/images/logo/logo_without_background.png";
 
 export default function Footer(){
     return(
-        <footer>
-           <div className="shadow bg-white px-6 py-4">
-                <div className="container-fluid">
-                     <div className="grid grid-cols-1">
-                        <div className="sm:text-start text-center mx-md-2">
-                            <p className="mb-0 text-slate-400">© {(new Date().getFullYear())} NiceToMenu. Design & Develop with by SoftwareChiefs</p>
-                        </div>
-                     </div>
-                    
-                </div>
-           </div>
+        <footer data-theme="dark" className="footer relative flex items-center justify-between p-4 top-20 bg-neutral text-neutral-content">
+            <div className="flex items-center">
+                <img src={logo} alt="logo" className="h-10 mr-2" style={{filter: "grayscale(100%)"}} />
+                <p>© {(new Date().getFullYear())} NiceToMenu. All right reserved</p>
+            </div>
+
+            <div>
+                <p>Designed & Developed by SoftwareChiefs</p>
+            </div>
         </footer>
     )
 }
