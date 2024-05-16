@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import {Route, Routes} from 'react-router-dom';
 
 import Home from "./pages/Home";
@@ -7,41 +7,66 @@ import Login from "./pages/Login";
 import MenuList from "./pages/MenuList";
 import FindPassword from "./pages/FindPassword";
 import {useCookies} from "react-cookie";
-import { deleteFoodCategory, getFoodCategory, patchFoodCategory, postFoodCategory } from "./api/FoodCategory";
+import { deleteFoodCategory, getFoodCategory, getFoodCategoryId, patchFoodCategory, postFoodCategory } from "./api/FoodCategory";
 
 export default function App() {
 
     const accessToken = useCookies(['accessToken']);
 
+    const foodCategoryId = 1;
+    const updatedFoodCategory = { name : "라면"};
     useEffect(() => {
-        const foodCategory = async () => {
-            const id = 0; 
-            const name = "";
-            const authToken = "";
-                try {
-                    const newFoodCategory = { id: "0", name: "김밥" };
-                    const postResponse = await postFoodCategory(newFoodCategory);
-                    console.log('FoodCategory 생성:', postResponse);
+        //patchFoodCategory 테스트 코드
+        const testPatch = async () => {
+            try {
+                await patchFoodCategory(foodCategoryId, updatedFoodCategory, accessToken);
+            } catch (error) {
+                console.error('Error in useEffect:', error);
+            }
+        };
+        testPatch();
+        
+        //deleteFoodCategory 테스트 코드
+        // const deleteData = async () => {
+        //     try {
+        //         const data = await deleteFoodCategory(foodCategoryId);
+        //         console.log(data);
+        //     } catch (error) {
+        //         console.error("Error deleting food categories:", error);
+        //     }
+        // };
+        // deleteData();
 
-                    const getResponse = await getFoodCategory(id,name);
-                    console.log('FoodCategory 정보 get:', getResponse);
+        // postFoodCategory 테스트 코드
+        // const createFoodCategory = async () => {
+        //     try {
+        //         const foodCategoryData = {
+        //         name: "김밥"
+        //         };
+        //         const data = await postFoodCategory(foodCategoryData);
+        //         console.log(data);
+        //     } catch (error) {
+        //         console.error("Error creating food categories:", error);
+        //     }
+        // };
+        // createFoodCategory();
 
-                    const deleteResponse = await deleteFoodCategory(id, authToken);
-                    console.log('FoodCategory 삭제:', deleteResponse);
+        //getFoodCategoryId 테스트 코드
+        // getFoodCategoryId(foodCategoryId);
 
-                    const updatedFoodCategory = { id: "1", name: "라면"};
-                    const patchResponse = await patchFoodCategory(foodCategoryId, updatedFoodCategory, authToken);
-                     if (patchResponse === true) {
-                        console.log('FoodCategory 수정 완료');
-                    } else {
-                        console.log('FoodCategory 수정 실패');
-                    }
-                } catch (error) {
-                    console.error("Error in foodCategory operations:", error);
-                }
-            };
-            foodCategory();
-    }, []);
+        //getFoodCategory(); 테스트 코드
+        //     const fetchData = async () => {
+        //   try {
+        //     const data = await getFoodCategory();
+        //     console.log(data);
+        //   } catch (error) {
+        //     console.error("Error fetching food categories:", error);
+        //   }
+        // };
+        //   fetchData();
+    }, []); 
+
+
 
   return (
       <>
