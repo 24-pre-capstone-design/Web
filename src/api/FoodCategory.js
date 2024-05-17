@@ -2,17 +2,28 @@ import axios from 'axios';
 
 const API_SERVER = process.env.REACT_APP_API_SERVER_URL;
 
-export const postFoodCategory = async (foodCategoryData)=>{
+const setHeaders = (accessToken) => {
+   return {
+            'Authorization': `Bearer ${accessToken}`,
+          }
+}
+
+export const postFoodCategory = async (foodCategoryData,token)=>{
   try{
-    const response = await axios.post(`${API_SERVER}/foodCategory`, foodCategoryData);
-    return console.log(response.data);
+    const response = await axios.post(`${API_SERVER}/foodCategory`, foodCategoryData,{
+          headers: {
+            'Content-type': 'application/json',
+            'Accept': 'application/json',
+            'Authorization': `Bearer ${token}`
+          }
+        });
+      return response.data;
   }catch(error){
     console.error('Error creating food categories:', error);
     throw error;
   }
 };
 
-//완
 export const getFoodCategory = async() =>{
     try {
         const response = await axios.get(`${API_SERVER}/foodCategory`);
@@ -23,7 +34,6 @@ export const getFoodCategory = async() =>{
     }
 }
 
-//완
 export const getFoodCategoryId = async (foodCategoryId)=>{
   console.log("Fetching foodCategoryId:", foodCategoryId);
   try{
@@ -35,25 +45,24 @@ export const getFoodCategoryId = async (foodCategoryId)=>{
   }
 };
 
-export const deleteFoodCategory = async (foodCategoryId)=>{
+export const deleteFoodCategory = async (foodCategoryId, accessToken)=>{
   try{
-    const response = await axios.delete(`${API_SERVER}/foodCategory/${foodCategoryId}`);
+    const response = await axios.delete(`${API_SERVER}/foodCategory/${foodCategoryId}`,{
+      headers: setHeaders(accessToken)
+    });
     return console.log(response.data);
   }catch(error){
     console.error('Error deleting food categories:', error);
     throw error;
   }
 };
-
+//완
 export const patchFoodCategory = async (foodCategoryId, updatedFoodCategory, accessToken) => {
     try {
         const response = await axios.patch(`${API_SERVER}/foodCategory/${foodCategoryId}`, updatedFoodCategory,{
-          headers: {
-            'Authorization': `Bearer ${accessToken}`,
-            'Content-Type': 'application/json'
-          }
+          headers: setHeaders(accessToken)
         });
-    return console.log(response.data);
+        return console.log(response.data);
     } catch (error) {
         console.error("Error updating food category:", error);
     throw error;
