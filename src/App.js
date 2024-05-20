@@ -7,7 +7,8 @@ import Login from "./pages/Login";
 // import MenuList from "./pages/MenuList";
 import FindPassword from "./pages/FindPassword";
 // import {auth_login} from "./api/Auth";
-import { postOwner, getOwner, deleteOwner, patchOwner } from "./api/Owner";
+// import { postOwner, getOwner, deleteOwner, patchOwner } from "./api/Owner";
+import { createNewOrderNotification, getUnreadNotifications, getAllNotifications, deleteNotification, deleteAllNotifications, } from './api/Notification';
 
 export default function App() {
 
@@ -20,37 +21,38 @@ export default function App() {
     //     }
     // }, []);
 
+
     useEffect(() => {
-        const testOwner = async () => {
-            const ownerId = "mingmingmon"; 
-            const authToken = "";
-        
+        const testNotifications = async () => {
+            const authToken = ""; 
+            const orderHistoryId = 36;  
+            const title = '새 주문이 도착했습니다.';
+            const content = '주문 ID: 36, 상품: 상품명';
+            const notificationId = 36;  
+
+
             try {
-                // const newOwnerData = { id: "t123", password: "1234asdf!", name: "123", birthDate: "20010325" };
-                // const postResponse = await postOwner(newOwnerData);
-                // console.log('Owner 생성됨:', postResponse);
-                
-                const getResponse = await getOwner(ownerId);
-                console.log('Owner 정보 가져옴:', getResponse);
+                const createResponse = await createNewOrderNotification(orderHistoryId, title, content, authToken);
+                console.log('새 주문 생성됨 :', createResponse);
 
-                const updatedOwnerData = { id: "mingmingmon", password: "1234asdf!", name: "123456", birthDate: "20010325" };
-                const patchResponse = await patchOwner(ownerId, updatedOwnerData, authToken);
+                const unreadResponse = await getUnreadNotifications(authToken);
+                console.log('읽지 않은 알림 :', unreadResponse);
 
-                if (patchResponse === true) {
-                    console.log('Owner 수정 완료');
-                } else {
-                    console.log('Owner 수정 실패');
-                }
+                const allResponse = await getAllNotifications(authToken);
+                console.log('전체 알림 :', allResponse);
 
-                // const deleteResponse = await deleteOwner(ownerId, authToken);
-                // console.log('Owner 삭제됨:', deleteResponse);
-                
+                const deleteResponse = await deleteNotification(notificationId, authToken);
+                console.log('알림 삭제됨 :', deleteResponse);
+
+                const deleteAllResponse = await deleteAllNotifications(authToken);
+                console.log('전체 알림 삭제됨 :', deleteAllResponse);
+
             } catch (error) {
-                console.error("Error in owner operations:", error);
+                console.error("오류 발생 :", error);
             }
         };
 
-        testOwner();
+        testNotifications();
     }, []);
 
 
