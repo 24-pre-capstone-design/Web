@@ -5,16 +5,6 @@ import Login from "./pages/Login";
 import MenuList from "./pages/MenuList";
 import FindPassword from "./pages/FindPassword";
 import {useCookies} from "react-cookie";
-import {useEffect} from "react";
-
-import {
-    editOrderHistory, getByDate, getByLatest, getMonth,
-    getnewOrderNumber,
-    getOrderByStatus,
-    postNewOrderHistory,
-    searchOrderHistory
-} from "./api/OrderHistory";
-
 
 export default function App() {
 
