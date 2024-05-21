@@ -1,27 +1,36 @@
-import React, {useState} from "react";
+import React from "react";
 import {Route, Routes} from 'react-router-dom';
 
 import Home from "./pages/Home";
-import Sidebar from "./components/sidebar";
-import Topnav from "./components/topnav";
-
+import OrderPage from "./pages/OrderPage";
+import Login from "./pages/Login";
+import MenuList from "./pages/MenuList";
+import FindPassword from "./pages/FindPassword";
+import {useCookies} from "react-cookie";
+import MyPage from "./pages/MyPage";
 
 export default function App() {
 
-    const [toggle, setToggle] = useState(true);
+    const accessToken = useCookies(['accessToken']);
 
   return (
       <>
-          <div className={`page-wrapper bg-black ${toggle ? "toggled" : ""}`}>
-              <Sidebar/>
-              <main className="page-content h-screen">
-                  <Topnav toggle={toggle} setToggle={setToggle}/>
-
-                  <Routes>
-                      <Route path="/home" element={<Home />} />
-                  </Routes>
-              </main>
-          </div>
+          <Routes>
+              {
+                    accessToken[0].accessToken ?
+                        <>
+                            <Route path="/home" element={<Home />} />
+                            <Route path="/order" element={<OrderPage/>}/>
+                            <Route path="/menu" element={<MenuList />} />
+                            <Route path="/my" element={<MyPage />} />
+                        </>
+                        :
+                        <>
+                            <Route path="/" element={<Login />} />
+                            <Route path="/find-password" element={<FindPassword />} />
+                        </>
+              }
+          </Routes>
       </>
   );
 }

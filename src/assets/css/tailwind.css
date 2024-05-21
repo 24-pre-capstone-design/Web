@@ -53,24 +53,17 @@ h6 {
   font-size: inherit;
   font-weight: inherit;
 }
-/*
-Reset links to optimize for opt-in styling instead of opt-out.
-*/
+
 a {
   color: inherit;
   text-decoration: inherit;
 }
-/*
-Add the correct font weight in Edge and Safari.
-*/
+
 b,
 strong {
   font-weight: bolder;
 }
-/*
-1. Use the user's configured `mono` font family by default.
-2. Correct the odd `em` font sizing in all browsers.
-*/
+
 code,
 kbd,
 samp,
@@ -78,15 +71,11 @@ pre {
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; /* 1 */
   font-size: 1em; /* 2 */
 }
-/*
-Add the correct font size in all browsers.
-*/
+
 small {
   font-size: 80%;
 }
-/*
-Prevent `sub` and `sup` elements from affecting the line height in all browsers.
-*/
+
 sub,
 sup {
   font-size: 75%;
@@ -100,21 +89,13 @@ sub {
 sup {
   top: -0.5em;
 }
-/*
-1. Remove text indentation from table contents in Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=999088, https://bugs.webkit.org/show_bug.cgi?id=201297)
-2. Correct table border color inheritance in all Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=935729, https://bugs.webkit.org/show_bug.cgi?id=195016)
-3. Remove gaps between table borders by default.
-*/
+
 table {
   text-indent: 0; /* 1 */
   border-color: inherit; /* 2 */
   border-collapse: collapse; /* 3 */
 }
-/*
-1. Change the font styles in all browsers.
-2. Remove the margin in Firefox and Safari.
-3. Remove default padding in all browsers.
-*/
+
 button,
 input,
 optgroup,
@@ -131,17 +112,12 @@ textarea {
   margin: 0; /* 2 */
   padding: 0; /* 3 */
 }
-/*
-Remove the inheritance of text transform in Edge and Firefox.
-*/
+
 button,
 select {
   text-transform: none;
 }
-/*
-1. Correct the inability to style clickable types in iOS and Safari.
-2. Remove default button styles.
-*/
+
 button,
 [type='button'],
 [type='reset'],
@@ -150,62 +126,42 @@ button,
   background-color: transparent; /* 2 */
   background-image: none; /* 2 */
 }
-/*
-Use the modern Firefox focus style for all focusable elements.
-*/
+
 :-moz-focusring {
   outline: auto;
 }
-/*
-Remove the additional `:invalid` styles in Firefox. (https://github.com/mozilla/gecko-dev/blob/2f9eacd9d3d995c937b4251a5557d95d494c9be1/layout/style/res/forms.css#L728-L737)
-*/
+
 :-moz-ui-invalid {
   box-shadow: none;
 }
-/*
-Add the correct vertical alignment in Chrome and Firefox.
-*/
+
 progress {
   vertical-align: baseline;
 }
-/*
-Correct the cursor style of increment and decrement buttons in Safari.
-*/
+
 ::-webkit-inner-spin-button,
 ::-webkit-outer-spin-button {
   height: auto;
 }
-/*
-1. Correct the odd appearance in Chrome and Safari.
-2. Correct the outline style in Safari.
-*/
+
 [type='search'] {
   -webkit-appearance: textfield; /* 1 */
   outline-offset: -2px; /* 2 */
 }
-/*
-Remove the inner padding in Chrome and Safari on macOS.
-*/
+
 ::-webkit-search-decoration {
   -webkit-appearance: none;
 }
-/*
-1. Correct the inability to style clickable types in iOS and Safari.
-2. Change font properties to `inherit` in Safari.
-*/
+
 ::-webkit-file-upload-button {
   -webkit-appearance: button; /* 1 */
   font: inherit; /* 2 */
 }
-/*
-Add the correct display in Chrome and Safari.
-*/
+
 summary {
   display: list-item;
 }
-/*
-Removes the default spacing and border for appropriate elements.
-*/
+
 blockquote,
 dl,
 dd,
@@ -235,22 +191,15 @@ menu {
   margin: 0;
   padding: 0;
 }
-/*
-Reset default styling for dialogs.
-*/
+
 dialog {
   padding: 0;
 }
-/*
-Prevent resizing textareas horizontally by default.
-*/
+
 textarea {
   resize: vertical;
 }
-/*
-1. Reset the default placeholder opacity in Firefox. (https://github.com/tailwindlabs/tailwindcss/issues/3300)
-2. Set the default placeholder color to the user's configured gray 400 color.
-*/
+
 input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
   opacity: 1; /* 1 */
   color: #9ca3af; /* 2 */
@@ -272,24 +221,16 @@ textarea::placeholder {
   opacity: 1; /* 1 */
   color: #9ca3af; /* 2 */
 }
-/*
-Set the default cursor for buttons.
-*/
+
 button,
 [role="button"] {
   cursor: pointer;
 }
-/*
-Make sure disabled buttons don't get the pointer cursor.
-*/
+
 :disabled {
   cursor: default;
 }
-/*
-1. Make replaced elements `display: block` by default. (https://github.com/mozdevs/cssremedy/issues/14)
-2. Add `vertical-align: middle` to align replaced elements more sensibly by default. (https://github.com/jensimmons/cssremedy/issues/14#issuecomment-634934210)
-   This can trigger a poorly considered lint error in some tools but is included by design.
-*/
+
 img,
 svg,
 video,
@@ -301,15 +242,13 @@ object {
   display: block; /* 1 */
   vertical-align: middle; /* 2 */
 }
-/*
-Constrain images and videos to the parent width and preserve their intrinsic aspect ratio. (https://github.com/mozdevs/cssremedy/issues/14)
-*/
+
 img,
 video {
   max-width: 100%;
   height: auto;
 }
-/* Make elements with the HTML hidden attribute stay hidden by default */
+
 [hidden] {
   display: none;
 }
@@ -727,6 +666,9 @@ video {
 .bottom-20{
   bottom: 5rem !important;
 }
+.bottom-0{
+  bottom: 0 !important;
+}
 .bottom-3{
   bottom: 0.75rem !important;
 }
@@ -799,6 +741,9 @@ video {
 .top-20{
   top: 5rem !important;
 }
+.top-25{
+    top: 6.25rem !important;
+}
 .top-3{
   top: 0.75rem !important;
 }
@@ -850,6 +795,39 @@ video {
       -ms-flex-order: 3 !important;
           order: 3 !important;
 }
+.col-span-1 {
+  grid-column: span 1 / span 1 !important;
+}
+.col-span-2 {
+  grid-column: span 2 / span 2 !important;
+}
+.col-span-3 {
+  grid-column: span 3 / span 3 !important;
+}
+.col-span-4 {
+  grid-column: span 4 / span 4 !important;
+}
+.col-span-5 {
+  grid-column: span 5 / span 5 !important;
+}
+.col-span-6 {
+  grid-column: span 6 / span 6 !important;
+}
+.col-span-7 {
+  grid-column: span 7 / span 7 !important;
+}
+.col-span-8 {
+  grid-column: span 8 / span 8 !important;
+}
+.col-span-9 {
+  grid-column: span 9 / span 9 !important;
+}
+.col-span-10 {
+  grid-column: span 10 / span 10 !important;
+}
+.col-span-11 {
+  grid-column: span 11 / span 11 !important;
+}
 .col-span-12{
   grid-column: span 12 / span 12 !important;
 }
@@ -889,6 +867,10 @@ video {
 .mx-6{
   margin-left: 1.5rem !important;
   margin-right: 1.5rem !important;
+}
+.mx-10{
+  margin-left: 2.5rem !important;
+  margin-right: 2.5rem !important;
 }
 .mx-auto{
   margin-left: auto !important;
@@ -1078,6 +1060,9 @@ video {
 .h-40{
   height: 10rem !important;
 }
+.h-48{
+    height: 12rem !important;
+}
 .h-5{
   height: 1.25rem !important;
 }
@@ -1095,6 +1080,9 @@ video {
 }
 .h-80{
   height: 20rem !important;
+}
+.h-90{
+  height: 22.5rem !important;
 }
 .h-9{
   height: 2.25rem !important;
@@ -1257,6 +1245,9 @@ video {
 .w-\[600px\]{
   width: 600px !important;
 }
+.w-\[768px\]{
+  width: 768px !important;
+}
 .w-auto{
   width: auto !important;
 }
@@ -1313,6 +1304,9 @@ video {
 .max-w-\[208px\]{
   max-width: 208px !important;
 }
+.max-w-\[1440px\]{
+  max-width: 1440px !important;
+}
 .max-w-\[30px\]{
   max-width: 30px !important;
 }
@@ -1365,8 +1359,38 @@ video {
 .grid-cols-1{
   grid-template-columns: repeat(1, minmax(0, 1fr)) !important;
 }
+.grid-cols-2{
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+}
+.grid-cols-3{
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+}
+.grid-cols-4{
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+}
+.grid-cols-5{
+  grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
+}
+.grid-cols-6{
+  grid-template-columns: repeat(6, minmax(0, 1fr)) !important;
+}
 .grid-cols-12{
   grid-template-columns: repeat(12, minmax(0, 1fr)) !important;
+}
+.grid-flow-row{
+    grid-auto-flow: row !important;
+}
+.grid-flow-col{
+  grid-auto-flow: column !important;
+}
+.grid-flow-dense{
+    grid-auto-flow: dense !important;
+}
+.grid-flow-row-dense{
+    grid-auto-flow: row dense !important;
+}
+.grid-flow-col-dense{
+  grid-auto-flow: column dense !important;
 }
 .flex-col{
   -webkit-box-orient: vertical !important;
@@ -1427,6 +1451,9 @@ video {
 }
 .gap-6{
   gap: 1.5rem !important;
+}
+.gap-10{
+  gap: 2.5rem !important;
 }
 .-space-x-px > :not([hidden]) ~ :not([hidden]){
   --tw-space-x-reverse: 0 !important;
@@ -2866,6 +2893,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{
 .page-wrapper .sidebar-wrapper.sidebar-dark{
   --tw-bg-opacity: 1;
   background-color: #292B2E;
+  /*background-color: rgb(15 23 42 / var(--tw-bg-opacity));*/
 }
 .page-wrapper .sidebar-wrapper.sidebar-colored{
   --tw-bg-opacity: 1;
@@ -4565,7 +4593,6 @@ html[dir=rtl] .tns-visually-hidden {
     text-align: start !important;
   }
 }
-
 @media (min-width: 768px){
   .md\:order-1{
     -webkit-box-ordinal-group: 2 !important;
@@ -4732,7 +4759,7 @@ html[dir=rtl] .tns-visually-hidden {
   }
 }
 
-@media (min-width: 1280px){
+@media (min-width: 1560px){
   .xl\:col-span-10{
     grid-column: span 10 / span 10 !important;
   }
