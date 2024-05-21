@@ -6,7 +6,7 @@ import {TbTilde} from "../assets/icons/vander.js";
 import Pagenation from "../components/Pagenation";
 import Footer from "../components/Footer";
 
-export default function OrderPage(){
+export default function OrderList(){
 
     const [toggle, setToggle] = useState(true);
     const [orderItem, setOrderItem] = useState([]);
