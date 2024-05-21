@@ -37,15 +37,15 @@ export default function Sidebar(){
                     </li>
 
                     <li>
-                        <Link to="/employee" className="text-gray-400 text-xl py-5"><FaPeopleCarry className="me-3 icon"/>직원 관리</Link>
-                    </li>
-
-                    <li>
                         <Link to="/order" className="text-gray-400 text-xl py-5"><FaBell className="me-3 icon"/>주문 관리</Link>
                     </li>
 
                     <li>
                         <Link to="/menu" className="text-gray-400 text-xl py-5"><TbHandFinger className="me-3 icon"/>상품 및 메뉴 관리</Link>
+                    </li>
+
+                    <li>
+                        <Link to="/employee" className="text-gray-400 text-xl py-5"><FaPeopleCarry className="me-3 icon"/>직원 관리</Link>
                     </li>
 
                     <li>
