@@ -7,6 +7,9 @@ import CountUp from "react-countup";
 import {Link} from "react-router-dom";
 import {notificationData} from "../data/data";
 import Footer from "../components/Footer";
+import DeleteAccount from "../components/modal/DeleteAccount";
+import EditOwnerInfo from "../components/modal/EditOwnerInfo";
+import UpdatePassword from "../components/modal/UpdatePassword";
 
 export default function MyPage(){
 
@@ -58,8 +61,10 @@ export default function MyPage(){
 
                             <div className="stat">
                                 <div className="stat-figure">
-                                    <button className="btn btn-success block w-48 my-1 text-white">비밀번호 변경</button>
-                                    <button className="btn btn-error block w-48 my-1 text-white ">회원 탈퇴</button>
+                                    <button className="btn btn-success block w-48 my-1 text-white"
+                                            onClick={() => document.getElementById('updatePassword').showModal()}>비밀번호 변경</button>
+                                    <button className="btn btn-error block w-48 my-1 text-white"
+                                            onClick={() => document.getElementById('deleteAccountModal').showModal()}>회원 탈퇴</button>
                                 </div>
                             </div>
 
@@ -88,7 +93,8 @@ export default function MyPage(){
                                         </tr>
                                     </tbody>
                                 </table>
-                                <button className="btn btn-active block w-full my-2">내 정보 수정</button>
+                                <button className="btn btn-active block w-full my-2"
+                                        onClick={() => document.getElementById('editOwnerInfo').showModal()}>내 정보 수정</button>
                             </div>
 
                             <div className="overflow-x-auto mx-2 md:col-span-8 lg:col-span-8">
@@ -125,6 +131,18 @@ export default function MyPage(){
 
                         </div>
                     </section>
+
+                    <dialog id="deleteAccountModal" className="modal">
+                        <DeleteAccount />
+                    </dialog>
+
+                    <dialog id="editOwnerInfo" className="modal">
+                        <EditOwnerInfo />
+                    </dialog>
+
+                    <dialog id="updatePassword" className="modal">
+                        <UpdatePassword />
+                    </dialog>
 
                     <Footer/>
                 </main>
