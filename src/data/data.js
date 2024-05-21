@@ -503,3 +503,133 @@ export const notificationData = [
         read: true
     },
 ];
+
+export const employeeData = [
+    {
+        id: 4,
+        name: "석해현",
+        phoneNumber: "010-1111-1111",
+        workDate: "월화수",
+        status: "WORKING"
+    },
+    {
+        id: 5,
+        name: "석해현",
+        phoneNumber: "010-1111-1111",
+        workDate: "월화수",
+        status: "WORKING"
+    },
+    {
+        id: 6,
+        name: "석해현",
+        phoneNumber: "010-1111-1111",
+        workDate: "월화수",
+        status: "WORKING"
+    },
+    {
+        id: 7,
+        name: "석해현",
+        phoneNumber: "010-1111-1111",
+        workDate: "월화수",
+        status: "WORKING"
+    },
+    {
+        id: 8,
+        name: "석해현",
+        phoneNumber: "010-1111-1111",
+        workDate: "월화수",
+        status: "WORKING"
+    },
+    {
+        id: 9,
+        name: "석해현",
+        phoneNumber: "010-1111-1111",
+        workDate: "월화수",
+        status: "WORKING"
+    },
+    {
+        id: 10,
+        name: "석해현",
+        phoneNumber: "010-1111-1111",
+        workDate: "월화수",
+        status: "WORKING"
+    },
+    {
+        id: 11,
+        name: "석해현",
+        phoneNumber: "010-1111-1111",
+        workDate: "월화수",
+        status: "WORKING"
+    },
+    {
+        id: 12,
+        name: "석해현",
+        phoneNumber: "010-1111-1111",
+        workDate: "월화수",
+        status: "WORKING"
+    },
+    {
+        id: 13,
+        name: "석해현",
+        phoneNumber: "010-1111-1111",
+        workDate: "월화수",
+        status: "WORKING"
+    },
+    {
+        id: 14,
+        name: "석해현",
+        phoneNumber: "010-1111-1111",
+        workDate: "월화수",
+        status: "WORKING"
+    },
+    {
+        id: 15,
+        name: "석해현",
+        phoneNumber: "010-1111-1111",
+        workDate: "월화수",
+        status: "WORKING"
+    },
+    {
+        id: 16,
+        name: "석해현",
+        phoneNumber: "010-1111-1111",
+        workDate: "월화수",
+        status: "WORKING"
+    },
+    {
+        id: 17,
+        name: "석해현",
+        phoneNumber: "010-1111-1111",
+        workDate: "월화수",
+        status: "WORKING"
+    },
+    {
+        id: 18,
+        name: "석해현",
+        phoneNumber: "010-1111-1111",
+        workDate: "월화수",
+        status: "WORKING"
+    },
+    {
+        id: 19,
+        name: "석해현",
+        phoneNumber: "010-1111-1111",
+        workDate: "월화수",
+        status: "WORKING"
+    },
+    {
+        id: 20,
+        name: "석해현",
+        phoneNumber: "010-1111-1111",
+        workDate: "월화수",
+        status: "WORKING"
+    },
+    {
+        id: 21,
+        name: "석해현",
+        phoneNumber: "010-1111-1111",
+        workDate: "월화수",
+        status: "WORKING"
+    }
+
+];
