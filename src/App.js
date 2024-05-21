@@ -1,6 +1,4 @@
-import React from "react";
 import {Route, Routes} from 'react-router-dom';
-
 import Home from "./pages/Home";
 import OrderPage from "./pages/OrderPage";
 import Login from "./pages/Login";
@@ -12,6 +10,7 @@ import MyPage from "./pages/MyPage";
 export default function App() {
 
     const accessToken = useCookies(['accessToken']);
+
 
     return (
         <>
