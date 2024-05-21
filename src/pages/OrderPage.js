@@ -22,7 +22,7 @@ export default function OrderPage(){
                 <main className="page-content h-screen">
                     <Topnav toggle={toggle} setToggle={setToggle}/>
 
-                    <div className="relative top-25 mx-10 flex items-center justify-between">
+                    <div className="relative top-6 mx-10 flex items-center justify-between">
                         <h3 className="text-4xl text-white font-bold">주문 관리</h3>
 
                         <div className="flex justify-end">
@@ -68,7 +68,7 @@ export default function OrderPage(){
 
                     </div>
 
-                    <section className="relative top-25 mx-10 mt-8">
+                    <section className="relative top-6 mx-10 mt-8">
                         <div className="flex items-center justify-between">
                             <select className="select select-bordered select-sm w-36 max-w-xs mx-2 bg-neutral text-gray-50 border border-white/10">
                                 <option selected>최근 주문순</option>
@@ -124,7 +124,9 @@ export default function OrderPage(){
                         <Pagenation />
                     </section>
 
-                    <Footer />
+                    <div className="relative top-20">
+                        <Footer/>
+                    </div>
 
                 </main>
             </div>

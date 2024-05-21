@@ -35,7 +35,7 @@ export default function MenuList() {
                 <main className="page-content h-screen">
                     <Topnav toggle={toggle} setToggle={setToggle}/>
 
-                    <div className="relative top-25 mx-10 flex items-center justify-between">
+                    <div className="relative top-6 mx-10 flex items-center justify-between">
                         <h3 className="text-4xl text-white font-bold">상품 및 메뉴 관리</h3>
 
                         <div className="flex items-center mx-10">
@@ -77,7 +77,7 @@ export default function MenuList() {
                     </div>
 
 
-                    <section className="relative top-25 mt-8 mb-8 mx-10">
+                    <section className="relative top-6 mt-8 mb-8 mx-10">
                         <div className="grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-3 sm:grid-cols-2 max-w-[1440px]">
 
                             {
@@ -136,8 +136,9 @@ export default function MenuList() {
                         <NewCategory />
                     </dialog>
 
-                    <Footer />
-
+                    <div className="relative top-20">
+                        <Footer/>
+                    </div>
                 </main>
             </div>
         </>
