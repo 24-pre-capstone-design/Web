@@ -22,7 +22,7 @@ export default function Home() {
     }, []);
 
     const formatPrice = (price) => {
-        return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + " ₩";
+        return "₩ " +  price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     };
 
     const settings = {
