@@ -1,3 +1,4 @@
+import React, { useEffect } from "react";
 import {Route, Routes} from 'react-router-dom';
 import Home from "./pages/Home";
 import OrderPage from "./pages/OrderPage";
@@ -10,7 +11,6 @@ import MyPage from "./pages/MyPage";
 export default function App() {
 
     const accessToken = useCookies(['accessToken']);
-
 
     return (
         <>
