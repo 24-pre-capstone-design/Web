@@ -5,12 +5,14 @@ import {employeeData, employeeStatus} from "../data/data"
 import Pagenation from "../components/Pagenation";
 import Footer from "../components/Footer";
 import EditEmployee from "../components/modal/EditEmployee";
+import {FaTrashAlt, GrPowerReset} from "../assets/icons/vander";
 
 export default function EmployeeList(){
 
     const [toggle, setToggle] = useState(true);
     const [telVisibleIndex, setTelVisibleIndex] = useState(null);
     const [employee, setEmployee] = useState({});
+    const [checkboxShow, setCheckboxShow] = useState(false);
 
     const showTel = (index) => {
         setTelVisibleIndex(index);
@@ -36,7 +38,16 @@ export default function EmployeeList(){
 
                         <div className="flex items-center">
                             <button className="btn btn-neutral" onClick={()=>document.getElementById('editEmployee').showModal()}>직원 추가하기</button>
-                            <button className="btn btn-neutral text-error mx-2">직원 삭제하기</button>
+                            {
+                                checkboxShow ?
+                                    <div className="mx-2">
+                                        <button className="btn btn-error mx-0.5" onClick={()=>document.getElementById('deleteModal').showModal()}><FaTrashAlt /></button>
+                                        <button className="btn btn-neutral text-error mx-0.5" onClick={() => setCheckboxShow(false)}><GrPowerReset /></button>
+                                    </div>
+                                    :
+                                    <button className="btn btn-neutral text-error mx-2" onClick={() => setCheckboxShow(true)}>직원 삭제하기</button>
+
+                            }
                             <label className="input input-bordered flex items-center gap-2 mx-0.5 bg-neutral text-gray-50 border border-white/10">
                                 <input
                                     type="text"
@@ -71,7 +82,8 @@ export default function EmployeeList(){
                             <table className="table text-center mt-2">
                                 <thead>
                                 <tr className="h-11 border-t border-gray-400 text-gray-50 text-[14px]">
-                                    <th>번호</th>
+                                    <th className="w-10"></th>
+                                    <th className="w-14">번호</th>
                                     <th>이름</th>
                                     <th>전화번호</th>
                                     <th>근무요일</th>
@@ -84,7 +96,10 @@ export default function EmployeeList(){
                                     employeeData.map((item, index) => {
                                         return (
                                             <tr key={index} className={`border-b border-gray-800 ${index%2===0 ? 'bg-gray-800/30' : ''}`}>
-                                                <td>{index+1}</td>
+                                                <td>
+                                                    <input type="checkbox" className={`checkbox checkbox-error mx-2 ${checkboxShow ? '' : 'hidden'}`} />
+                                                </td>
+                                                <td>{item.id}</td>
                                                 <td>{item.name}</td>
                                                 <td>
                                                     {
@@ -115,6 +130,19 @@ export default function EmployeeList(){
                         </div>
                         <Pagenation />
                     </section>
+
+                    <dialog id="deleteModal" className="modal">
+                        <div className="modal-box">
+                            <h3 className="font-bold text-lg">Warning!</h3>
+                            <p className="py-4">정말 삭제하시겠습니까? 메뉴 삭제 이후에는 복구가 불가능 합니다.</p>
+                            <div className="modal-action">
+                                <form method="dialog">
+                                    <button className="btn mx-0.5" onClick={()=>setCheckboxShow(false)}>취소</button>
+                                    <button className="btn btn-outline btn-error mx-0.5" onClick={()=>setCheckboxShow(false)}>삭제</button>
+                                </form>
+                            </div>
+                        </div>
+                    </dialog>
 
                     <dialog id="updateEmployee" className="modal">
                         <EditEmployee item={employee} />
