@@ -19,7 +19,7 @@ export default function Sidebar(){
         <nav className="sidebar-wrapper">
             <div data-theme="dark" className="sidebar-content">
                 <div className="sidebar-brand">
-                    <Link to="/"><img src={logo} alt="logo" className="h-8 w-56" style={{filter: "grayscale(50%)"}} /></Link>
+                    <Link to="/home"><img src={logo} alt="logo" className="h-8 w-56" style={{filter: "grayscale(50%)"}} /></Link>
                 </div>
             <SimpleBarReact style={{height:"calc(100% - 70px)"}}> 
                 <ul className="sidebar-menu border-white/10">

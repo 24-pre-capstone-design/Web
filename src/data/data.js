@@ -276,141 +276,141 @@ export const orderData = [
         orderHistoryStatus : "PAYMENT_COMPLETE",
         orderedAt : "2024-04-29 11:38"
     },
-    {
-        id : 16,
-        paymentId : 10,
-        foodName : "초밥세트",
-        quantity : 1,
-        sumOfCost : 28000,
-        orderHistoryStatus : "NEW",
-        orderedAt : "2024-04-29 11:39"
-    },
-    {
-        id : 17,
-        paymentId : 10,
-        foodName : "우동",
-        quantity : 2,
-        sumOfCost : 15000,
-        orderHistoryStatus : "NEW",
-        orderedAt : "2024-04-29 11:40"
-    },
-    {
-        id : 18,
-        paymentId : 11,
-        foodName : "피자",
-        quantity : 1,
-        sumOfCost : 20000,
-        orderHistoryStatus : "NEW",
-        orderedAt : "2024-04-29 11:41"
-    },
-    {
-        id : 19,
-        paymentId : 11,
-        foodName : "파스타",
-        quantity : 2,
-        sumOfCost : 26000,
-        orderHistoryStatus : "NEW",
-        orderedAt : "2024-04-29 11:42"
-    },
-    {
-        id : 20,
-        paymentId : 12,
-        foodName : "스테이크",
-        quantity : 1,
-        sumOfCost : 35000,
-        orderHistoryStatus : "COOKING",
-        orderedAt : "2024-04-29 11:43"
-    },
-    {
-        id : 21,
-        paymentId : 12,
-        foodName : "샐러드",
-        quantity : 1,
-        sumOfCost : 12000,
-        orderHistoryStatus : "COOKING",
-        orderedAt : "2024-04-29 11:44"
-    },
-    {
-        id : 22,
-        paymentId : 13,
-        foodName : "햄버거",
-        quantity : 3,
-        sumOfCost : 33000,
-        orderHistoryStatus : "COOKING",
-        orderedAt : "2024-04-29 11:45"
-    },
-    {
-        id : 23,
-        paymentId : 13,
-        foodName : "핫도그",
-        quantity : 2,
-        sumOfCost : 16000,
-        orderHistoryStatus : "COOKING",
-        orderedAt : "2024-04-29 11:46"
-    },
-    {
-        id : 24,
-        paymentId : 14,
-        foodName : "김밥",
-        quantity : 1,
-        sumOfCost : 5000,
-        orderHistoryStatus : "COOKING_COMPLETE",
-        orderedAt : "2024-04-29 11:47"
-    },
-    {
-        id : 25,
-        paymentId : 15,
-        foodName : "라면",
-        quantity : 2,
-        sumOfCost : 7000,
-        orderHistoryStatus : "COOKING_COMPLETE",
-        orderedAt : "2024-04-29 11:48"
-    },
-    {
-        id : 26,
-        paymentId : 15,
-        foodName : "컵밥",
-        quantity : 1,
-        sumOfCost : 4000,
-        orderHistoryStatus : "COOKING_COMPLETE",
-        orderedAt : "2024-04-29 11:49"
-    },
-    {
-        id : 27,
-        paymentId : 16,
-        foodName : "마라샹궈",
-        quantity : 1,
-        sumOfCost : 18000,
-        orderHistoryStatus : "PAYMENT_COMPLETE",
-        orderedAt : "2024-04-29 11:50"
-    },
-    {
-        id : 28,
-        paymentId : 17,
-        foodName : "타코",
-        quantity : 3,
-        sumOfCost : 21000,
-        orderHistoryStatus : "PAYMENT_COMPLETE",
-        orderedAt : "2024-04-29 11:51"
-    },
-    {
-        id : 29,
-        paymentId : 18,
-        foodName : "삼겹살",
-        quantity : 1,
-        sumOfCost : 25000,
-        orderHistoryStatus : "PAYMENT_COMPLETE",
-        orderedAt : "2024-04-29 11:52"
-    },
-    {
-        id : 30,
-        paymentId : 18,
-        foodName : "불고기",
-        quantity : 1,
-        sumOfCost : 23000,
-        orderHistoryStatus : "PAYMENT_COMPLETE",
-        orderedAt : "2024-04-29 11:53"
-    },
+    // {
+    //     id : 16,
+    //     paymentId : 10,
+    //     foodName : "초밥세트",
+    //     quantity : 1,
+    //     sumOfCost : 28000,
+    //     orderHistoryStatus : "NEW",
+    //     orderedAt : "2024-04-29 11:39"
+    // },
+    // {
+    //     id : 17,
+    //     paymentId : 10,
+    //     foodName : "우동",
+    //     quantity : 2,
+    //     sumOfCost : 15000,
+    //     orderHistoryStatus : "NEW",
+    //     orderedAt : "2024-04-29 11:40"
+    // },
+    // {
+    //     id : 18,
+    //     paymentId : 11,
+    //     foodName : "피자",
+    //     quantity : 1,
+    //     sumOfCost : 20000,
+    //     orderHistoryStatus : "NEW",
+    //     orderedAt : "2024-04-29 11:41"
+    // },
+    // {
+    //     id : 19,
+    //     paymentId : 11,
+    //     foodName : "파스타",
+    //     quantity : 2,
+    //     sumOfCost : 26000,
+    //     orderHistoryStatus : "NEW",
+    //     orderedAt : "2024-04-29 11:42"
+    // },
+    // {
+    //     id : 20,
+    //     paymentId : 12,
+    //     foodName : "스테이크",
+    //     quantity : 1,
+    //     sumOfCost : 35000,
+    //     orderHistoryStatus : "COOKING",
+    //     orderedAt : "2024-04-29 11:43"
+    // },
+    // {
+    //     id : 21,
+    //     paymentId : 12,
+    //     foodName : "샐러드",
+    //     quantity : 1,
+    //     sumOfCost : 12000,
+    //     orderHistoryStatus : "COOKING",
+    //     orderedAt : "2024-04-29 11:44"
+    // },
+    // {
+    //     id : 22,
+    //     paymentId : 13,
+    //     foodName : "햄버거",
+    //     quantity : 3,
+    //     sumOfCost : 33000,
+    //     orderHistoryStatus : "COOKING",
+    //     orderedAt : "2024-04-29 11:45"
+    // },
+    // {
+    //     id : 23,
+    //     paymentId : 13,
+    //     foodName : "핫도그",
+    //     quantity : 2,
+    //     sumOfCost : 16000,
+    //     orderHistoryStatus : "COOKING",
+    //     orderedAt : "2024-04-29 11:46"
+    // },
+    // {
+    //     id : 24,
+    //     paymentId : 14,
+    //     foodName : "김밥",
+    //     quantity : 1,
+    //     sumOfCost : 5000,
+    //     orderHistoryStatus : "COOKING_COMPLETE",
+    //     orderedAt : "2024-04-29 11:47"
+    // },
+    // {
+    //     id : 25,
+    //     paymentId : 15,
+    //     foodName : "라면",
+    //     quantity : 2,
+    //     sumOfCost : 7000,
+    //     orderHistoryStatus : "COOKING_COMPLETE",
+    //     orderedAt : "2024-04-29 11:48"
+    // },
+    // {
+    //     id : 26,
+    //     paymentId : 15,
+    //     foodName : "컵밥",
+    //     quantity : 1,
+    //     sumOfCost : 4000,
+    //     orderHistoryStatus : "COOKING_COMPLETE",
+    //     orderedAt : "2024-04-29 11:49"
+    // },
+    // {
+    //     id : 27,
+    //     paymentId : 16,
+    //     foodName : "마라샹궈",
+    //     quantity : 1,
+    //     sumOfCost : 18000,
+    //     orderHistoryStatus : "PAYMENT_COMPLETE",
+    //     orderedAt : "2024-04-29 11:50"
+    // },
+    // {
+    //     id : 28,
+    //     paymentId : 17,
+    //     foodName : "타코",
+    //     quantity : 3,
+    //     sumOfCost : 21000,
+    //     orderHistoryStatus : "PAYMENT_COMPLETE",
+    //     orderedAt : "2024-04-29 11:51"
+    // },
+    // {
+    //     id : 29,
+    //     paymentId : 18,
+    //     foodName : "삼겹살",
+    //     quantity : 1,
+    //     sumOfCost : 25000,
+    //     orderHistoryStatus : "PAYMENT_COMPLETE",
+    //     orderedAt : "2024-04-29 11:52"
+    // },
+    // {
+    //     id : 30,
+    //     paymentId : 18,
+    //     foodName : "불고기",
+    //     quantity : 1,
+    //     sumOfCost : 23000,
+    //     orderHistoryStatus : "PAYMENT_COMPLETE",
+    //     orderedAt : "2024-04-29 11:53"
+    // },
 
 ];
 
