@@ -744,6 +744,9 @@ video {
 .top-25{
     top: 6.25rem !important;
 }
+.top-50{
+  top: 13rem !important;
+}
 .top-3{
   top: 0.75rem !important;
 }
@@ -2474,6 +2477,9 @@ video {
 }
 .text-white\/70{
   color: rgb(255 255 255 / 0.7) !important;
+}
+.text-white\/85{
+  color: rgb(255 255 255 / 0.85) !important;
 }
 .text-yellow-500{
   --tw-text-opacity: 1 !important;

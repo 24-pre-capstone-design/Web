@@ -96,7 +96,7 @@ export default function OrderList(){
                                         <th>주문시각</th>
                                     </tr>
                                 </thead>
-                                <tbody className="text-gray-400">
+                                <tbody className="text-white/85">
                                 {
                                     orderItem.map((item, index) => {
                                         return (
