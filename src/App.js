@@ -5,9 +5,7 @@ import OrderPage from "./pages/OrderPage";
 import Login from "./pages/Login";
 import MenuList from "./pages/MenuList";
 import FindPassword from "./pages/FindPassword";
-import {useCookies} from "react-cookie";
-import MyPage from "./pages/MyPage";
-
+    
 export default function App() {
 
     const accessToken = useCookies(['accessToken']);
