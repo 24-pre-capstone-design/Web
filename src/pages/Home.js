@@ -217,7 +217,9 @@ export default function Home() {
 
                     </section>
 
-                <Footer/>
+                    <div className="relative top-20">
+                        <Footer/>
+                    </div>
 
                 </main>
             </div>
