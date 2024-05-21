@@ -1,13 +1,22 @@
 import React, {useState} from "react"
 import Sidebar from "../components/sidebar";
 import Topnav from "../components/topnav";
-import {employeeData} from "../data/data"
+import {employeeData, employeeStatus, orderHistoryStatus} from "../data/data"
 import Pagenation from "../components/Pagenation";
 import Footer from "../components/Footer";
+import Info from "../components/alert/Info";
 
 export default function EmployeeList(){
 
     const [toggle, setToggle] = useState(true);
+    const [telVisibleIndex, setTelVisibleIndex] = useState(null);
+
+    const showTel = (index) => {
+        setTelVisibleIndex(index);
+        setTimeout(() => {
+            setTelVisibleIndex(null);
+        }, 10000);
+    }
 
     return(
         <>
@@ -19,7 +28,9 @@ export default function EmployeeList(){
                     <div className="relative top-6 mx-10 flex items-center justify-between">
                         <h3 className="text-4xl text-white font-bold">직원 관리</h3>
 
-                        <div>
+                        <div className="flex items-center">
+                            <button className="btn btn-neutral">직원 추가하기</button>
+                            <button className="btn btn-neutral text-error mx-2">직원 삭제하기</button>
                             <label className="input input-bordered flex items-center gap-2 mx-0.5 bg-neutral text-gray-50 border border-white/10">
                                 <input
                                     type="text"
@@ -37,9 +48,11 @@ export default function EmployeeList(){
 
                         <div className="flex items-center justify-between">
                             <select className="select select-bordered select-sm w-36 max-w-xs mx-2 bg-neutral text-gray-50 border border-white/10">
-                                <option selected>전체</option>
+                                <option selected>상태 전체</option>
                                 <option>근무중</option>
-                                <option>==</option>
+                                <option>오프</option>
+                                <option>휴가</option>
+                                <option>대리근무</option>
                             </select>
                             <select className="select select-bordered select-sm w-28 max-w-xs mx-2 bg-neutral text-gray-50 border border-white/10">
                                 <option selected>15개</option>
@@ -65,9 +78,24 @@ export default function EmployeeList(){
                                         <tr key={index} className={`border-b border-gray-800 ${index%2===0 ? 'bg-gray-800/30' : ''}`}>
                                             <td>{index+1}</td>
                                             <td>{item.name}</td>
-                                            <td>{item.phoneNumber}</td>
+                                            <td>
+                                                {
+                                                    telVisibleIndex === index ? item.phoneNumber :
+                                                        <>
+                                                            <button
+                                                                className="btn btn-xs btn-active"
+                                                                onClick={()=>showTel(index)}>전화번호 보기</button>
+                                                        </>
+                                                }
+                                            </td>
                                             <td>{item.workDate}</td>
-                                            <td>{item.status}</td>
+                                            <td>{
+                                                employeeStatus.map((status, index) => {
+                                                    if (status.value === item.status) {
+                                                        return status.label
+                                                    }
+                                                })
+                                            }</td>
                                         </tr>
                                     ))
                                 }
