@@ -413,3 +413,93 @@ export const orderData = [
     },
 
 ];
+
+export const orderHistoryStatus = [
+    {
+        value : "NEW",
+        label : "신규주문"
+    },
+    {
+        value : "COOKING",
+        label : "조리중"
+    },
+    {
+        value : "COOKING_COMPLETE",
+        label : "조리완료"
+    },
+    {
+        value : "PAYMENT_COMPLETE",
+        label : "결제완료"
+    }
+]
+
+export const saleData = [
+    {
+        id : 1,
+        order : 37,
+        sale : 4432100,
+        date : "2024-05-14"
+    },
+    {
+        id : 2,
+        order : 32,
+        sale : 3132100,
+        date : "2024-05-13"
+    },
+    {
+        id : 3,
+        order : 45,
+        sale : 5125000,
+        date : "2024-05-12"
+    },
+    {
+        id : 4,
+        order : 29,
+        sale : 3028900,
+        date : "2024-05-11"
+    },
+    {
+        id : 5,
+        order : 60,
+        sale : 7598000,
+        date : "2024-05-10"
+    }
+];
+
+export const notificationData = [
+    {
+        id: 12,
+        title: "새 주문이 도착했습니다.",
+        content: "주문 ID: 12, 상품: 모듬생선구이, 수량: 3; 상품: 육회비빔밥, 수량: 5; 상품: 갈비탕, 수량: 1; ",
+        createdAt: "2024-05-19 22:38:55",
+        read: true
+    },
+    {
+        id: 11,
+        title: "새 주문이 도착했습니다.",
+        content: "주문 ID: 11, 상품: 모듬생선구이, 수량: 5; 상품: 갈비탕, 수량: 1; 상품: 된장찌개, 수량: 6; ",
+        createdAt: "2024-05-19 22:38:53",
+        read: true
+    },
+    {
+        id: 10,
+        title: "새 주문이 도착했습니다.",
+        content: "주문 ID: 10, 상품: 김치찌개, 수량: 4; 상품: 모듬생선구이, 수량: 5; 상품: 갈비탕, 수량: 3; ",
+        createdAt: "2024-05-19 22:38:51",
+        read: true
+    },
+    {
+        id: 9,
+        title: "새 주문이 도착했습니다.",
+        content: "주문 ID: 9, 상품: 미역국, 수량: 6; 상품: 갈비탕, 수량: 1; 상품: 모듬생선구이, 수량: 2; ",
+        createdAt: "2024-05-19 22:38:48",
+        read: true
+    },
+    {
+        id: 8,
+        title: "새 주문이 도착했습니다.",
+        content: "주문 ID: 8, 상품: 갈비탕, 수량: 10; 상품: 설렁탕, 수량: 5; 상품: 모듬생선구이, 수량: 1; ",
+        createdAt: "2024-05-19 22:38:46",
+        read: true
+    },
+];
