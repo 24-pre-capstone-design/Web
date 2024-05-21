@@ -431,6 +431,25 @@ export const orderHistoryStatus = [
         value : "PAYMENT_COMPLETE",
         label : "결제완료"
     }
+];
+
+export const employeeStatus = [
+    {
+        value : "WORKING",
+        label : "근무중"
+    },
+    {
+        value : "OFF_WORK",
+        label : "오프"
+    },
+    {
+        value : "VACATION",
+        label : "휴가"
+    },
+    {
+        value : "ASSISTANT_MANAGER_ATTENDANCE",
+        label : "대리근무"
+    }
 ]
 
 export const saleData = [
@@ -502,4 +521,134 @@ export const notificationData = [
         createdAt: "2024-05-19 22:38:46",
         read: true
     },
+];
+
+export const employeeData = [
+    {
+        id: 4,
+        name: "석해현",
+        phoneNumber: "010-1111-1111",
+        workDate: "월화수",
+        status: "WORKING"
+    },
+    {
+        id: 5,
+        name: "석해현",
+        phoneNumber: "010-1111-1111",
+        workDate: "월화수",
+        status: "WORKING"
+    },
+    {
+        id: 6,
+        name: "석해현",
+        phoneNumber: "010-1111-1111",
+        workDate: "월화수",
+        status: "WORKING"
+    },
+    {
+        id: 7,
+        name: "석해현",
+        phoneNumber: "010-1111-1111",
+        workDate: "월화수",
+        status: "WORKING"
+    },
+    {
+        id: 8,
+        name: "석해현",
+        phoneNumber: "010-1111-1111",
+        workDate: "월화수",
+        status: "WORKING"
+    },
+    {
+        id: 9,
+        name: "석해현",
+        phoneNumber: "010-1111-1111",
+        workDate: "월화수",
+        status: "WORKING"
+    },
+    {
+        id: 10,
+        name: "석해현",
+        phoneNumber: "010-1111-1111",
+        workDate: "월화수",
+        status: "WORKING"
+    },
+    {
+        id: 11,
+        name: "석해현",
+        phoneNumber: "010-1111-1111",
+        workDate: "월화수",
+        status: "WORKING"
+    },
+    {
+        id: 12,
+        name: "석해현",
+        phoneNumber: "010-1111-1111",
+        workDate: "월화수",
+        status: "WORKING"
+    },
+    {
+        id: 13,
+        name: "석해현",
+        phoneNumber: "010-1111-1111",
+        workDate: "월화수",
+        status: "WORKING"
+    },
+    {
+        id: 14,
+        name: "석해현",
+        phoneNumber: "010-1111-1111",
+        workDate: "월화수",
+        status: "WORKING"
+    },
+    {
+        id: 15,
+        name: "석해현",
+        phoneNumber: "010-1111-1111",
+        workDate: "월화수",
+        status: "WORKING"
+    },
+    {
+        id: 16,
+        name: "석해현",
+        phoneNumber: "010-1111-1111",
+        workDate: "월화수",
+        status: "WORKING"
+    },
+    {
+        id: 17,
+        name: "석해현",
+        phoneNumber: "010-1111-1111",
+        workDate: "월화수",
+        status: "WORKING"
+    },
+    {
+        id: 18,
+        name: "석해현",
+        phoneNumber: "010-1111-1111",
+        workDate: "월화수",
+        status: "WORKING"
+    },
+    {
+        id: 19,
+        name: "석해현",
+        phoneNumber: "010-1111-1111",
+        workDate: "월화수",
+        status: "WORKING"
+    },
+    {
+        id: 20,
+        name: "석해현",
+        phoneNumber: "010-1111-1111",
+        workDate: "월화수",
+        status: "WORKING"
+    },
+    {
+        id: 21,
+        name: "석해현",
+        phoneNumber: "010-1111-1111",
+        workDate: "월화수",
+        status: "WORKING"
+    }
+
 ];

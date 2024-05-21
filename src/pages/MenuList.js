@@ -38,20 +38,20 @@ export default function MenuList() {
                     <div className="relative top-6 mx-10 flex items-center justify-between">
                         <h3 className="text-4xl text-white font-bold">상품 및 메뉴 관리</h3>
 
-                        <div className="flex items-center mx-10">
-                            <button className="btn text-primary" onClick={()=>document.getElementById('editModal').showModal()}>메뉴 추가하기</button>
+                        <div className="flex items-center mx-2">
+                            <button className="btn btn-neutral" onClick={()=>document.getElementById('editModal').showModal()}>메뉴 추가하기</button>
                             {
                                 checkboxShow ?
                                     <div className="mx-2">
                                         <button className="btn btn-error mx-0.5" onClick={()=>document.getElementById('deleteModal').showModal()}><FaTrashAlt /></button>
-                                        <button className="btn text-red-600 mx-0.5" onClick={() => setCheckboxShow(false)}><GrPowerReset /></button>
+                                        <button className="btn btn-neutral text-error mx-0.5" onClick={() => setCheckboxShow(false)}><GrPowerReset /></button>
                                     </div>
                                     :
-                                    <button className="btn text-red-600 mx-2" onClick={() => setCheckboxShow(true)}>선택 삭제</button>
+                                    <button className="btn btn-neutral text-error mx-2" onClick={() => setCheckboxShow(true)}>선택 삭제</button>
 
                             }
                             <select
-                                className="select select-bordered w-36 max-w-xs mx-2"
+                                className="select select-bordered bg-neutral text-white w-36 max-w-xs mx-2"
                                 value={selectedCategory}
                                 onChange={(e) => setSelectedCategory(e.target.value)}
                             >
@@ -63,12 +63,12 @@ export default function MenuList() {
                                 }
                                 <option value="new">--카테고리 추가--</option>
                             </select>
-                            <label className="input input-bordered flex items-center gap-2">
+                            <label className="input input-bordered flex items-center gap-2 mx-0.5 bg-neutral text-gray-50 border border-white/10">
                                 <input
                                     type="text"
                                     className="grow w-28"
                                     placeholder="Search"
-                                    />
+                                />
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" className="w-4 h-4 opacity-70">
                                     <path fillRule="evenodd" d="M9.965 11.026a5 5 0 1 1 1.06-1.06l2.755 2.754a.75.75 0 1 1-1.06 1.06l-2.755-2.754ZM10.5 7a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0Z" clipRule="evenodd" />
                                 </svg>
