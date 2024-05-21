@@ -136,8 +136,9 @@ export default function MenuList() {
                         <NewCategory />
                     </dialog>
 
-                    <Footer />
-
+                    <div className="relative top-20">
+                        <Footer/>
+                    </div>
                 </main>
             </div>
         </>

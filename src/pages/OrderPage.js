@@ -124,7 +124,9 @@ export default function OrderPage(){
                         <Pagenation />
                     </section>
 
-                    <Footer />
+                    <div className="relative top-20">
+                        <Footer/>
+                    </div>
 
                 </main>
             </div>
