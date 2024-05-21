@@ -666,6 +666,9 @@ video {
 .bottom-20{
   bottom: 5rem !important;
 }
+.bottom-0{
+  bottom: 0 !important;
+}
 .bottom-3{
   bottom: 0.75rem !important;
 }
