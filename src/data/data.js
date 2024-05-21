@@ -431,6 +431,25 @@ export const orderHistoryStatus = [
         value : "PAYMENT_COMPLETE",
         label : "결제완료"
     }
+];
+
+export const employeeStatus = [
+    {
+        value : "WORKING",
+        label : "근무중"
+    },
+    {
+        value : "OFF_WORK",
+        label : "오프"
+    },
+    {
+        value : "VACATION",
+        label : "휴가"
+    },
+    {
+        value : "ASSISTANT_MANAGER_ATTENDANCE",
+        label : "대리근무"
+    }
 ]
 
 export const saleData = [
