@@ -1,21 +1,27 @@
 import React, {useState} from "react"
 import Sidebar from "../components/sidebar";
 import Topnav from "../components/topnav";
-import {employeeData, employeeStatus, orderHistoryStatus} from "../data/data"
+import {employeeData, employeeStatus} from "../data/data"
 import Pagenation from "../components/Pagenation";
 import Footer from "../components/Footer";
-import Info from "../components/alert/Info";
+import EditEmployee from "../components/modal/EditEmployee";
 
 export default function EmployeeList(){
 
     const [toggle, setToggle] = useState(true);
     const [telVisibleIndex, setTelVisibleIndex] = useState(null);
+    const [employee, setEmployee] = useState({});
 
     const showTel = (index) => {
         setTelVisibleIndex(index);
         setTimeout(() => {
             setTelVisibleIndex(null);
         }, 10000);
+    }
+
+    const updateEmployee = (item) => {
+        setEmployee(item);
+        document.getElementById("updateEmployee").showModal();
     }
 
     return(
@@ -29,7 +35,7 @@ export default function EmployeeList(){
                         <h3 className="text-4xl text-white font-bold">직원 관리</h3>
 
                         <div className="flex items-center">
-                            <button className="btn btn-neutral">직원 추가하기</button>
+                            <button className="btn btn-neutral" onClick={()=>document.getElementById('editEmployee').showModal()}>직원 추가하기</button>
                             <button className="btn btn-neutral text-error mx-2">직원 삭제하기</button>
                             <label className="input input-bordered flex items-center gap-2 mx-0.5 bg-neutral text-gray-50 border border-white/10">
                                 <input
@@ -64,46 +70,59 @@ export default function EmployeeList(){
                         <div className="overflow-x-auto p-2">
                             <table className="table text-center mt-2">
                                 <thead>
-                                <tr className="h-10 border-t border-gray-400 text-gray-50">
+                                <tr className="h-11 border-t border-gray-400 text-gray-50 text-[14px]">
                                     <th>번호</th>
                                     <th>이름</th>
                                     <th>전화번호</th>
                                     <th>근무요일</th>
-                                    <th>상태</th>
+                                    <th>근무상태</th>
+                                    <th>직원 수정</th>
                                 </tr>
                                 </thead>
                                 <tbody className="text-white/85">
                                 {
-                                    employeeData.map((item, index) => (
-                                        <tr key={index} className={`border-b border-gray-800 ${index%2===0 ? 'bg-gray-800/30' : ''}`}>
-                                            <td>{index+1}</td>
-                                            <td>{item.name}</td>
-                                            <td>
-                                                {
-                                                    telVisibleIndex === index ? item.phoneNumber :
-                                                        <>
-                                                            <button
-                                                                className="btn btn-xs btn-active"
-                                                                onClick={()=>showTel(index)}>전화번호 보기</button>
-                                                        </>
-                                                }
-                                            </td>
-                                            <td>{item.workDate}</td>
-                                            <td>{
-                                                employeeStatus.map((status, index) => {
-                                                    if (status.value === item.status) {
-                                                        return status.label
+                                    employeeData.map((item, index) => {
+                                        return (
+                                            <tr key={index} className={`border-b border-gray-800 ${index%2===0 ? 'bg-gray-800/30' : ''}`}>
+                                                <td>{index+1}</td>
+                                                <td>{item.name}</td>
+                                                <td>
+                                                    {
+                                                        telVisibleIndex === index ? item.phoneNumber :
+                                                            <>
+                                                                <button
+                                                                    className="btn btn-xs btn-active"
+                                                                    onClick={()=>showTel(index)}>전화번호 보기</button>
+                                                            </>
                                                     }
-                                                })
-                                            }</td>
-                                        </tr>
-                                    ))
+                                                </td>
+                                                <td>{item.workDate}</td>
+                                                <td>{
+                                                    employeeStatus.map((status, index) => {
+                                                        if (status.value === item.status) {
+                                                            return status.label
+                                                        }
+                                                    })
+                                                }</td>
+                                                <td>
+                                                    <button className="btn btn-xs btn-success" onClick={()=>updateEmployee(item)}>수정</button>
+                                                </td>
+                                            </tr>
+                                    )})
                                 }
                                 </tbody>
                             </table>
                         </div>
                         <Pagenation />
                     </section>
+
+                    <dialog id="updateEmployee" className="modal">
+                        <EditEmployee item={employee} />
+                    </dialog>
+
+                    <dialog id="editEmployee" className="modal">
+                        <EditEmployee />
+                    </dialog>
 
                     <div className="relative top-20">
                         <Footer/>
