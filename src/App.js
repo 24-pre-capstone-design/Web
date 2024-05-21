@@ -8,6 +8,7 @@ import MenuList from "./pages/MenuList";
 import FindPassword from "./pages/FindPassword";
 import {useCookies} from "react-cookie";
 import MyPage from "./pages/MyPage";
+import EmployeeList from "./pages/EmplyeeList";
 
 export default function App() {
 
@@ -23,6 +24,7 @@ export default function App() {
                             <Route path="/order" element={<OrderList/>}/>
                             <Route path="/menu" element={<MenuList />} />
                             <Route path="/my" element={<MyPage />} />
+                            <Route path="employee" element={<EmployeeList />} />
                         </>
                         :
                         <>

@@ -5,7 +5,7 @@ import {Link, useLocation} from "react-router-dom";
 import SimpleBarReact from "simplebar-react";
 import 'simplebar-react/dist/simplebar.min.css';
 
-import {AiOutlineAppstore, AiOutlineLineChart, FaBell, TbHandFinger, IoMdPerson} from '../assets/icons/vander'
+import {AiOutlineAppstore, AiOutlineLineChart, FaBell, TbHandFinger, IoMdPerson, FaPeopleCarry} from '../assets/icons/vander'
 import logo from "../assets/images/logo/logo_without_background_long.png";
 
 export default function Sidebar(){
@@ -34,6 +34,10 @@ export default function Sidebar(){
 
                     <li>
                         <Link to="/my" className="text-gray-400 text-xl py-5"><IoMdPerson className="me-3 icon"/>마이페이지</Link>
+                    </li>
+
+                    <li>
+                        <Link to="/employee" className="text-gray-400 text-xl py-5"><FaPeopleCarry className="me-3 icon"/>직원 관리</Link>
                     </li>
 
                     <li>
