@@ -73,7 +73,7 @@ export default function MyPage(){
                         <div className="divider divider-neutral mt-8 mb-3"></div>
 
                         <div className="grid grid-cols-1 md:grid-cols-12 lg:grid-cols-12 gap-10">
-                            <div className="overflow-x-auto mx-2 md:col-span-4 lg:col-span-4">
+                            <div className="overflow-x-auto mx-2 md:col-span-3 lg:col-span-3">
                                 <div className="flex items-center">
                                     <h3 className="text-xl text-white font-bold m-2">내 정보</h3>
                                 </div>
@@ -97,7 +97,7 @@ export default function MyPage(){
                                         onClick={() => document.getElementById('editOwnerInfo').showModal()}>내 정보 수정</button>
                             </div>
 
-                            <div className="overflow-x-auto mx-2 md:col-span-8 lg:col-span-8">
+                            <div className="overflow-x-auto mx-2 md:col-span-9 lg:col-span-9">
                                 <div className="flex items-center justify-between">
                                     <h3 className="text-xl text-white font-bold m-2">최근 알림 내역</h3>
                                     <Link to="/menu" className="link mx-2 text-gray-400">알림 더보기</Link>
@@ -130,6 +130,7 @@ export default function MyPage(){
                             </div>
 
                         </div>
+
                     </section>
 
                     <dialog id="deleteAccountModal" className="modal">
@@ -144,7 +145,7 @@ export default function MyPage(){
                         <UpdatePassword />
                     </dialog>
 
-                    <div className="relative top-50">
+                    <div className="relative top-75">
                         <Footer/>
                     </div>
                 </main>
