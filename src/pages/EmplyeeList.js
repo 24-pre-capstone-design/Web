@@ -6,6 +6,7 @@ import Pagenation from "../components/Pagenation";
 import Footer from "../components/Footer";
 import EditEmployee from "../components/modal/EditEmployee";
 import {FaTrashAlt, GrPowerReset} from "../assets/icons/vander";
+import Info from "../components/alert/Info";
 
 export default function EmployeeList(){
 
@@ -13,11 +14,14 @@ export default function EmployeeList(){
     const [telVisibleIndex, setTelVisibleIndex] = useState(null);
     const [employee, setEmployee] = useState({});
     const [checkboxShow, setCheckboxShow] = useState(false);
+    const [message, setMessage] = useState(null);
 
     const showTel = (index) => {
         setTelVisibleIndex(index);
+        setMessage("전화번호는 10초간 보여집니다.");
         setTimeout(() => {
             setTelVisibleIndex(null);
+            setMessage(null);
         }, 10000);
     }
 
@@ -32,6 +36,12 @@ export default function EmployeeList(){
                 <Sidebar/>
                 <main className="page-content h-screen">
                     <Topnav toggle={toggle} setToggle={setToggle}/>
+
+                    <div className="flex items-center justify-center mx-10">
+                        <div className={`fixed top-20 ${!message ? 'hidden' : ''}`}>
+                            <Info message={message} />
+                        </div>
+                    </div>
 
                     <div className="relative top-6 mx-10 flex items-center justify-between">
                         <h3 className="text-4xl text-white font-bold">직원 관리</h3>
