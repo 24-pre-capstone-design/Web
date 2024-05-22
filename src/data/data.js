@@ -523,6 +523,121 @@ export const notificationData = [
     },
 ];
 
+export const notificationAllData = [
+    {
+        id: 28,
+        title: "새 주문이 도착했습니다.",
+        content: "주문 ID: 28, 상품: 김치찌개, 수량: 1; ",
+        createdAt: "2024-05-21 13:14:22",
+        read: true
+    },
+    {
+        id: 27,
+        title: "새 주문이 도착했습니다.",
+        content: "주문 ID: 27, 상품: 낙지볶음, 수량: 1; ",
+        createdAt: "2024-05-21 13:14:14",
+        read: true
+    },
+    {
+        id: 26,
+        title: "새 주문이 도착했습니다.",
+        content: "주문 ID: 26, 상품: 육회비빔밥, 수량: 1; ",
+        createdAt: "2024-05-21 13:13:21",
+        read: true
+    },
+    {
+        id: 25,
+        title: "새 주문이 도착했습니다.",
+        content: "주문 ID: 25, 상품: 야채비빔밥, 수량: 1; ",
+        createdAt: "2024-05-21 13:13:15",
+        read: true
+    },
+    {
+        id: 24,
+        title: "새 주문이 도착했습니다.",
+        content: "주문 ID: 24, 상품: 설렁탕, 수량: 1; ",
+        createdAt: "2024-05-21 13:06:21",
+        read: true
+    },
+    {
+        id: 23,
+        title: "새 주문이 도착했습니다.",
+        content: "주문 ID: 23, 상품: 야채비빔밥, 수량: 1; ",
+        createdAt: "2024-05-21 13:06:11",
+        read: true
+    },
+    {
+        id: 22,
+        title: "새 주문이 도착했습니다.",
+        content: "주문 ID: 22, 상품: 미역국, 수량: 1; ",
+        createdAt: "2024-05-21 11:40:57",
+        read: true
+    },
+    {
+        id: 21,
+        title: "새 주문이 도착했습니다.",
+        content: "주문 ID: 21, 상품: 육회비빔밥, 수량: 1; 상품: 야채비빔밥, 수량: 1; 상품: 오리훈제구이, 수량: 1; ",
+        createdAt: "2024-05-21 11:31:02",
+        read: true
+    },
+    {
+        id: 20,
+        title: "새 주문이 도착했습니다.",
+        content: "주문 ID: 20, 상품: 된장찌개, 수량: 1; ",
+        createdAt: "2024-05-21 11:29:54",
+        read: true
+    },
+    {
+        id: 19,
+        title: "새 주문이 도착했습니다.",
+        content: "주문 ID: 19, 상품: 육회비빔밥, 수량: 1; ",
+        createdAt: "2024-05-21 11:22:52",
+        read: true
+    },
+    {
+        id: 18,
+        title: "새 주문이 도착했습니다.",
+        content: "주문 ID: 18, 상품: 된장찌개, 수량: 1; ",
+        createdAt: "2024-05-21 11:19:18",
+        read: true
+    },
+    {
+        id: 17,
+        title: "새 주문이 도착했습니다.",
+        content: "주문 ID: 17, 상품: 된장찌개, 수량: 1; ",
+        createdAt: "2024-05-21 11:15:56",
+        read: true
+    },
+    {
+        id: 16,
+        title: "새 주문이 도착했습니다.",
+        content: "주문 ID: 16, 상품: 닭갈비, 수량: 1; ",
+        createdAt: "2024-05-21 11:10:30",
+        read: true
+    },
+    {
+        id: 15,
+        title: "새 주문이 도착했습니다.",
+        content: "주문 ID: 15, 상품: 비빔냉면, 수량: 1; ",
+        createdAt: "2024-05-21 11:05:22",
+        read: true
+    },
+    {
+        id: 14,
+        title: "새 주문이 도착했습니다.",
+        content: "주문 ID: 14, 상품: 갈비탕, 수량: 1; ",
+        createdAt: "2024-05-21 11:00:15",
+        read: true
+    },
+    {
+        id: 13,
+        title: "새 주문이 도착했습니다.",
+        content: "주문 ID: 13, 상품: 불고기, 수량: 1; ",
+        createdAt: "2024-05-21 10:55:44",
+        read: true
+    }
+];
+
 export const employeeData = [
     {
         id: 4,

@@ -9,6 +9,7 @@ import FindPassword from "./pages/FindPassword";
 import {useCookies} from "react-cookie";
 import MyPage from "./pages/MyPage";
 import EmployeeList from "./pages/EmplyeeList";
+import NotificationList from "./pages/NotificationList";
 
 export default function App() {
 
@@ -25,6 +26,7 @@ export default function App() {
                             <Route path="/menu" element={<MenuList />} />
                             <Route path="/my" element={<MyPage />} />
                             <Route path="employee" element={<EmployeeList />} />
+                            <Route path="/notification" element={<NotificationList />} />
                         </>
                         :
                         <>
