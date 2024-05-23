@@ -2,7 +2,7 @@ import React, {useState} from "react"
 import Sidebar from "../components/sidebar";
 import Topnav from "../components/topnav";
 import {employeeData, employeeStatus} from "../data/data"
-import Pagenation from "../components/Pagenation";
+import Pagenation from "../components/widgets/Pagenation";
 import Footer from "../components/Footer";
 import EditEmployee from "../components/modal/EditEmployee";
 import Info from "../components/alert/Info";

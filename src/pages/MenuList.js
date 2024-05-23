@@ -2,7 +2,7 @@ import Sidebar from "../components/sidebar";
 import Topnav from "../components/topnav";
 import React, {useEffect, useState} from "react";
 import {category, menuData} from "../data/data.js";
-import Pagenation from "../components/Pagenation";
+import Pagenation from "../components/widgets/Pagenation";
 import {FaTrashAlt, GrPowerReset} from '../assets/icons/vander'
 import EditMenu from "../components/modal/EditMenu";
 import NewCategory from "../components/modal/NewCategory";

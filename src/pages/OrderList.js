@@ -2,7 +2,7 @@ import React, {useEffect, useState} from "react"
 import Sidebar from "../components/sidebar";
 import Topnav from "../components/topnav";
 import {orderData, orderHistoryStatus} from "../data/data"
-import Pagenation from "../components/Pagenation";
+import Pagenation from "../components/widgets/Pagenation";
 import Footer from "../components/Footer";
 import PageTitle from "../components/widgets/PageTitle";
 
