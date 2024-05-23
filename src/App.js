@@ -10,6 +10,7 @@ import {useCookies} from "react-cookie";
 import MyPage from "./pages/MyPage";
 import EmployeeList from "./pages/EmplyeeList";
 import NotificationList from "./pages/NotificationList";
+import Analysis from "./pages/Analysis";
 
 export default function App() {
 
@@ -27,6 +28,7 @@ export default function App() {
                             <Route path="/my" element={<MyPage />} />
                             <Route path="employee" element={<EmployeeList />} />
                             <Route path="/notification" element={<NotificationList />} />
+                            <Route path="/analysis" element={<Analysis />} />
                         </>
                         :
                         <>

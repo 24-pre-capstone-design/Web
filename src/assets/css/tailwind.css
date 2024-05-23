@@ -932,6 +932,9 @@ video {
 .mb-8{
   margin-bottom: 2rem !important;
 }
+.mb-10{
+  margin-bottom: 2.5rem !important;
+}
 .me-1{
   -webkit-margin-end: 0.25rem !important;
           margin-inline-end: 0.25rem !important;
@@ -1990,6 +1993,9 @@ video {
 }
 .bg-white\/70{
   background-color: rgb(255 255 255 / 0.7) !important;
+}
+.bg-white\/90{
+  background-color: rgb(255 255 255 / 0.9) !important;
 }
 .bg-yellow-500{
   --tw-bg-opacity: 1 !important;
