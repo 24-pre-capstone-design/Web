@@ -6,7 +6,7 @@ import {TbTilde} from "../assets/icons/vander.js";
 import Pagenation from "../components/Pagenation";
 import Footer from "../components/Footer";
 
-export default function OrderPage(){
+export default function OrderList(){
 
     const [toggle, setToggle] = useState(true);
     const [orderItem, setOrderItem] = useState([]);
@@ -84,9 +84,9 @@ export default function OrderPage(){
 
                         </div>
                         <div className="overflow-x-auto p-2">
-                            <table className="table table-xs bg-neutral text-center text-white">
+                            <table className="table text-center mt-2">
                                 <thead>
-                                    <tr className="h-10 border border-slate-900 text-gray-50">
+                                    <tr className="h-10 border-t border-gray-400 text-gray-50">
                                         <th>번호</th>
                                         <th>결제아이디</th>
                                         <th>메뉴</th>
@@ -96,11 +96,11 @@ export default function OrderPage(){
                                         <th>주문시각</th>
                                     </tr>
                                 </thead>
-                                <tbody>
+                                <tbody className="text-white/85">
                                 {
                                     orderItem.map((item, index) => {
                                         return (
-                                            <tr key={index} className={`border border-slate-900 ${index%2===0 ? 'bg-slate-800' : 'bg-gray-600'}`}>
+                                            <tr key={index} className={`border-b border-gray-800 ${index%2===0 ? 'bg-gray-800/30' : ''}`}>
                                                 <td>{item.id}</td>
                                                 <td>{item.paymentId}</td>
                                                 <td>{item.foodName}</td>

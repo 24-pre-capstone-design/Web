@@ -22,7 +22,7 @@ export default function Home() {
     }, []);
 
     const formatPrice = (price) => {
-        return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + " ₩";
+        return "₩ " +  price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     };
 
     const settings = {
@@ -131,7 +131,7 @@ export default function Home() {
                                         <th>주문시각</th>
                                     </tr>
                                     </thead>
-                                    <tbody>
+                                    <tbody className="text-white/70">
                                     {
                                         orderItem5.map((order, index) => (
 
@@ -168,7 +168,7 @@ export default function Home() {
                                         <th>날짜</th>
                                     </tr>
                                     </thead>
-                                    <tbody>
+                                    <tbody className="text-white/70">
                                     {
                                         saleData.map((sale, index) => (
 

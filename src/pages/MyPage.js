@@ -43,7 +43,7 @@ export default function MyPage(){
 
                     </div>
 
-                    <section className="relative top-6 mt-3 mb-8 mx-6">
+                    <section className="relative top-6 mt-3 mx-6">
 
                         <div data-theme="light" className="stats shadow mt-6 mx-2 py-4 px-3">
                             <div className="stat">
@@ -73,11 +73,11 @@ export default function MyPage(){
                         <div className="divider divider-neutral mt-8 mb-3"></div>
 
                         <div className="grid grid-cols-1 md:grid-cols-12 lg:grid-cols-12 gap-10">
-                            <div className="overflow-x-auto mx-2 md:col-span-4 lg:col-span-4">
+                            <div className="overflow-x-auto mx-2 md:col-span-3 lg:col-span-3">
                                 <div className="flex items-center">
                                     <h3 className="text-xl text-white font-bold m-2">내 정보</h3>
                                 </div>
-                                <table className="table text-gray-400">
+                                <table className="table text-white/85">
                                     <tbody>
                                         <tr>
                                             <td>아이디</td>
@@ -97,14 +97,14 @@ export default function MyPage(){
                                         onClick={() => document.getElementById('editOwnerInfo').showModal()}>내 정보 수정</button>
                             </div>
 
-                            <div className="overflow-x-auto mx-2 md:col-span-8 lg:col-span-8">
+                            <div className="overflow-x-auto mx-2 md:col-span-9 lg:col-span-9">
                                 <div className="flex items-center justify-between">
                                     <h3 className="text-xl text-white font-bold m-2">최근 알림 내역</h3>
                                     <Link to="/menu" className="link mx-2 text-gray-400">알림 더보기</Link>
                                 </div>
                                 <table className="table text-gray-400 table-b">
                                     {/* head */}
-                                    <thead className="text-gray-400">
+                                    <thead className="text-white">
                                     <tr className="border-none">
                                         <th></th>
                                         <th>제목</th>
@@ -112,7 +112,7 @@ export default function MyPage(){
                                         <th>생성시각</th>
                                     </tr>
                                     </thead>
-                                    <tbody>
+                                    <tbody className="text-white/85">
                                     {
                                         notificationData.map((data, index) => {
                                             return (
@@ -130,6 +130,7 @@ export default function MyPage(){
                             </div>
 
                         </div>
+
                     </section>
 
                     <dialog id="deleteAccountModal" className="modal">
@@ -144,7 +145,9 @@ export default function MyPage(){
                         <UpdatePassword />
                     </dialog>
 
-                    <Footer/>
+                    <div className="relative top-75">
+                        <Footer/>
+                    </div>
                 </main>
             </div>
         </>

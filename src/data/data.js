@@ -6,6 +6,7 @@ import 깐풍기 from "../assets/images/food/깐풍기.png";
 import 짜장밥 from "../assets/images/food/짜장밥.png";
 import 짬뽕밥 from "../assets/images/food/짬뽕밥.png";
 import 간짜장 from "../assets/images/food/간짜장.png";
+import React from "react";
 
 export const test = "test data";
 
@@ -276,141 +277,141 @@ export const orderData = [
         orderHistoryStatus : "PAYMENT_COMPLETE",
         orderedAt : "2024-04-29 11:38"
     },
-    {
-        id : 16,
-        paymentId : 10,
-        foodName : "초밥세트",
-        quantity : 1,
-        sumOfCost : 28000,
-        orderHistoryStatus : "NEW",
-        orderedAt : "2024-04-29 11:39"
-    },
-    {
-        id : 17,
-        paymentId : 10,
-        foodName : "우동",
-        quantity : 2,
-        sumOfCost : 15000,
-        orderHistoryStatus : "NEW",
-        orderedAt : "2024-04-29 11:40"
-    },
-    {
-        id : 18,
-        paymentId : 11,
-        foodName : "피자",
-        quantity : 1,
-        sumOfCost : 20000,
-        orderHistoryStatus : "NEW",
-        orderedAt : "2024-04-29 11:41"
-    },
-    {
-        id : 19,
-        paymentId : 11,
-        foodName : "파스타",
-        quantity : 2,
-        sumOfCost : 26000,
-        orderHistoryStatus : "NEW",
-        orderedAt : "2024-04-29 11:42"
-    },
-    {
-        id : 20,
-        paymentId : 12,
-        foodName : "스테이크",
-        quantity : 1,
-        sumOfCost : 35000,
-        orderHistoryStatus : "COOKING",
-        orderedAt : "2024-04-29 11:43"
-    },
-    {
-        id : 21,
-        paymentId : 12,
-        foodName : "샐러드",
-        quantity : 1,
-        sumOfCost : 12000,
-        orderHistoryStatus : "COOKING",
-        orderedAt : "2024-04-29 11:44"
-    },
-    {
-        id : 22,
-        paymentId : 13,
-        foodName : "햄버거",
-        quantity : 3,
-        sumOfCost : 33000,
-        orderHistoryStatus : "COOKING",
-        orderedAt : "2024-04-29 11:45"
-    },
-    {
-        id : 23,
-        paymentId : 13,
-        foodName : "핫도그",
-        quantity : 2,
-        sumOfCost : 16000,
-        orderHistoryStatus : "COOKING",
-        orderedAt : "2024-04-29 11:46"
-    },
-    {
-        id : 24,
-        paymentId : 14,
-        foodName : "김밥",
-        quantity : 1,
-        sumOfCost : 5000,
-        orderHistoryStatus : "COOKING_COMPLETE",
-        orderedAt : "2024-04-29 11:47"
-    },
-    {
-        id : 25,
-        paymentId : 15,
-        foodName : "라면",
-        quantity : 2,
-        sumOfCost : 7000,
-        orderHistoryStatus : "COOKING_COMPLETE",
-        orderedAt : "2024-04-29 11:48"
-    },
-    {
-        id : 26,
-        paymentId : 15,
-        foodName : "컵밥",
-        quantity : 1,
-        sumOfCost : 4000,
-        orderHistoryStatus : "COOKING_COMPLETE",
-        orderedAt : "2024-04-29 11:49"
-    },
-    {
-        id : 27,
-        paymentId : 16,
-        foodName : "마라샹궈",
-        quantity : 1,
-        sumOfCost : 18000,
-        orderHistoryStatus : "PAYMENT_COMPLETE",
-        orderedAt : "2024-04-29 11:50"
-    },
-    {
-        id : 28,
-        paymentId : 17,
-        foodName : "타코",
-        quantity : 3,
-        sumOfCost : 21000,
-        orderHistoryStatus : "PAYMENT_COMPLETE",
-        orderedAt : "2024-04-29 11:51"
-    },
-    {
-        id : 29,
-        paymentId : 18,
-        foodName : "삼겹살",
-        quantity : 1,
-        sumOfCost : 25000,
-        orderHistoryStatus : "PAYMENT_COMPLETE",
-        orderedAt : "2024-04-29 11:52"
-    },
-    {
-        id : 30,
-        paymentId : 18,
-        foodName : "불고기",
-        quantity : 1,
-        sumOfCost : 23000,
-        orderHistoryStatus : "PAYMENT_COMPLETE",
-        orderedAt : "2024-04-29 11:53"
-    },
+    // {
+    //     id : 16,
+    //     paymentId : 10,
+    //     foodName : "초밥세트",
+    //     quantity : 1,
+    //     sumOfCost : 28000,
+    //     orderHistoryStatus : "NEW",
+    //     orderedAt : "2024-04-29 11:39"
+    // },
+    // {
+    //     id : 17,
+    //     paymentId : 10,
+    //     foodName : "우동",
+    //     quantity : 2,
+    //     sumOfCost : 15000,
+    //     orderHistoryStatus : "NEW",
+    //     orderedAt : "2024-04-29 11:40"
+    // },
+    // {
+    //     id : 18,
+    //     paymentId : 11,
+    //     foodName : "피자",
+    //     quantity : 1,
+    //     sumOfCost : 20000,
+    //     orderHistoryStatus : "NEW",
+    //     orderedAt : "2024-04-29 11:41"
+    // },
+    // {
+    //     id : 19,
+    //     paymentId : 11,
+    //     foodName : "파스타",
+    //     quantity : 2,
+    //     sumOfCost : 26000,
+    //     orderHistoryStatus : "NEW",
+    //     orderedAt : "2024-04-29 11:42"
+    // },
+    // {
+    //     id : 20,
+    //     paymentId : 12,
+    //     foodName : "스테이크",
+    //     quantity : 1,
+    //     sumOfCost : 35000,
+    //     orderHistoryStatus : "COOKING",
+    //     orderedAt : "2024-04-29 11:43"
+    // },
+    // {
+    //     id : 21,
+    //     paymentId : 12,
+    //     foodName : "샐러드",
+    //     quantity : 1,
+    //     sumOfCost : 12000,
+    //     orderHistoryStatus : "COOKING",
+    //     orderedAt : "2024-04-29 11:44"
+    // },
+    // {
+    //     id : 22,
+    //     paymentId : 13,
+    //     foodName : "햄버거",
+    //     quantity : 3,
+    //     sumOfCost : 33000,
+    //     orderHistoryStatus : "COOKING",
+    //     orderedAt : "2024-04-29 11:45"
+    // },
+    // {
+    //     id : 23,
+    //     paymentId : 13,
+    //     foodName : "핫도그",
+    //     quantity : 2,
+    //     sumOfCost : 16000,
+    //     orderHistoryStatus : "COOKING",
+    //     orderedAt : "2024-04-29 11:46"
+    // },
+    // {
+    //     id : 24,
+    //     paymentId : 14,
+    //     foodName : "김밥",
+    //     quantity : 1,
+    //     sumOfCost : 5000,
+    //     orderHistoryStatus : "COOKING_COMPLETE",
+    //     orderedAt : "2024-04-29 11:47"
+    // },
+    // {
+    //     id : 25,
+    //     paymentId : 15,
+    //     foodName : "라면",
+    //     quantity : 2,
+    //     sumOfCost : 7000,
+    //     orderHistoryStatus : "COOKING_COMPLETE",
+    //     orderedAt : "2024-04-29 11:48"
+    // },
+    // {
+    //     id : 26,
+    //     paymentId : 15,
+    //     foodName : "컵밥",
+    //     quantity : 1,
+    //     sumOfCost : 4000,
+    //     orderHistoryStatus : "COOKING_COMPLETE",
+    //     orderedAt : "2024-04-29 11:49"
+    // },
+    // {
+    //     id : 27,
+    //     paymentId : 16,
+    //     foodName : "마라샹궈",
+    //     quantity : 1,
+    //     sumOfCost : 18000,
+    //     orderHistoryStatus : "PAYMENT_COMPLETE",
+    //     orderedAt : "2024-04-29 11:50"
+    // },
+    // {
+    //     id : 28,
+    //     paymentId : 17,
+    //     foodName : "타코",
+    //     quantity : 3,
+    //     sumOfCost : 21000,
+    //     orderHistoryStatus : "PAYMENT_COMPLETE",
+    //     orderedAt : "2024-04-29 11:51"
+    // },
+    // {
+    //     id : 29,
+    //     paymentId : 18,
+    //     foodName : "삼겹살",
+    //     quantity : 1,
+    //     sumOfCost : 25000,
+    //     orderHistoryStatus : "PAYMENT_COMPLETE",
+    //     orderedAt : "2024-04-29 11:52"
+    // },
+    // {
+    //     id : 30,
+    //     paymentId : 18,
+    //     foodName : "불고기",
+    //     quantity : 1,
+    //     sumOfCost : 23000,
+    //     orderHistoryStatus : "PAYMENT_COMPLETE",
+    //     orderedAt : "2024-04-29 11:53"
+    // },
 
 ];
 
@@ -430,6 +431,25 @@ export const orderHistoryStatus = [
     {
         value : "PAYMENT_COMPLETE",
         label : "결제완료"
+    }
+];
+
+export const employeeStatus = [
+    {
+        value : "WORKING",
+        label : "근무중"
+    },
+    {
+        value : "OFF_WORK",
+        label : "오프"
+    },
+    {
+        value : "VACATION",
+        label : "휴가"
+    },
+    {
+        value : "ASSISTANT_MANAGER_ATTENDANCE",
+        label : "대리근무"
     }
 ]
 
@@ -501,5 +521,374 @@ export const notificationData = [
         content: "주문 ID: 8, 상품: 갈비탕, 수량: 10; 상품: 설렁탕, 수량: 5; 상품: 모듬생선구이, 수량: 1; ",
         createdAt: "2024-05-19 22:38:46",
         read: true
+    },
+];
+
+export const notificationAllData = [
+    {
+        id: 28,
+        title: "새 주문이 도착했습니다.",
+        content: "주문 ID: 28, 상품: 김치찌개, 수량: 1; ",
+        createdAt: "2024-05-21 13:14:22",
+        read: true
+    },
+    {
+        id: 27,
+        title: "새 주문이 도착했습니다.",
+        content: "주문 ID: 27, 상품: 낙지볶음, 수량: 1; ",
+        createdAt: "2024-05-21 13:14:14",
+        read: true
+    },
+    {
+        id: 26,
+        title: "새 주문이 도착했습니다.",
+        content: "주문 ID: 26, 상품: 육회비빔밥, 수량: 1; ",
+        createdAt: "2024-05-21 13:13:21",
+        read: true
+    },
+    {
+        id: 25,
+        title: "새 주문이 도착했습니다.",
+        content: "주문 ID: 25, 상품: 야채비빔밥, 수량: 1; ",
+        createdAt: "2024-05-21 13:13:15",
+        read: true
+    },
+    {
+        id: 24,
+        title: "새 주문이 도착했습니다.",
+        content: "주문 ID: 24, 상품: 설렁탕, 수량: 1; ",
+        createdAt: "2024-05-21 13:06:21",
+        read: true
+    },
+    {
+        id: 23,
+        title: "새 주문이 도착했습니다.",
+        content: "주문 ID: 23, 상품: 야채비빔밥, 수량: 1; ",
+        createdAt: "2024-05-21 13:06:11",
+        read: true
+    },
+    {
+        id: 22,
+        title: "새 주문이 도착했습니다.",
+        content: "주문 ID: 22, 상품: 미역국, 수량: 1; ",
+        createdAt: "2024-05-21 11:40:57",
+        read: true
+    },
+    {
+        id: 21,
+        title: "새 주문이 도착했습니다.",
+        content: "주문 ID: 21, 상품: 육회비빔밥, 수량: 1; 상품: 야채비빔밥, 수량: 1; 상품: 오리훈제구이, 수량: 1; ",
+        createdAt: "2024-05-21 11:31:02",
+        read: true
+    },
+    {
+        id: 20,
+        title: "새 주문이 도착했습니다.",
+        content: "주문 ID: 20, 상품: 된장찌개, 수량: 1; ",
+        createdAt: "2024-05-21 11:29:54",
+        read: true
+    },
+    {
+        id: 19,
+        title: "새 주문이 도착했습니다.",
+        content: "주문 ID: 19, 상품: 육회비빔밥, 수량: 1; ",
+        createdAt: "2024-05-21 11:22:52",
+        read: true
+    },
+    {
+        id: 18,
+        title: "새 주문이 도착했습니다.",
+        content: "주문 ID: 18, 상품: 된장찌개, 수량: 1; ",
+        createdAt: "2024-05-21 11:19:18",
+        read: true
+    },
+    {
+        id: 17,
+        title: "새 주문이 도착했습니다.",
+        content: "주문 ID: 17, 상품: 된장찌개, 수량: 1; ",
+        createdAt: "2024-05-21 11:15:56",
+        read: true
+    },
+    {
+        id: 16,
+        title: "새 주문이 도착했습니다.",
+        content: "주문 ID: 16, 상품: 닭갈비, 수량: 1; ",
+        createdAt: "2024-05-21 11:10:30",
+        read: true
+    },
+    {
+        id: 15,
+        title: "새 주문이 도착했습니다.",
+        content: "주문 ID: 15, 상품: 비빔냉면, 수량: 1; ",
+        createdAt: "2024-05-21 11:05:22",
+        read: true
+    },
+    {
+        id: 14,
+        title: "새 주문이 도착했습니다.",
+        content: "주문 ID: 14, 상품: 갈비탕, 수량: 1; ",
+        createdAt: "2024-05-21 11:00:15",
+        read: true
+    },
+    {
+        id: 13,
+        title: "새 주문이 도착했습니다.",
+        content: "주문 ID: 13, 상품: 불고기, 수량: 1; ",
+        createdAt: "2024-05-21 10:55:44",
+        read: true
+    }
+];
+
+export const employeeData = [
+    {
+        id: 4,
+        name: "석해현",
+        phoneNumber: "010-1111-1111",
+        workDate: "월화수",
+        status: "WORKING"
+    },
+    {
+        id: 5,
+        name: "석해현",
+        phoneNumber: "010-1111-1111",
+        workDate: "월화수",
+        status: "WORKING"
+    },
+    {
+        id: 6,
+        name: "석해현",
+        phoneNumber: "010-1111-1111",
+        workDate: "월화수",
+        status: "WORKING"
+    },
+    {
+        id: 7,
+        name: "석해현",
+        phoneNumber: "010-1111-1111",
+        workDate: "월화수",
+        status: "WORKING"
+    },
+    {
+        id: 8,
+        name: "석해현",
+        phoneNumber: "010-1111-1111",
+        workDate: "월화수",
+        status: "WORKING"
+    },
+    {
+        id: 9,
+        name: "석해현",
+        phoneNumber: "010-1111-1111",
+        workDate: "월화수",
+        status: "WORKING"
+    },
+    {
+        id: 10,
+        name: "석해현",
+        phoneNumber: "010-1111-1111",
+        workDate: "월화수",
+        status: "WORKING"
+    },
+    {
+        id: 11,
+        name: "석해현",
+        phoneNumber: "010-1111-1111",
+        workDate: "월화수",
+        status: "WORKING"
+    },
+    {
+        id: 12,
+        name: "석해현",
+        phoneNumber: "010-1111-1111",
+        workDate: "월화수",
+        status: "WORKING"
+    },
+    {
+        id: 13,
+        name: "석해현",
+        phoneNumber: "010-1111-1111",
+        workDate: "월화수",
+        status: "WORKING"
+    },
+    {
+        id: 14,
+        name: "석해현",
+        phoneNumber: "010-1111-1111",
+        workDate: "월화수",
+        status: "WORKING"
+    },
+    {
+        id: 15,
+        name: "석해현",
+        phoneNumber: "010-1111-1111",
+        workDate: "월화수",
+        status: "WORKING"
+    },
+    {
+        id: 16,
+        name: "석해현",
+        phoneNumber: "010-1111-1111",
+        workDate: "월화수",
+        status: "WORKING"
+    },
+    {
+        id: 17,
+        name: "석해현",
+        phoneNumber: "010-1111-1111",
+        workDate: "월화수",
+        status: "WORKING"
+    },
+    {
+        id: 18,
+        name: "석해현",
+        phoneNumber: "010-1111-1111",
+        workDate: "월화수",
+        status: "WORKING"
+    },
+    {
+        id: 19,
+        name: "석해현",
+        phoneNumber: "010-1111-1111",
+        workDate: "월화수",
+        status: "WORKING"
+    },
+    {
+        id: 20,
+        name: "석해현",
+        phoneNumber: "010-1111-1111",
+        workDate: "월화수",
+        status: "WORKING"
+    },
+    {
+        id: 21,
+        name: "석해현",
+        phoneNumber: "010-1111-1111",
+        workDate: "월화수",
+        status: "WORKING"
+    }
+
+];
+
+export const sellData = [
+    {
+        "date": '05-15',
+        "주문건수" : 25,
+        "매출액" : 800,
+    },
+    {
+        "date": '05-16',
+        "주문건수" : 30,
+        "매출액" : 967,
+    },
+    {
+        "date": '05-17',
+        "주문건수" : 29,
+        "매출액" : 1098,
+    },
+    {
+        "date": '05-18',
+        "주문건수" : 37,
+        "매출액" : 1200,
+    },
+    {
+        "date": '05-19',
+        "주문건수" : 42,
+        "매출액" : 1108,
+    },
+    {
+        "date": '05-20',
+        "주문건수" : 11,
+        "매출액" : 680,
+    },
+    {
+        "date": '05-21',
+        "주문건수" : 38,
+        "매출액" : 1700,
+    }
+];
+
+export const monthlySellData = [
+    {
+        month: '2024-04',
+        orderCount : 250,
+        sales : 6000,
+    },
+    {
+        month: '2024-03',
+        orderCount : 300,
+        sales : 8000,
+    },
+    {
+        month: '2024-02',
+        orderCount : 280,
+        sales : 7000,
+    },
+    {
+        month: '2024-01',
+        orderCount : 310,
+        sales : 9000,
+    }
+];
+
+export const categorySales = [
+    { name: '식사', value: 400 },
+    { name: '찌개', value: 300 },
+    { name: '국/탕', value: 300 },
+    { name: '구이', value: 200 },
+    { name: '요리', value: 300 },
+    { name: '음료', value: 50 },
+];
+
+export const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042', '#00BB42', '#FF88FE'];
+
+const RADIAN = Math.PI / 180;
+export const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent, index }) => {
+    const radius = innerRadius + (outerRadius - innerRadius) * 0.5;
+    const x = cx + radius * Math.cos(-midAngle * RADIAN);
+    const y = cy + radius * Math.sin(-midAngle * RADIAN);
+
+    return (
+        <text x={x} y={y} fill="white" textAnchor={x > cx ? 'start' : 'end'} dominantBaseline="central">
+            {`${(percent * 100).toFixed(0)}%`}
+        </text>
+    );
+};
+
+export const reviewData = [
+    {
+        subject: '맛',
+        A: 120,
+        B: 110,
+        fullMark: 150,
+    },
+    {
+        subject: '양',
+        A: 98,
+        B: 130,
+        fullMark: 150,
+    },
+    {
+        subject: '가격',
+        A: 86,
+        B: 130,
+        fullMark: 150,
+    },
+    {
+        subject: '분위기',
+        A: 99,
+        B: 100,
+        fullMark: 150,
+    },
+    {
+        subject: '위생',
+        A: 85,
+        B: 90,
+        fullMark: 150,
+    },
+    {
+        subject: '친절함',
+        A: 65,
+        B: 85,
+        fullMark: 150,
     },
 ];
