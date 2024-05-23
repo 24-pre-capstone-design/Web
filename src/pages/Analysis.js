@@ -4,60 +4,63 @@ import React, {useState} from "react";
 import Footer from "../components/Footer";
 import {Link} from "react-router-dom";
 import {
-    Area,
-    Bar, BarChart,
-    CartesianGrid,
+    Bar,
+    CartesianGrid, Cell,
     ComposedChart,
     Legend,
-    Line, Rectangle,
-    ResponsiveContainer, Scatter,
+    Line, Pie, PieChart, PolarAngleAxis, PolarGrid, PolarRadiusAxis, Radar, RadarChart,
+    Rectangle,
+    ResponsiveContainer,
     Tooltip,
     XAxis,
     YAxis
 } from "recharts";
-import {employeeData, employeeStatus, menuData} from "../data/data";
+import {categorySales, COLORS, menuData, monthlySellData, renderCustomizedLabel, sellData} from "../data/data";
+
+const data = [
+    {
+        subject: '맛',
+        A: 120,
+        B: 110,
+        fullMark: 150,
+    },
+    {
+        subject: '양',
+        A: 98,
+        B: 130,
+        fullMark: 150,
+    },
+    {
+        subject: '가격',
+        A: 86,
+        B: 130,
+        fullMark: 150,
+    },
+    {
+        subject: '분위기',
+        A: 99,
+        B: 100,
+        fullMark: 150,
+    },
+    {
+        subject: '위생',
+        A: 85,
+        B: 90,
+        fullMark: 150,
+    },
+    {
+        subject: '친절함',
+        A: 65,
+        B: 85,
+        fullMark: 150,
+    },
+];
+
 
 export default function Analysis() {
 
     const [toggle, setToggle] = useState(true);
 
-    const data = [
-        {
-            "date": '05-15',
-            "주문건수" : 25,
-            "매출액" : 800,
-        },
-        {
-            "date": '05-16',
-            "주문건수" : 30,
-            "매출액" : 967,
-        },
-        {
-            "date": '05-17',
-            "주문건수" : 29,
-            "매출액" : 1098,
-        },
-        {
-            "date": '05-18',
-            "주문건수" : 37,
-            "매출액" : 1200,
-        },
-        {
-            "date": '05-19',
-            "주문건수" : 42,
-            "매출액" : 1108,
-        },
-        {
-            "date": '05-20',
-            "주문건수" : 11,
-            "매출액" : 680,
-        },
-        {
-            "date": '05-21',
-            "주문건수" : 38,
-            "매출액" : 1700,
-        }
-    ];
 
     return(
         <>
@@ -86,7 +89,7 @@ export default function Analysis() {
                         </div>
                     </div>
 
-                    <section className="relative top-6 mt-6 mb-8 mx-6">
+                    <section className="relative top-6 mt-6 mb-10 mx-6">
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-10">
                             <div className="overflow-x-auto mx-2">
                                 <div className="flex items-center justify-between">
@@ -126,7 +129,7 @@ export default function Analysis() {
                                     <ComposedChart
                                         width={500}
                                         height={400}
-                                        data={data}
+                                        data={sellData}
                                         margin={{
                                             top: 50,
                                             right: 20,
@@ -151,11 +154,77 @@ export default function Analysis() {
                         <div className="divider divider-neutral mt-8"></div>
 
                         <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-10">
+                            <div className="overflow-x-auto mx-2">
+                                <div className="flex items-center">
+                                    <h3 className="text-xl text-white font-bold m-2">월별 매출액</h3>
+                                </div>
+                                <table className="table text-center mt-2">
+                                    <thead>
+                                    <tr className="h-11 border-t border-gray-400 text-gray-50 text-[14px]">
+                                        <th>월</th>
+                                        <th>매출액(만원)</th>
+                                        <th>주문건수</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody className="text-white/85">
+                                    {
+                                        monthlySellData.map((data, index) => (
+                                            <tr key={index} className={`border-b border-gray-800 ${index%2===0 ? 'bg-gray-800/30' : ''}`}>
+                                                <td>{data.month}</td>
+                                                <td>{data.sales}</td>
+                                                <td>{data.orderCount}</td>
+                                            </tr>
+                                        ))
+                                    }
+                                    </tbody>
+                                </table>
+                            </div>
 
+                            <div className="overflow-x-auto mx-2">
+                                <div className="flex items-center">
+                                    <h3 className="text-xl text-white font-bold m-2">카테고리별 판매 현황</h3>
+                                </div>
+                                <div className="h-64 bg-neutral rounded-2xl">
+                                    <ResponsiveContainer width="100%" height="100%">
+                                        <PieChart width={400} height={400}>
+                                            <Pie
+                                                data={categorySales}
+                                                cx="50%"
+                                                cy="50%"
+                                                labelLine={false}
+                                                label={renderCustomizedLabel}
+                                                outerRadius={100}
+                                                fill="#8884d8"
+                                                dataKey="value"
+                                            >
+                                                {categorySales.map((entry, index) => (
+                                                    <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+                                                ))}
+                                            </Pie>
+                                            <Legend />
+                                        </PieChart>
+                                    </ResponsiveContainer>
+                                </div>
+                            </div>
+
+                            <div className="overflow-x-auto mx-2">
+                                <div className="flex items-center">
+                                    <h3 className="text-xl text-white font-bold m-2">고객 평가</h3>
+                                </div>
+                                <div className="h-64 bg-white rounded-2xl">
+                                    <ResponsiveContainer width="100%" height="100%">
+                                        <RadarChart cx="50%" cy="50%" outerRadius="75%" data={data}>
+                                            <PolarGrid />
+                                            <PolarAngleAxis dataKey="subject" />
+                                            <Radar name="Mike" dataKey="A" stroke="#8884d8" fill="#722f37" fillOpacity={0.8} />
+                                        </RadarChart>
+                                    </ResponsiveContainer>
+                                </div>
+                            </div>
                         </div>
                     </section>
 
-                    <div className="relative top-20">
+                    <div className="relative top-25">
                         <Footer/>
                     </div>
 

@@ -6,6 +6,7 @@ import 깐풍기 from "../assets/images/food/깐풍기.png";
 import 짜장밥 from "../assets/images/food/짜장밥.png";
 import 짬뽕밥 from "../assets/images/food/짬뽕밥.png";
 import 간짜장 from "../assets/images/food/간짜장.png";
+import React from "react";
 
 export const test = "test data";
 
@@ -767,3 +768,88 @@ export const employeeData = [
     }
 
 ];
+
+export const sellData = [
+    {
+        "date": '05-15',
+        "주문건수" : 25,
+        "매출액" : 800,
+    },
+    {
+        "date": '05-16',
+        "주문건수" : 30,
+        "매출액" : 967,
+    },
+    {
+        "date": '05-17',
+        "주문건수" : 29,
+        "매출액" : 1098,
+    },
+    {
+        "date": '05-18',
+        "주문건수" : 37,
+        "매출액" : 1200,
+    },
+    {
+        "date": '05-19',
+        "주문건수" : 42,
+        "매출액" : 1108,
+    },
+    {
+        "date": '05-20',
+        "주문건수" : 11,
+        "매출액" : 680,
+    },
+    {
+        "date": '05-21',
+        "주문건수" : 38,
+        "매출액" : 1700,
+    }
+];
+
+export const monthlySellData = [
+    {
+        month: '2024-04',
+        orderCount : 250,
+        sales : 6000,
+    },
+    {
+        month: '2024-03',
+        orderCount : 300,
+        sales : 8000,
+    },
+    {
+        month: '2024-02',
+        orderCount : 280,
+        sales : 7000,
+    },
+    {
+        month: '2024-01',
+        orderCount : 310,
+        sales : 9000,
+    }
+];
+
+export const categorySales = [
+    { name: '식사', value: 400 },
+    { name: '찌개', value: 300 },
+    { name: '국/탕', value: 300 },
+    { name: '구이', value: 200 },
+    { name: '요리', value: 300 },
+    { name: '음료', value: 50 },
+];
+
+export const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042', '#00BB42', '#FF88FE'];
+
+const RADIAN = Math.PI / 180;
+export const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent, index }) => {
+    const radius = innerRadius + (outerRadius - innerRadius) * 0.5;
+    const x = cx + radius * Math.cos(-midAngle * RADIAN);
+    const y = cy + radius * Math.sin(-midAngle * RADIAN);
+
+    return (
+        <text x={x} y={y} fill="white" textAnchor={x > cx ? 'start' : 'end'} dominantBaseline="central">
+            {`${(percent * 100).toFixed(0)}%`}
+        </text>
+    );
+};

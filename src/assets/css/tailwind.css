@@ -932,6 +932,9 @@ video {
 .mb-8{
   margin-bottom: 2rem !important;
 }
+.mb-10{
+  margin-bottom: 2.5rem !important;
+}
 .me-1{
   -webkit-margin-end: 0.25rem !important;
           margin-inline-end: 0.25rem !important;
