@@ -1991,6 +1991,9 @@ video {
 .bg-white\/70{
   background-color: rgb(255 255 255 / 0.7) !important;
 }
+.bg-white\/90{
+  background-color: rgb(255 255 255 / 0.9) !important;
+}
 .bg-yellow-500{
   --tw-bg-opacity: 1 !important;
   background-color: rgb(234 179 8 / var(--tw-bg-opacity)) !important;
