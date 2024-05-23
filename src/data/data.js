@@ -853,3 +853,42 @@ export const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadi
         </text>
     );
 };
+
+export const reviewData = [
+    {
+        subject: '맛',
+        A: 120,
+        B: 110,
+        fullMark: 150,
+    },
+    {
+        subject: '양',
+        A: 98,
+        B: 130,
+        fullMark: 150,
+    },
+    {
+        subject: '가격',
+        A: 86,
+        B: 130,
+        fullMark: 150,
+    },
+    {
+        subject: '분위기',
+        A: 99,
+        B: 100,
+        fullMark: 150,
+    },
+    {
+        subject: '위생',
+        A: 85,
+        B: 90,
+        fullMark: 150,
+    },
+    {
+        subject: '친절함',
+        A: 65,
+        B: 85,
+        fullMark: 150,
+    },
+];

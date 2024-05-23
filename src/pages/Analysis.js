@@ -5,56 +5,26 @@ import Footer from "../components/Footer";
 import {Link} from "react-router-dom";
 import {
     Bar,
-    CartesianGrid, Cell,
+    CartesianGrid,
+    Cell,
     ComposedChart,
     Legend,
-    Line, Pie, PieChart, PolarAngleAxis, PolarGrid, PolarRadiusAxis, Radar, RadarChart,
+    Line,
+    Pie,
+    PieChart,
+    PolarAngleAxis,
+    PolarGrid,
+    Radar,
+    RadarChart,
     Rectangle,
     ResponsiveContainer,
     Tooltip,
     XAxis,
     YAxis
 } from "recharts";
-import {categorySales, COLORS, menuData, monthlySellData, renderCustomizedLabel, sellData} from "../data/data";
+import {categorySales, COLORS, menuData, monthlySellData, renderCustomizedLabel, sellData, reviewData} from "../data/data";
 
-const data = [
-    {
-        subject: '맛',
-        A: 120,
-        B: 110,
-        fullMark: 150,
-    },
-    {
-        subject: '양',
-        A: 98,
-        B: 130,
-        fullMark: 150,
-    },
-    {
-        subject: '가격',
-        A: 86,
-        B: 130,
-        fullMark: 150,
-    },
-    {
-        subject: '분위기',
-        A: 99,
-        B: 100,
-        fullMark: 150,
-    },
-    {
-        subject: '위생',
-        A: 85,
-        B: 90,
-        fullMark: 150,
-    },
-    {
-        subject: '친절함',
-        A: 65,
-        B: 85,
-        fullMark: 150,
-    },
-];
+
 
 
 export default function Analysis() {
@@ -124,7 +94,7 @@ export default function Analysis() {
                                 <div className="flex items-center">
                                     <h3 className="text-xl text-white font-bold m-2">판매 현황</h3>
                                 </div>
-                                <div className="h-90 bg-white rounded-lg">
+                                <div className="h-90 bg-neutral rounded-lg">
                                 <ResponsiveContainer width="100%" height="100%">
                                     <ComposedChart
                                         width={500}
@@ -211,12 +181,12 @@ export default function Analysis() {
                                 <div className="flex items-center">
                                     <h3 className="text-xl text-white font-bold m-2">고객 평가</h3>
                                 </div>
-                                <div className="h-64 bg-white rounded-2xl">
+                                <div className="h-64 bg-neutral rounded-2xl">
                                     <ResponsiveContainer width="100%" height="100%">
-                                        <RadarChart cx="50%" cy="50%" outerRadius="75%" data={data}>
+                                        <RadarChart cx="50%" cy="50%" outerRadius="75%" data={reviewData}>
                                             <PolarGrid />
-                                            <PolarAngleAxis dataKey="subject" />
-                                            <Radar name="Mike" dataKey="A" stroke="#8884d8" fill="#722f37" fillOpacity={0.8} />
+                                            <PolarAngleAxis dataKey="subject" stroke="white"/>
+                                            <Radar dataKey="A" stroke="#722f37" fill="#722f37" fillOpacity={0.8} />
                                         </RadarChart>
                                     </ResponsiveContainer>
                                 </div>
