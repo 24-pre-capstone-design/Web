@@ -7,7 +7,7 @@ import {FaTrashAlt, GrPowerReset} from '../assets/icons/vander'
 import EditMenu from "../components/modal/EditMenu";
 import NewCategory from "../components/modal/NewCategory";
 import Footer from "../components/Footer";
-import MenuManager from "../components/widgets/MenuManager";
+import MenuManager from "../components/widgets/PageManager/MenuManager";
 import PageTitle from "../components/widgets/PageTitle";
 
 export default function MenuList() {

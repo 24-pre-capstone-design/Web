@@ -1,5 +1,5 @@
-import {monthData} from "../../data/data";
-import {TbTilde} from "../../assets/icons/vander";
+import {monthData} from "../../../data/data";
+import {TbTilde} from "../../../assets/icons/vander";
 import React from "react";
 
 export default function OrderManager(){

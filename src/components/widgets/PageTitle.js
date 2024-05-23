@@ -1,8 +1,8 @@
 import React from "react";
-import EmployeeManager from "./EmployeeManager";
-import MenuManager from "./MenuManager";
-import NotificationManager from "./NotificationManager";
-import OrderManager from "./OrderManager";
+import EmployeeManager from "./PageManager/EmployeeManager";
+import MenuManager from "./PageManager/MenuManager";
+import NotificationManager from "./PageManager/NotificationManager";
+import OrderManager from "./PageManager/OrderManager";
 
 export default function  PageTitle ({title}) {
 

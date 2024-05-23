@@ -6,7 +6,7 @@ import Pagenation from "../components/Pagenation";
 import Footer from "../components/Footer";
 import EditEmployee from "../components/modal/EditEmployee";
 import Info from "../components/alert/Info";
-import EmployeeManager from "../components/widgets/EmployeeManager";
+import EmployeeManager from "../components/widgets/PageManager/EmployeeManager";
 import PageTitle from "../components/widgets/PageTitle";
 
 export default function EmployeeList(){
