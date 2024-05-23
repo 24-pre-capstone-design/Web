@@ -10,6 +10,7 @@ import Footer from "../components/Footer";
 import DeleteAccount from "../components/modal/DeleteAccount";
 import EditOwnerInfo from "../components/modal/EditOwnerInfo";
 import UpdatePassword from "../components/modal/UpdatePassword";
+import PageTitle from "../components/widgets/PageTitle";
 
 export default function MyPage(){
 
@@ -22,26 +23,7 @@ export default function MyPage(){
                 <main className="page-content h-screen">
                     <Topnav toggle={toggle} setToggle={setToggle}/>
 
-                    <div className="relative top-6 mx-10 flex items-center justify-between">
-                        <h3 className="text-4xl text-white font-bold">MY PAGE</h3>
-
-                        <div className="flex items-center mx-10">
-                            <label data-theme="dark" className="input input-bordered flex items-center gap-2">
-                                <input
-                                    type="text"
-                                    className="grow w-28"
-                                    placeholder="Search"
-                                />
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"
-                                     className="w-4 h-4 opacity-70">
-                                    <path fillRule="evenodd"
-                                          d="M9.965 11.026a5 5 0 1 1 1.06-1.06l2.755 2.754a.75.75 0 1 1-1.06 1.06l-2.755-2.754ZM10.5 7a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0Z"
-                                          clipRule="evenodd"/>
-                                </svg>
-                            </label>
-                        </div>
-
-                    </div>
+                    <PageTitle title={"MY PAGE"} />
 
                     <section className="relative top-6 mt-3 mx-6">
 

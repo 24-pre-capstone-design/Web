@@ -41,7 +41,7 @@ export default function Sidebar(){
                     </li>
 
                     <li>
-                        <Link to="/menu" className="text-gray-400 text-xl py-5"><TbHandFinger className="me-3 icon"/>상품 및 메뉴 관리</Link>
+                        <Link to="/menu" className="text-gray-400 text-xl py-5"><TbHandFinger className="me-3 icon"/>메뉴 관리</Link>
                     </li>
 
                     <li>
