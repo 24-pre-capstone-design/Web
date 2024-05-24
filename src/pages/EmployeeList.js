@@ -62,14 +62,11 @@ export default function EmployeeList(){
                                 <option>45개</option>
                             </select>
                         </div>
-
                         <EmployeeTable checkboxShow={checkboxShow} telVisibleIndex={telVisibleIndex} showTel={showTel} updateEmployee={updateEmployee}/>
                         <Pagenation />
                     </section>
 
-                    <dialog id="deleteModal" className="modal">
-                        <DeleteCheckedItem setCheckboxShow={setCheckboxShow}/>
-                    </dialog>
+                    <DeleteCheckedItem setCheckboxShow={setCheckboxShow}/>
 
                     <dialog id="updateEmployee" className="modal">
                         <EditEmployee item={employee} />

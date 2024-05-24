@@ -39,14 +39,8 @@ export default function MenuList() {
                         <Pagenation page={page}/>
                     </section>
 
-                    <dialog id="deleteModal" className="modal">
-                        <DeleteCheckedItem setCheckboxShow={setCheckboxShow}/>
-                    </dialog>
-
-                    <dialog id="editModal" className="modal">
-                        <EditMenu />
-                    </dialog>
-
+                    <DeleteCheckedItem setCheckboxShow={setCheckboxShow}/>
+                    <EditMenu />
                     <NewCategory />
 
                     <div className="relative top-20">

@@ -5,7 +5,7 @@ import React from "react";
 export default function MenuManager({checkboxShow, setCheckboxShow, selectedCategory, setSelectedCategory}){
     return(
         <>
-            <button className="btn btn-neutral" onClick={()=>document.getElementById('editModal').showModal()}>메뉴 추가하기</button>
+            <button className="btn btn-neutral" onClick={()=>document.getElementById('modal').showModal()}>메뉴 추가하기</button>
             {
                 checkboxShow ?
                     <div className="mx-2">
