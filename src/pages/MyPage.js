@@ -1,16 +1,16 @@
-import Sidebar from "../components/sidebar";
-import Topnav from "../components/topnav";
+import Sidebar from "../components/widgets/sidebar";
+import Topnav from "../components/widgets/topnav";
 import React, {useState} from "react";
 import profile_img from "../assets/images/profile_empty.jpeg";
 import logo from "../assets/images/logo/logo_without_background_long.png";
 import CountUp from "react-countup";
 import {Link} from "react-router-dom";
 import {notificationData} from "../data/data";
-import Footer from "../components/Footer";
+import Footer from "../components/widgets/Footer";
 import DeleteAccount from "../components/modal/DeleteAccount";
 import EditOwnerInfo from "../components/modal/EditOwnerInfo";
 import UpdatePassword from "../components/modal/UpdatePassword";
-import PageTitle from "../components/widgets/PageTitle";
+import PageTitle from "../components/PageManager/PageTitle";
 
 export default function MyPage(){
 

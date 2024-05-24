@@ -1,11 +1,11 @@
 import React, {useState} from "react"
-import Sidebar from "../components/sidebar";
-import Topnav from "../components/topnav";
+import Sidebar from "../components/widgets/sidebar";
+import Topnav from "../components/widgets/topnav";
 import Pagenation from "../components/widgets/Pagenation";
-import Footer from "../components/Footer";
+import Footer from "../components/widgets/Footer";
 import EditEmployee from "../components/modal/EditEmployee";
 import Info from "../components/alert/Info";
-import PageTitle from "../components/widgets/PageTitle";
+import PageTitle from "../components/PageManager/PageTitle";
 import EmployeeTable from "../components/table/EmployeeTable";
 
 export default function EmployeeList(){

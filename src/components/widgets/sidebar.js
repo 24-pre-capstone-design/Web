@@ -5,8 +5,8 @@ import {Link, useLocation} from "react-router-dom";
 import SimpleBarReact from "simplebar-react";
 import 'simplebar-react/dist/simplebar.min.css';
 
-import {AiOutlineAppstore, AiOutlineLineChart, FaBell, TbHandFinger, IoMdPerson, FaPeopleCarry, FaLightbulb} from '../assets/icons/vander'
-import logo from "../assets/images/logo/logo_without_background_long.png";
+import {AiOutlineAppstore, AiOutlineLineChart, FaBell, TbHandFinger, IoMdPerson, FaPeopleCarry, FaLightbulb} from '../../assets/icons/vander'
+import logo from "../../assets/images/logo/logo_without_background_long.png";
 
 export default function Sidebar(){
     const location = useLocation();

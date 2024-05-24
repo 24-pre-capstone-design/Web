@@ -1,15 +1,15 @@
 import React, {useEffect, useState} from "react";
-import Sidebar from "../components/sidebar";
-import Topnav from "../components/topnav";
+import Sidebar from "../components/widgets/sidebar";
+import Topnav from "../components/widgets/topnav";
 import {GrCart, LuLightbulb} from "../assets/icons/vander"
 import {Link} from "react-router-dom";
 import {menuData, orderData, orderHistoryStatus, saleData} from "../data/data";
 import Slider from "react-slick";
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import Footer from "../components/Footer";
+import Footer from "../components/widgets/Footer";
 import CountUp from "react-countup";
-import PageTitle from "../components/widgets/PageTitle";
+import PageTitle from "../components/PageManager/PageTitle";
 
 export default function Home() {
 

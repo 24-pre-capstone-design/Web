@@ -1,11 +1,11 @@
-import Sidebar from "../components/sidebar";
-import Topnav from "../components/topnav";
+import Sidebar from "../components/widgets/sidebar";
+import Topnav from "../components/widgets/topnav";
 import React, {useState} from "react";
-import Footer from "../components/Footer";
+import Footer from "../components/widgets/Footer";
 import {Link} from "react-router-dom";
 import {Bar, CartesianGrid, Cell, ComposedChart, Legend, Line, Pie, PieChart, PolarAngleAxis, PolarGrid, Radar, RadarChart, Rectangle, ResponsiveContainer, Tooltip, XAxis, YAxis} from "recharts";
 import {categorySales, COLORS, menuData, monthlySellData, renderCustomizedLabel, sellData, reviewData} from "../data/data";
-import PageTitle from "../components/widgets/PageTitle";
+import PageTitle from "../components/PageManager/PageTitle";
 
 export default function Analysis() {
 

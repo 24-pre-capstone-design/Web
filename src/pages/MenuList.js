@@ -1,12 +1,12 @@
-import Sidebar from "../components/sidebar";
-import Topnav from "../components/topnav";
+import Sidebar from "../components/widgets/sidebar";
+import Topnav from "../components/widgets/topnav";
 import React, {useEffect, useState} from "react";
 import {menuData} from "../data/data.js";
 import Pagenation from "../components/widgets/Pagenation";
 import EditMenu from "../components/modal/EditMenu";
 import NewCategory from "../components/modal/NewCategory";
-import Footer from "../components/Footer";
-import PageTitle from "../components/widgets/PageTitle";
+import Footer from "../components/widgets/Footer";
+import PageTitle from "../components/PageManager/PageTitle";
 
 export default function MenuList() {
 

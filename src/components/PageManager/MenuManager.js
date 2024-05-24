@@ -1,5 +1,5 @@
-import {FaTrashAlt, GrPowerReset} from "../../../assets/icons/vander";
-import {category} from "../../../data/data";
+import {FaTrashAlt, GrPowerReset} from "../../assets/icons/vander";
+import {category} from "../../data/data";
 import React from "react";
 
 export default function MenuManager({checkboxShow, setCheckboxShow, selectedCategory, setSelectedCategory}){

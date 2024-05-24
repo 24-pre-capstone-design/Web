@@ -1,9 +1,9 @@
 import React, {useState} from "react"
-import Sidebar from "../components/sidebar";
-import Topnav from "../components/topnav";
+import Sidebar from "../components/widgets/sidebar";
+import Topnav from "../components/widgets/topnav";
 import Pagenation from "../components/widgets/Pagenation";
-import Footer from "../components/Footer";
-import PageTitle from "../components/widgets/PageTitle";
+import Footer from "../components/widgets/Footer";
+import PageTitle from "../components/PageManager/PageTitle";
 import NotificationTable from "../components/table/NotificationTable";
 
 export default function NotificationList(){
