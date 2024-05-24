@@ -13,7 +13,6 @@ export default function EmployeeList(){
 
     const [toggle, setToggle] = useState(true);
     const [telVisibleIndex, setTelVisibleIndex] = useState(null);
-    const [employee, setEmployee] = useState({});
     const [checkboxShow, setCheckboxShow] = useState(false);
     const [message, setMessage] = useState(null);
 
@@ -24,11 +23,6 @@ export default function EmployeeList(){
             setTelVisibleIndex(null);
             setMessage(null);
         }, 10000);
-    }
-
-    const updateEmployee = (item) => {
-        setEmployee(item);
-        document.getElementById("updateEmployee").showModal();
     }
 
     return(
@@ -62,19 +56,12 @@ export default function EmployeeList(){
                                 <option>45개</option>
                             </select>
                         </div>
-                        <EmployeeTable checkboxShow={checkboxShow} telVisibleIndex={telVisibleIndex} showTel={showTel} updateEmployee={updateEmployee}/>
+                        <EmployeeTable checkboxShow={checkboxShow} telVisibleIndex={telVisibleIndex} showTel={showTel}/>
                         <Pagenation />
                     </section>
 
                     <DeleteCheckedItem setCheckboxShow={setCheckboxShow}/>
-
-                    <dialog id="updateEmployee" className="modal">
-                        <EditEmployee item={employee} />
-                    </dialog>
-
-                    <dialog id="editEmployee" className="modal">
-                        <EditEmployee />
-                    </dialog>
+                    <EditEmployee />
 
                     <div className="relative top-20">
                         <Footer/>

@@ -1,7 +1,15 @@
 import {employeeData, employeeStatus} from "../../data/data";
-import React from "react";
+import React, {useState} from "react";
+import EditEmployee from "../modal/EditEmployee";
 
-export default function EmployeeTable({checkboxShow, telVisibleIndex, showTel, updateEmployee}) {
+export default function EmployeeTable({checkboxShow, telVisibleIndex, showTel}) {
+
+    const [employee, setEmployee] = useState(null);
+
+    async function editEmployee(item) {
+        await setEmployee(item);
+        document.getElementById(item.id + "modal").showModal();
+    }
 
     return (
         <div className="overflow-x-auto p-2">
@@ -46,13 +54,16 @@ export default function EmployeeTable({checkboxShow, telVisibleIndex, showTel, u
                                     })
                                 }</td>
                                 <td>
-                                    <button className="btn btn-xs btn-success" onClick={()=>updateEmployee(item)}>수정</button>
+                                    <button className="btn btn-xs btn-success" onClick={() => editEmployee(item)}>수정</button>
                                 </td>
                             </tr>
                         )})
                 }
                 </tbody>
             </table>
+
+            <EditEmployee item={employee} />
+
         </div>
     )
 }

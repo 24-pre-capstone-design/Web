@@ -4,7 +4,7 @@ import React from "react";
 export default function EmployeeManager({checkboxShow, setCheckboxShow}){
     return (
         <>
-            <button className="btn btn-neutral" onClick={()=>document.getElementById('editEmployee').showModal()}>직원 추가하기</button>
+            <button className="btn btn-neutral" onClick={()=>document.getElementById('modal').showModal()}>직원 추가하기</button>
             {
                 checkboxShow ?
                     <div className="mx-2">

@@ -5,6 +5,7 @@ import Pagenation from "../components/widgets/Pagenation";
 import Footer from "../components/widgets/Footer";
 import PageTitle from "../components/PageManager/PageTitle";
 import NotificationTable from "../components/table/NotificationTable";
+import DeleteCheckedItem from "../components/modal/DeleteCheckedItem";
 
 export default function NotificationList(){
 
@@ -40,18 +41,7 @@ export default function NotificationList(){
                         <Pagenation />
                     </section>
 
-                    <dialog id="deleteModal" className="modal">
-                        <div className="modal-box">
-                            <h3 className="font-bold text-lg">Warning!</h3>
-                            <p className="py-4">정말 삭제하시겠습니까? 메뉴 삭제 이후에는 복구가 불가능 합니다.</p>
-                            <div className="modal-action">
-                                <form method="dialog">
-                                    <button className="btn mx-0.5" onClick={()=>setCheckboxShow(false)}>취소</button>
-                                    <button className="btn btn-outline btn-error mx-0.5" onClick={()=>setCheckboxShow(false)}>삭제</button>
-                                </form>
-                            </div>
-                        </div>
-                    </dialog>
+                    <DeleteCheckedItem setCheckboxShow={setCheckboxShow}/>
 
                     <div className="relative top-20">
                         <Footer/>
