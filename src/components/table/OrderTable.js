@@ -16,7 +16,7 @@ export default function OrderTable() {
                     <th>주문시각</th>
                 </tr>
                 </thead>
-                <tbody className="text-white/85">˚
+                <tbody className="text-white/85">
                 {
                     orderData.map((item, index) => {
                         return (
