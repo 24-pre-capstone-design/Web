@@ -3,8 +3,6 @@ import Sidebar from "../components/sidebar";
 import Topnav from "../components/topnav";
 import Pagenation from "../components/widgets/Pagenation";
 import Footer from "../components/Footer";
-import {FaTrashAlt, GrPowerReset} from "../assets/icons/vander";
-import {notificationAllData} from "../data/data";
 import PageTitle from "../components/widgets/PageTitle";
 import NotificationTable from "../components/table/NotificationTable";
 
