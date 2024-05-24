@@ -115,17 +115,9 @@ export default function MyPage(){
 
                     </section>
 
-                    <dialog id="deleteAccountModal" className="modal">
-                        <DeleteAccount />
-                    </dialog>
-
-                    <dialog id="editOwnerInfo" className="modal">
-                        <EditOwnerInfo />
-                    </dialog>
-
-                    <dialog id="updatePassword" className="modal">
-                        <UpdatePassword />
-                    </dialog>
+                    <DeleteAccount />
+                    <EditOwnerInfo />
+                    <UpdatePassword />
 
                     <div className="relative top-75">
                         <Footer/>
