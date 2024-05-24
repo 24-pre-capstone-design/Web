@@ -6,6 +6,7 @@ import Footer from "../components/Footer";
 import {FaTrashAlt, GrPowerReset} from "../assets/icons/vander";
 import {notificationAllData} from "../data/data";
 import PageTitle from "../components/widgets/PageTitle";
+import NotificationTable from "../components/table/NotificationTable";
 
 export default function NotificationList(){
 
@@ -19,7 +20,7 @@ export default function NotificationList(){
                 <main className="page-content h-screen">
                     <Topnav toggle={toggle} setToggle={setToggle}/>
 
-                    <PageTitle title={"알림 관리"} />
+                    <PageTitle title={"알림 관리"} checkboxShow={checkboxShow} setCheckboxShow={setCheckboxShow}/>
 
                     <section className="relative top-6 mx-10 mt-8">
 
@@ -36,37 +37,8 @@ export default function NotificationList(){
                             </select>
                         </div>
 
-                        <div className="overflow-x-auto p-2">
-                            <table className="table text-center mt-2">
-                                <thead>
-                                <tr className="h-11 border-t border-gray-400 text-gray-50 text-[14px]">
-                                    <th className="w-10"></th>
-                                    <th className="w-14">번호</th>
-                                    <th>제목</th>
-                                    <th>내용</th>
-                                    <th>생성시각</th>
-                                    <th>상태</th>
-                                </tr>
-                                </thead>
-                                <tbody className="text-white/85">
-                                {
-                                    notificationAllData.map((item, index) => {
-                                        return (
-                                            <tr key={index} className={`border-b border-gray-800 ${index%2===0 ? 'bg-gray-800/30' : ''}`}>
-                                                <td>
-                                                    <input type="checkbox" className={`checkbox checkbox-error mx-2 ${checkboxShow ? '' : 'hidden'}`} />
-                                                </td>
-                                                <td>{item.id}</td>
-                                                <td>{item.title}</td>
-                                                <td>{item.content}</td>
-                                                <td>{item.createdAt}</td>
-                                                <td>{item.read ? "읽음" : "안읽음"}</td>
-                                            </tr>
-                                        )})
-                                }
-                                </tbody>
-                            </table>
-                        </div>
+                        <NotificationTable checkboxShow={checkboxShow} />
+
                         <Pagenation />
                     </section>
 
