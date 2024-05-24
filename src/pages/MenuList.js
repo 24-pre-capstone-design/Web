@@ -1,13 +1,11 @@
 import Sidebar from "../components/sidebar";
 import Topnav from "../components/topnav";
 import React, {useEffect, useState} from "react";
-import {category, menuData} from "../data/data.js";
+import {menuData} from "../data/data.js";
 import Pagenation from "../components/widgets/Pagenation";
-import {FaTrashAlt, GrPowerReset} from '../assets/icons/vander'
 import EditMenu from "../components/modal/EditMenu";
 import NewCategory from "../components/modal/NewCategory";
 import Footer from "../components/Footer";
-import MenuManager from "../components/widgets/PageManager/MenuManager";
 import PageTitle from "../components/widgets/PageTitle";
 
 export default function MenuList() {
@@ -37,7 +35,7 @@ export default function MenuList() {
                 <main className="page-content h-screen">
                     <Topnav toggle={toggle} setToggle={setToggle}/>
 
-                    <PageTitle title={"메뉴 관리"} />
+                    <PageTitle title={"메뉴 관리"} checkboxShow={checkboxShow} setCheckboxShow={setCheckboxShow} selectedCategory={selectedCategory} setSelectedCategory={setSelectedCategory}/>
 
                     <section className="relative top-6 mt-8 mb-8 mx-10">
                         <div className="grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-3 sm:grid-cols-2 max-w-[1440px]">
