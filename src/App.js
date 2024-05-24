@@ -8,7 +8,7 @@ import MenuList from "./pages/MenuList";
 import FindPassword from "./pages/FindPassword";
 import {useCookies} from "react-cookie";
 import MyPage from "./pages/MyPage";
-import EmployeeList from "./pages/EmplyeeList";
+import EmployeeList from "./pages/EmployeeList";
 import NotificationList from "./pages/NotificationList";
 import Analysis from "./pages/Analysis";
 

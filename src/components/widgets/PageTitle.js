@@ -4,19 +4,22 @@ import MenuManager from "./PageManager/MenuManager";
 import NotificationManager from "./PageManager/NotificationManager";
 import OrderManager from "./PageManager/OrderManager";
 
-export default function  PageTitle ({title}) {
+export default function PageTitle ({title, checkboxShow, setCheckboxShow, selectedCategory, setSelectedCategory}) {
 
     const renderComponents = () => {
-        const componentMap = {
-            "직원 관리": EmployeeManager,
-            "메뉴 관리": MenuManager,
-            "알림 관리": NotificationManager,
-            "주문 관리": OrderManager,
-        };
-
-        const ComponentToRender = componentMap[title];
-        return ComponentToRender ? <ComponentToRender /> : null;
-    };
+        switch (title) {
+            case '메뉴 관리':
+                return <MenuManager checkboxShow={checkboxShow} setCheckboxShow={setCheckboxShow} selectedCategory={selectedCategory} setSelectedCategory={setSelectedCategory}/>
+            case '주문 관리':
+                return <OrderManager />
+            case '직원 관리':
+                return <EmployeeManager checkboxShow={checkboxShow} setCheckboxShow={setCheckboxShow} />
+            case '알림 관리':
+                return <NotificationManager checkboxShow={checkboxShow} setCheckboxShow={setCheckboxShow}/>
+            default:
+                return null
+        }
+    }
 
 
     return (
