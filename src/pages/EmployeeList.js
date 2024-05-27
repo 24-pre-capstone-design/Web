@@ -8,6 +8,7 @@ import Info from "../components/alert/Info";
 import PageTitle from "../components/PageManager/PageTitle";
 import EmployeeTable from "../components/table/EmployeeTable";
 import DeleteCheckedItem from "../components/modal/DeleteCheckedItem";
+import SelectBox from "../components/widgets/SelectBox";
 
 export default function EmployeeList(){
 
@@ -41,21 +42,7 @@ export default function EmployeeList(){
                     <PageTitle title={"직원 관리"} checkboxShow={checkboxShow} setCheckboxShow={setCheckboxShow}/>
 
                     <section className="relative top-6 mx-10 mt-8">
-
-                        <div className="flex items-center justify-between">
-                            <select className="select select-bordered select-sm w-36 max-w-xs mx-2 bg-neutral text-gray-50 border border-white/10">
-                                <option selected>상태 전체</option>
-                                <option>근무중</option>
-                                <option>오프</option>
-                                <option>휴가</option>
-                                <option>대리근무</option>
-                            </select>
-                            <select className="select select-bordered select-sm w-28 max-w-xs mx-2 bg-neutral text-gray-50 border border-white/10">
-                                <option selected>15개</option>
-                                <option>30개</option>
-                                <option>45개</option>
-                            </select>
-                        </div>
+                        <SelectBox selected={"상태 전체"} options={["근무중", "오프", "휴가", "대리근무"]} />
                         <EmployeeTable checkboxShow={checkboxShow} telVisibleIndex={telVisibleIndex} showTel={showTel}/>
                         <Pagenation />
                     </section>

@@ -5,6 +5,7 @@ import Pagenation from "../components/widgets/Pagenation";
 import Footer from "../components/widgets/Footer";
 import PageTitle from "../components/PageManager/PageTitle";
 import OrderTable from "../components/table/OrderTable";
+import SelectBox from "../components/widgets/SelectBox";
 
 export default function OrderList(){
 
@@ -20,20 +21,7 @@ export default function OrderList(){
                     <PageTitle title={"주문 관리"} />
 
                     <section className="relative top-6 mx-10 mt-8">
-                        <div className="flex items-center justify-between">
-                            <select className="select select-bordered select-sm w-36 max-w-xs mx-2 bg-neutral text-gray-50 border border-white/10">
-                                <option selected>최근 주문순</option>
-                                <option>오래된 주문순</option>
-                                <option>가격 높은 순</option>
-                                <option>가격 낮은 순</option>
-                            </select>
-                            <select className="select select-bordered select-sm w-28 max-w-xs mx-2 bg-neutral text-gray-50 border border-white/10">
-                                <option selected>15개</option>
-                                <option>30개</option>
-                                <option>45개</option>
-                            </select>
-
-                        </div>
+                        <SelectBox selected={"최근 주문순"} options={["오래된 주문순", "가격 높은 순", "가격 낮은 순"]} />
                         <OrderTable />
                         <Pagenation />
                     </section>
