@@ -27,9 +27,7 @@ export default function Analysis() {
                             <PopularMenuTable />
                             <SalesChart />
                         </div>
-
                         <div className="divider divider-neutral mt-8"></div>
-
                         <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-10">
                             <MonthlySalesTable />
                             <CategorySalesChart />

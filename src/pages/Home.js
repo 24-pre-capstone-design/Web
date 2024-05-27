@@ -30,22 +30,16 @@ export default function Home() {
                         <div className="chat chat-start">
                             <div className="chat-bubble">디지털 약자를 위한 따뜻한 키오스크 시스템, Nice To Menu 입니다!</div>
                         </div>
-
                         <HomeStats formatPrice={formatPrice}/>
-
                         <div className="divider divider-neutral mt-8 mb-3"></div>
-
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-10">
                             <RecentOrdersTable formatPrice={formatPrice} />
                             <RecentSalesTable formatPrice={formatPrice} />
                         </div>
-
                         <div className="divider divider-neutral mt-8"></div>
-
                         <div className="mt-6 pb-6">
                             <HomeMenuSlider />
                         </div>
-
                     </section>
 
                     <div className="relative top-20">
