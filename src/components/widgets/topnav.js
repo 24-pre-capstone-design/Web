@@ -3,10 +3,10 @@ import {Link} from "react-router-dom";
 
 
 import * as Icon from 'react-feather'
-import {AiOutlineSetting, FaUser, IoMdLogOut} from '../assets/icons/vander'
+import {AiOutlineSetting, FaUser, IoMdLogOut} from '../../assets/icons/vander'
 import 'simplebar-react/dist/simplebar.min.css';
 import {useCookies} from "react-cookie";
-import {notificationData} from "../data/data";
+import {notificationData} from "../../data/data";
 
 export default function Topnav({toggle, setToggle}){
 
