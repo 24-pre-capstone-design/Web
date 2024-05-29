@@ -1,6 +1,7 @@
 import React from "react";
 
-export default function MyInfoTable() {
+export default function MyInfoTable({owner}) {
+
     return (
         <div className="overflow-x-auto mx-2 md:col-span-3 lg:col-span-3">
             <div className="flex items-center">
@@ -10,15 +11,15 @@ export default function MyInfoTable() {
                 <tbody>
                 <tr>
                     <td>아이디</td>
-                    <td>mingmingmon</td>
+                    <td>{owner?.id}</td>
                 </tr>
                 <tr>
                     <td>이름</td>
-                    <td>전민주</td>
+                    <td>{owner?.name}</td>
                 </tr>
                 <tr>
                     <td>생년월일</td>
-                    <td>20020722</td>
+                    <td>{owner?.birthDate}</td>
                 </tr>
                 </tbody>
             </table>

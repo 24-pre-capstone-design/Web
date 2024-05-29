@@ -1,4 +1,5 @@
 import axios from "axios";
+import {axiosWithoutAuth} from "../common/AxiosInstance";
 
 const API_SERVER = process.env.REACT_APP_API_SERVER_URL;
 
@@ -15,7 +16,7 @@ export const postOwner = async (ownerData) => {
 export const getOwner = async (ownerId) => {
     console.log("Fetching owner with ID:", ownerId);
     try {
-        const response = await axios.get(`${API_SERVER}/owner/${ownerId}`);
+        const response = await axiosWithoutAuth.get('/owner/' + ownerId);
         return response.data;
     } catch (error) {
         console.error("Error fetching owner:", error);
