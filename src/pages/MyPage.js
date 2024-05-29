@@ -1,8 +1,6 @@
 import Sidebar from "../components/widgets/sidebar";
 import Topnav from "../components/widgets/topnav";
 import React, {useEffect, useState} from "react";
-import {Link} from "react-router-dom";
-import {notificationData} from "../data/data";
 import Footer from "../components/widgets/Footer";
 import DeleteAccount from "../components/modal/DeleteAccount";
 import EditOwnerInfo from "../components/modal/EditOwnerInfo";
@@ -44,7 +42,7 @@ export default function MyPage(){
                     </section>
 
                     <DeleteAccount />
-                    <EditOwnerInfo />
+                    <EditOwnerInfo owner={owner}/>
                     <UpdatePassword />
 
                     <div className="relative top-75">

@@ -1,8 +1,16 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
+import {useCookies} from "react-cookie";
+
 export default function EditOwnerInfo({owner}){
 
-    const [name, setName] = useState('전민주');
-    const [birth, setBirth] = useState('20200722');
+    const [name, setName] = useState("");
+    const [birth, setBirth] = useState("");
+    const [cookie, setCookie] = useCookies(['accessToken']);
+
+    useEffect(() => {
+        setName(owner?.name);
+        setBirth(owner?.birthDate);
+    }, [owner]);
 
     return (
         <dialog id="editOwnerInfo" className="modal">

@@ -1,4 +1,5 @@
 import axios from "axios";
+import {axiosWithAccessToken} from "../common/AxiosInstance";
 
 const API_SERVER = process.env.REACT_APP_API_SERVER_URL;
 
@@ -36,13 +37,9 @@ export const getUnreadNotifications = async (authToken) => {
     }
 };
 
-export const getAllNotifications = async (authToken) => {
+export const getAllNotifications = async (page, size, accessToken) => {
     try {
-        const response = await axios.get(`${API_SERVER}/notifications/all`, {
-            headers: {
-                'Authorization': `Bearer ${authToken}`,
-            },
-        });
+        const response = await axiosWithAccessToken(accessToken).get(`/notifications/all?page=${page}&size=${size}`);
         return response.data;
     } catch (error) {
         console.error("Error fetching all notifications:", error);

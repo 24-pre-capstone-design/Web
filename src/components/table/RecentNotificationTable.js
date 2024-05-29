@@ -1,8 +1,22 @@
 import {Link} from "react-router-dom";
 import {notificationData} from "../../data/data";
-import React from "react";
+import React, {useEffect, useState} from "react";
+import {useCookies} from "react-cookie";
+import {getAllNotifications} from "../../api/Notification";
 
 export default function RecentNotificationTable() {
+
+    const [notifications, setNotifications] = useState([]);
+    const [cookies, setCookie] = useCookies(['accessToken']);
+
+    useEffect(() => {
+        const data = getAllNotifications(0,5, cookies.accessToken);
+        data.then(response => {
+            setNotifications(response.data?.items);
+        });
+
+    },[]);
+
     return(
         <div className="overflow-x-auto mx-2 md:col-span-9 lg:col-span-9">
             <div className="flex items-center justify-between">
@@ -20,7 +34,7 @@ export default function RecentNotificationTable() {
                 </thead>
                 <tbody className="text-white/85">
                 {
-                    notificationData.map((data, index) => {
+                    notifications.map((data, index) => {
                         return (
                             <tr key={index}>
                                 <td>{data.id}</td>

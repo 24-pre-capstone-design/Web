@@ -1,5 +1,5 @@
 import axios from "axios";
-import {axiosWithoutAuth} from "../common/AxiosInstance";
+import {axiosWithAccessToken, axiosWithoutAuth} from "../common/AxiosInstance";
 
 const API_SERVER = process.env.REACT_APP_API_SERVER_URL;
 
@@ -38,17 +38,33 @@ export const deleteOwner = async (ownerId, authToken) => {
     }
 };
 
-export const patchOwner = async (ownerId, updatedOwnerData, authToken) => {
+export const patchOwner =  async (ownerId, name, birthDate, accessToken) => {
     try {
-        await axios.patch(`${API_SERVER}/owner/${ownerId}`, updatedOwnerData, {
-            headers: {
-                'Authorization': `Bearer ${authToken}`,
-                'Content-Type': 'application/json'
-            }
-        });
+        const updatedOwnerData = {
+            id : ownerId,
+            name: name,
+            birthDate: birthDate
+        };
+        await axiosWithAccessToken(accessToken).patch('owner' + ownerId, updatedOwnerData, accessToken);
         return true;
     } catch (error) {
         console.error("Error updating owner:", error);
-        return false; 
+        return false;
     }
-};
+}
+
+// export const patchOwner = async (ownerId, updatedOwnerData, authToken) => {
+//     try {
+//         await axios.patch(`${API_SERVER}/owner/${ownerId}`, updatedOwnerData, {
+//             headers: {
+//                 'Authorization': `Bearer ${authToken}`,
+//                 'Content-Type': 'application/json'
+//             }
+//         });
+//         return true;
+//     } catch (error) {
+//         console.error("Error updating owner:", error);
+//         return false;
+//     }
+// };
+
