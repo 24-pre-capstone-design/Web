@@ -55,7 +55,7 @@ export default function EditMenu({item}){
                             <span className="badge badge-lg my-1">썸네일 이미지</span>
                             <button className="btn btn-xs btn-warning mx-2"><label for="inputPictureURL">썸네일 변경</label></button>
                             <input type="file" id="inputPictureURL" className="hidden"/>
-                            <img src={item?.pictureURL} alt="썸네일 이미지" className="rounded-3xl px-3 py-1 hover:scale"/>
+                            <img src={`${process.env.REACT_APP_API_SERVER_URL}${item?.pictureURL}`} alt="썸네일 이미지" className="rounded-3xl px-3 py-1 hover:scale"/>
                         </div>
                     )
                 }

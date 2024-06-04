@@ -14,11 +14,12 @@ export const axiosWithoutAuth = axios.create(
 );
 
 // 액세스 토큰을 사용하는 axios 인스턴스
-export const axiosWithAccessToken = axios.create({
+
+export const axiosWithAccessToken = (accessToken) => axios.create({
     baseURL: API_SERVER,
     headers: {
         'Content-Type': 'application/json',
-        // 'Authorization': `Bearer ${accessToken}`
+        'Authorization': `Bearer ${accessToken}`
     }
 });
 
@@ -31,7 +32,7 @@ export const axiosWithMultipartContentType = axios.create({
     }
 });
 
-axiosWithAccessToken.interceptors.request.use(
+axiosWithAccessToken().interceptors.request.use(
     config => {
         const accessToken = useCookies(['accessToken'])[0].accessToken;
         if (accessToken) {

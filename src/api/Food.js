@@ -1,15 +1,14 @@
 import axios from "axios";
-
-
+import {axiosWithoutAuth} from "../common/AxiosInstance";
 
 const API_SERVER = process.env.REACT_APP_API_SERVER_URL;
 
 
 //전체 음식 조회
-export async function getFood() {
+export async function getAllFood() {
     try {
         //응답 성공
-        const response = await axios.get(`${API_SERVER}/food`);
+        const response = await axiosWithoutAuth.get('/food');
         return response.data;
     } catch (error) {
         //응답 실패

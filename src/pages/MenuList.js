@@ -9,12 +9,12 @@ import Footer from "../components/widgets/Footer";
 import PageTitle from "../components/PageManager/PageTitle";
 import DeleteCheckedItem from "../components/modal/DeleteCheckedItem";
 import MenuCards from "../components/widgets/MenuCards";
+import {getAllFood} from "../api/Food";
 
 export default function MenuList() {
 
     const [toggle, setToggle] = useState(true);
-    const [page, setPage] = useState(1);
-    const [size, setSize] = useState(8);
+    const [foods, setFoods] = useState([]);
     const [checkboxShow, setCheckboxShow] = useState(false);
     const [selectedCategory, setSelectedCategory] = useState('');
 
@@ -24,6 +24,14 @@ export default function MenuList() {
             setSelectedCategory('');
         }
     },[selectedCategory]);
+
+    useEffect(() => {
+        getAllFood().then((response) => {
+            console.log(response.data)
+            setFoods(response.data);
+        });
+    }, []);
+
 
     return (
         <>
@@ -35,8 +43,7 @@ export default function MenuList() {
                     <PageTitle title={"메뉴 관리"} checkboxShow={checkboxShow} setCheckboxShow={setCheckboxShow} selectedCategory={selectedCategory} setSelectedCategory={setSelectedCategory}/>
 
                     <section className="relative top-6 mt-8 mb-8 mx-10">
-                        <MenuCards checkboxShow={checkboxShow} />
-                        <Pagenation page={page}/>
+                        <MenuCards checkboxShow={checkboxShow} foods={foods} />
                     </section>
 
                     <DeleteCheckedItem setCheckboxShow={setCheckboxShow}/>
