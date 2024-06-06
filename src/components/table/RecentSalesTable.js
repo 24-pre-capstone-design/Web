@@ -7,7 +7,7 @@ export default function RecentSalesTable({formatPrice}){
         <div className="overflow-x-auto mx-2">
             <div className="flex items-center justify-between">
                 <h3 className="text-xl text-white font-bold m-2">최근 매출액</h3>
-                <Link to="/menu" className="link mx-2 text-gray-400">리포팅 및 분석 더보기</Link>
+                <Link to="/analysis" className="link mx-2 text-gray-400">리포팅 및 분석 더보기</Link>
             </div>
             <table className="table text-gray-400 table-b">
                 <thead className="text-gray-400">
