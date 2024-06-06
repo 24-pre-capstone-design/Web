@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import Sidebar from "../components/widgets/sidebar";
 import Topnav from "../components/widgets/topnav";
 import 'slick-carousel/slick/slick.css';
@@ -9,10 +9,13 @@ import HomeStats from "../components/widgets/HomeStats";
 import RecentOrdersTable from "../components/table/RecentOrdersTable";
 import RecentSalesTable from "../components/table/RecentSalesTable";
 import HomeMenuSlider from "../components/widgets/HomeMenuSlider";
+import {getOrderHistoryByLatest} from "../api/OrderHistory";
+import {useCookies} from "react-cookie";
 
 export default function Home() {
 
     const [toggle, setToggle] = useState(true);
+
     const formatPrice = (price) => {
         return "₩ " +  price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     };
