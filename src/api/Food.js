@@ -106,16 +106,11 @@ export async function searchFoodKw() {
     }
 }
 /*카테고리 id별 음식 조회*/
-export async function searchCategoryId() {
+export async function getFoodByCategoryId(foodCategoryId) {
     try {
         //응답 성공
-        const response = await axios.get(`${API_SERVER}/food/search/foodCategoryId`,{
-            params:{
-                //url 뒤에 붙는 param id값
-                foodCategoryId: "1"
-            }
-        });
-        return console.log(response.data);
+        const response = await axiosWithoutAuth.get(`/food/category/${foodCategoryId}`);
+        return response.data;
     } catch (error) {
         //응답 실패
         console.error("Error fetching searchCategoryId",error);

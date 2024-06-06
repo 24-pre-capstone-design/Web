@@ -1,9 +1,11 @@
 import {Link} from "react-router-dom";
 import Slider from "react-slick";
-import React from "react";
-import {menuData} from "../../data/data";
+import React, {useEffect, useState} from "react";
+import {getAllFood} from "../../api/Food";
 
 export default function HomeMenuSlider() {
+
+    const [foods, setFoods] = useState([]);
 
     const settings = {
         dots: false,
@@ -17,6 +19,12 @@ export default function HomeMenuSlider() {
         cssEase: "linear"
     };
 
+    useEffect(() => {
+        getAllFood().then((response) => {
+            setFoods(response.data);
+        });
+    }, []);
+
     return (
         <>
             <div className="flex items-center justify-between mx-6 mb-6">
@@ -25,15 +33,15 @@ export default function HomeMenuSlider() {
             </div>
             <Slider {...settings} className="pb-6">
                 {
-                    menuData.slice(0,5).map((item, index) => (
+                    foods.map((item, index) => (
                         <div className="px-4">
-                            <div data-theme="dark" className="card card-compact w-96 bg-base-100 shadow-xl" key={item.id}>
-                                <figure><img src={item.pictureURL} alt=""/></figure>
+                            <div data-theme="dark" className="card card-compact w-96 bg-base-100 shadow-xl" key={item?.id}>
+                                <figure><img src={`${process.env.REACT_APP_API_SERVER_URL}${item?.pictureURL}`} alt=""/></figure>
                                 <div className="card-body">
                                     <h2 className="card-title justify-between">
                                         <div>
                                             {item.name}
-                                            <div className="badge badge-accent badge-outline align-middle mb-1 mx-2">{item.foodCategory}</div>
+                                            <div className="badge badge-accent badge-outline align-middle mb-1 mx-2">{item.foodCategory?.name}</div>
                                             <div className="badge badge-warning badge-outline align-middle mb-1">{item.status}</div>
                                         </div>
                                     </h2>
