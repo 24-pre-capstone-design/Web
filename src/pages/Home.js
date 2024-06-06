@@ -7,10 +7,11 @@ import Footer from "../components/widgets/Footer";
 import PageTitle from "../components/PageManager/PageTitle";
 import HomeStats from "../components/widgets/HomeStats";
 import RecentOrdersTable from "../components/table/RecentOrdersTable";
-import RecentSalesTable from "../components/table/RecentSalesTable";
+import RecentSalesTable from "../components/table/RecentNotificationTableHome";
 import HomeMenuSlider from "../components/widgets/HomeMenuSlider";
 import {getOrderHistoryByLatest} from "../api/OrderHistory";
 import {useCookies} from "react-cookie";
+import RecentNotificationTableHome from "../components/table/RecentNotificationTableHome";
 
 export default function Home() {
 
@@ -37,7 +38,7 @@ export default function Home() {
                         <div className="divider divider-neutral mt-8 mb-3"></div>
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-10">
                             <RecentOrdersTable formatPrice={formatPrice} />
-                            <RecentSalesTable formatPrice={formatPrice} />
+                            <RecentNotificationTableHome formatPrice={formatPrice} />
                         </div>
                         <div className="divider divider-neutral mt-8"></div>
                         <div className="mt-6 pb-6">
