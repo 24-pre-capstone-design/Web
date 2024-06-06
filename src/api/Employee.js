@@ -1,4 +1,5 @@
 import axios from 'axios';
+import {axiosWithAccessToken} from "../common/AxiosInstance";
 
 const API_SERVER = process.env.REACT_APP_API_SERVER_URL;
 
@@ -18,13 +19,9 @@ export const postEmployee = async (employeeData, token)=>{
     }
 };
 
-export const getEmployee = async(token) =>{
+export const getAllEmployee = async(token) =>{
     try {
-        const response = await axios.get(`${API_SERVER}/employee/all`,{
-            headers: {
-                'Authorization' : `Bearer ${token}`
-            }
-        });
+        const response = await axiosWithAccessToken(token).get(`/employee/all`);
         return response.data;
     } catch (error) {
         console.error('Error getting employee',error);

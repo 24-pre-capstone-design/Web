@@ -2,7 +2,7 @@ import {employeeData, employeeStatus} from "../../data/data";
 import React, {useState} from "react";
 import EditEmployee from "../modal/EditEmployee";
 
-export default function EmployeeTable({checkboxShow, telVisibleIndex, showTel}) {
+export default function EmployeeTable({checkboxShow, telVisibleIndex, showTel, employeeList}) {
 
     const [employee, setEmployee] = useState(null);
 
@@ -27,7 +27,7 @@ export default function EmployeeTable({checkboxShow, telVisibleIndex, showTel}) 
                 </thead>
                 <tbody className="text-white/85">
                 {
-                    employeeData.map((item, index) => {
+                    employeeList.map((item, index) => {
                         return (
                             <tr key={index} className={`border-b border-gray-800 ${index%2===0 ? 'bg-gray-800/30' : ''}`}>
                                 <td>
