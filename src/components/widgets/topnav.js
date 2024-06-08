@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import {Link} from "react-router-dom";
 
 
@@ -7,10 +7,12 @@ import {AiOutlineSetting, FaUser, IoMdLogOut} from '../../assets/icons/vander'
 import 'simplebar-react/dist/simplebar.min.css';
 import {useCookies} from "react-cookie";
 import {notificationData} from "../../data/data";
+import {getAllNotifications} from "../../api/Notification";
 
 export default function Topnav({toggle, setToggle}){
 
     const [cookie, setCookie] = useCookies(['accessToken']);
+    const [notifications, setNotifications] = useState([]);
 
     const toggleHandler = () => {
         setToggle(!toggle);
@@ -20,6 +22,14 @@ export default function Topnav({toggle, setToggle}){
         setCookie("accessToken", "", {path: "/"});
         window.location.href = "/";
     }
+
+    useEffect(() => {
+        const data = getAllNotifications(0,5, cookie.accessToken);
+        data.then(response => {
+            setNotifications(response.data?.items);
+        });
+
+    },[]);
 
     return(
         <>
@@ -46,7 +56,7 @@ export default function Topnav({toggle, setToggle}){
                         </div>
                         <ul tabIndex={0} className="dropdown-content z-50 menu p-2 shadow bg-white text-black rounded-box w-[420px]">
                             {
-                                notificationData.map((item, index) => {
+                                notifications.map((item, index) => {
                                     return(
                                         <li key={index}>
                                             <Link to="/notification" className="flex items-center py-2 px-3 hover:bg-gray-100">

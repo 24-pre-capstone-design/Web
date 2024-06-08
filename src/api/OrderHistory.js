@@ -1,4 +1,5 @@
 import axios from "axios";
+import {axiosWithAccessToken} from "../common/AxiosInstance";
 
 const API_SERVER = process.env.REACT_APP_API_SERVER_URL;
 
@@ -84,7 +85,7 @@ export async function getOrderByStatus(orderHistoryStatus) {
 }
 
 //결제번호로 주문내역조회(GET)
-export async function 회(paymentId) {
+export async function getOrderHistoryByPaymentId(paymentId) {
     try {
         //응답 성공
         const response = await axios.get(`${API_SERVER}/orderHistory/payment/${paymentId}`,{
@@ -101,13 +102,11 @@ export async function 회(paymentId) {
     }
 }
 //신규 주문내역 개수 조회(GET)
-export async function getnewOrderNumber() {
+export async function getNewOrderNumber(accessToken) {
     try {
-        //응답 성공
-        const response = await axios.get(`${API_SERVER}/orderHistory/new}`);
-        return console.log(response.data);
+        const response = await axiosWithAccessToken(accessToken).get('/orderHistory/new');
+        return response.data;
     } catch (error) {
-        //응답 실패
         console.error("Error getting newOrder Number",error);
         throw error;
     }
@@ -132,13 +131,11 @@ export async function getMonth(year,month) {
 }
 
 //최신순으로 주문내역 전체조회(GET)
-export async function getByLatest() {
+export async function getOrderHistoryByLatest(page, size, accessToken) {
     try {
-        //응답 성공
-        const response = await axios.get(`${API_SERVER}/orderHistory/latest`);
-        return console.log(response.data);
+        const response = await axiosWithAccessToken(accessToken).get(`/orderHistory/latest?page=${page}&size=${size}`);
+        return response.data;
     } catch (error) {
-        //응답 실패
         console.error("Error getting By Latest",error);
         throw error;
     }
@@ -154,6 +151,16 @@ export async function getByDate(date) {
     } catch (error) {
         //응답 실패
         console.error("Error getting By Date",error);
+        throw error;
+    }
+}
+
+export async function getRevenueByDate(date, accessToken) {
+    try {
+        const response = await axiosWithAccessToken(accessToken).get(`/orderHistory/revenue/date?date=${date}`);
+        return response.data;
+    } catch (error) {
+        console.log("Error getRevenueByDate", error);
         throw error;
     }
 }

@@ -5,6 +5,8 @@ import Info from "../components/alert/Info";
 import {auth_login} from "../api/Auth";
 import {useCookies} from "react-cookie";
 
+import logo from "../assets/images/logo/long_simple_logo.png";
+
 export default function Login(){
 
   const [id, setId] = useState("");
@@ -76,9 +78,7 @@ export default function Login(){
         </div>
 
         <div className="bg-black p-8 rounded-lg max-w-3xl w-full">
-          <h1 className="text-center text-white text-2xl font-bold mb-6">nice to menu</h1>
-          <h2 className="text-center text-white font-bold mb-6">로그인</h2>
-
+          <img src={logo} className="w-64 mx-auto" alt="logo"/>
             <div className ="mb-6">
               <div className ="mt-4 relative rounded-md shadow-sm">
                 <input type="text"

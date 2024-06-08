@@ -1,4 +1,5 @@
 import axios from 'axios';
+import {axiosWithoutAuth} from "../common/AxiosInstance";
 
 const API_SERVER = process.env.REACT_APP_API_SERVER_URL;
 
@@ -26,8 +27,8 @@ export const postFoodCategory = async (foodCategoryData,token)=>{
 
 export const getFoodCategory = async() =>{
     try {
-        const response = await axios.get(`${API_SERVER}/foodCategory`);
-        return console.log(response.data);
+        const response = await axiosWithoutAuth.get('/foodCategory');
+        return response.data;
     } catch (error) {
         console.error("Error fetching food categories:", error);
         throw error;
@@ -35,10 +36,9 @@ export const getFoodCategory = async() =>{
 }
 
 export const getFoodCategoryId = async (foodCategoryId)=>{
-  console.log("Fetching foodCategoryId:", foodCategoryId);
   try{
-    const response = await axios.get(`${API_SERVER}/foodCategory/${foodCategoryId}`);
-    return console.log(response.data);
+    const response = await axiosWithoutAuth.get(`/foodCategory/${foodCategoryId}`);
+    return response.data;
   }catch(error){
     console.error('Error fetching food categories by ID:', error);
     throw error;

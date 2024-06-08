@@ -1,8 +1,20 @@
 import {Link} from "react-router-dom";
-import {orderData, orderHistoryStatus} from "../../data/data";
-import React from "react";
+import {orderHistoryStatus} from "../../data/data";
+import React, {useEffect, useState} from "react";
+import {getOrderHistoryByLatest} from "../../api/OrderHistory";
+import {useCookies} from "react-cookie";
 
 export default function RecentOrdersTable({formatPrice}){
+
+    const [orderHistory, setOrderHistory] = useState([]);
+    const [cookie, setCookie] = useCookies(['accessToken']);
+
+    useEffect(() => {
+        getOrderHistoryByLatest(0, 5, cookie.accessToken).then(response => {
+            setOrderHistory(response.data.items);
+        });
+    }, []);
+
     return (
         <div className="overflow-x-auto mx-2">
             <div className="flex items-center justify-between">
@@ -21,12 +33,16 @@ export default function RecentOrdersTable({formatPrice}){
                 </thead>
                 <tbody className="text-white/70">
                 {
-                    orderData.slice(0, 5).map((order, index) => (
+                    orderHistory.map((order, index) => (
 
                         <tr key={index} className="border-t border-gray-800">
                             <td>{index + 1}</td>
-                            <td>{order.foodName}</td>
-                            <td>{formatPrice(order.sumOfCost)}</td>
+                            <td>
+                                {
+                                    order.orderResponseDtoList.map((menu, index) => menu.foodName).join(' / ')
+                                }
+                            </td>
+                            <td>{formatPrice(order.sumOfOrderHistoryCost)}</td>
                             <td>{
                                 orderHistoryStatus.map((status, index) => {
                                     if (status.value === order.orderHistoryStatus) {

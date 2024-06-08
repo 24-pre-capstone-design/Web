@@ -6,7 +6,7 @@ import SimpleBarReact from "simplebar-react";
 import 'simplebar-react/dist/simplebar.min.css';
 
 import {AiOutlineAppstore, AiOutlineLineChart, FaBell, TbHandFinger, IoMdPerson, FaPeopleCarry, FaLightbulb} from '../../assets/icons/vander'
-import logo from "../../assets/images/logo/logo_without_background_long.png";
+import logo from "../../assets/images/logo/simple_logo.png";
 
 export default function Sidebar(){
     const location = useLocation();
@@ -19,7 +19,7 @@ export default function Sidebar(){
         <nav className="sidebar-wrapper">
             <div data-theme="dark" className="sidebar-content">
                 <div className="sidebar-brand">
-                    <Link to="/home"><img src={logo} alt="logo" className="h-8 w-56" style={{filter: "grayscale(50%)"}} /></Link>
+                    <Link to="/home"><img src={logo} alt="logo" className="w-64 mt-1"/></Link>
                 </div>
             <SimpleBarReact style={{height:"calc(100% - 70px)"}}> 
                 <ul className="sidebar-menu border-white/10">

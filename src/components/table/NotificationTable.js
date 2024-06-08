@@ -1,7 +1,7 @@
-import {notificationAllData} from "../../data/data";
 import React from "react";
 
-export default function NotificationTable({checkboxShow}) {
+export default function NotificationTable({checkboxShow, notifications}) {
+
     return (
         <div className="overflow-x-auto p-2">
             <table className="table text-center mt-2">
@@ -17,7 +17,7 @@ export default function NotificationTable({checkboxShow}) {
                 </thead>
                 <tbody className="text-white/85">
                 {
-                    notificationAllData.map((item, index) => {
+                    notifications.map((item, index) => {
                         return (
                             <tr key={index} className={`border-b border-gray-800 ${index%2===0 ? 'bg-gray-800/30' : ''}`}>
                                 <td>
