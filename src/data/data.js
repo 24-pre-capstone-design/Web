@@ -771,37 +771,37 @@ export const employeeData = [
 
 export const sellData = [
     {
-        "date": '05-15',
+        "date": '06-01',
         "주문건수" : 25,
         "매출액" : 800,
     },
     {
-        "date": '05-16',
+        "date": '06-02',
         "주문건수" : 30,
         "매출액" : 967,
     },
     {
-        "date": '05-17',
+        "date": '06-03',
         "주문건수" : 29,
         "매출액" : 1098,
     },
     {
-        "date": '05-18',
+        "date": '06-04',
         "주문건수" : 37,
         "매출액" : 1200,
     },
     {
-        "date": '05-19',
+        "date": '06-05',
         "주문건수" : 42,
         "매출액" : 1108,
     },
     {
-        "date": '05-20',
+        "date": '06-06',
         "주문건수" : 11,
         "매출액" : 680,
     },
     {
-        "date": '05-21',
+        "date": '06-07',
         "주문건수" : 38,
         "매출액" : 1700,
     }
@@ -809,22 +809,22 @@ export const sellData = [
 
 export const monthlySellData = [
     {
-        month: '2024-04',
+        month: '2024-06',
         orderCount : 250,
         sales : 6000,
     },
     {
-        month: '2024-03',
+        month: '2024-05',
         orderCount : 300,
         sales : 8000,
     },
     {
-        month: '2024-02',
+        month: '2024-04',
         orderCount : 280,
         sales : 7000,
     },
     {
-        month: '2024-01',
+        month: '2024-03',
         orderCount : 310,
         sales : 9000,
     }

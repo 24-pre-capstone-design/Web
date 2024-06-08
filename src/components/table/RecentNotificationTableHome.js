@@ -35,7 +35,7 @@ export default function RecentNotificationTableHome({formatPrice}){
                 {
                     notifications.map((data, index) => {
                         return (
-                            <tr key={index}>
+                            <tr key={index} className="border-t border-gray-800">
                                 <td>{data.id}</td>
                                 <td>{data.title}</td>
                                 <td>{data.createdAt}</td>

@@ -45,7 +45,7 @@ export default function MyPage(){
                     <EditOwnerInfo owner={owner}/>
                     <UpdatePassword />
 
-                    <div className="relative top-75">
+                    <div className="Fixed bottom-0 w-full">
                         <Footer/>
                     </div>
                 </main>

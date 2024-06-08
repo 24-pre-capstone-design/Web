@@ -1,8 +1,18 @@
 import {Link} from "react-router-dom";
 import {menuData} from "../../data/data";
-import React from "react";
+import React, {useEffect, useState} from "react";
+import {getAllFood} from "../../api/Food";
 
 export default function PopularMenuTable(){
+
+    const [foods, setFoods] = useState([]);
+
+    useEffect(() => {
+        getAllFood().then((response) => {
+            setFoods(response.data);
+        });
+    }, []);
+
     return (
         <div className="overflow-x-auto mx-2">
             <div className="flex items-center justify-between">
@@ -20,11 +30,11 @@ export default function PopularMenuTable(){
                 </thead>
                 <tbody className="text-white/85">
                 {
-                    menuData.slice(0,6).map((menu, index) => (
+                    foods.slice(0,6).map((menu, index) => (
                         <tr key={index} className={`border-b border-gray-800 ${index%2===0 ? 'bg-gray-800/30' : ''}`}>
                             <td>{index+1}</td>
                             <td>{menu.name}</td>
-                            <td>{menu.foodCategory}</td>
+                            <td>{menu.foodCategory?.name}</td>
                             <td>{menu.price}</td>
                         </tr>
                     ))
